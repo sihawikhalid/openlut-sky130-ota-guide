@@ -75,8 +75,8 @@ S. A. Khalid, S. E. Maestre and K. M. Madrid-Khalid, "Open-LUT: Interactive gm/I
 
 ## References
 
--<a id="ref1"></a> **[1]** S. A. Khalid, S. E. Maestre and K. M. Madrid-Khalid, "Open-LUT: Interactive gm/ID Lookup Tables for MOSFET Sizing in Open-Source PDKs," *2025 10th ICICM*, 2025, pp. 344-353, doi: [10.1109/ICICM66614.2025.11316023](https://doi.org/10.1109/ICICM66614.2025.11316023).
--<a id="ref2"></a> **[2]** "SKY’s the Limit with the SKY130 Open-Source PDK." Skywater. https://www.skywatertechnology.com/sky130-open-source-pdk/ (accessed Oct. 10, 2025).
--<a id="ref3"></a> **[3]** Jespers, P. G. A., & Murmann, B. (2017). Systematic Design of Analog CMOS Circuits: Using Pre-Computed Lookup Tables. Cambridge University Press. https://doi.org/10.1017/9781108125840
--<a id="ref4"></a> **[4]** Paul Jespers. The gm/ID Methodology, a sizing tool for low-voltage analog CMOS Circuits: The semi-empirical and compact model approaches. Springer Science & Business Media, 2009.
--<a id="ref5"></a> **[5]** Sabry, M. N., Omran, H., & Dessouky, M. (2018). Systematic design and optimization of operational transconductance amplifier using gm/ID design methodology. Microelectronics Journal, 75, 87–96. https://doi.org/10.1016/j.mejo.2018.02.002
+- <a id="ref1"></a> **[1]** S. A. Khalid, S. E. Maestre and K. M. Madrid-Khalid, "Open-LUT: Interactive gm/ID Lookup Tables for MOSFET Sizing in Open-Source PDKs," *2025 10th ICICM*, 2025, pp. 344-353, doi: [10.1109/ICICM66614.2025.11316023](https://doi.org/10.1109/ICICM66614.2025.11316023).
+- <a id="ref2"></a> **[2]** "SKY’s the Limit with the SKY130 Open-Source PDK." Skywater. https://www.skywatertechnology.com/sky130-open-source-pdk/ (accessed Oct. 10, 2025).
+- <a id="ref3"></a> **[3]** Jespers, P. G. A., & Murmann, B. (2017). Systematic Design of Analog CMOS Circuits: Using Pre-Computed Lookup Tables. Cambridge University Press. https://doi.org/10.1017/9781108125840
+- <a id="ref4"></a> **[4]** Paul Jespers. The gm/ID Methodology, a sizing tool for low-voltage analog CMOS Circuits: The semi-empirical and compact model approaches. Springer Science & Business Media, 2009.
+- <a id="ref5"></a> **[5]** Sabry, M. N., Omran, H., & Dessouky, M. (2018). Systematic design and optimization of operational transconductance amplifier using gm/ID design methodology. Microelectronics Journal, 75, 87–96. https://doi.org/10.1016/j.mejo.2018.02.002
