@@ -44,7 +44,7 @@ Open-LUT queries $g_m/I_D$ lookup tables at specific drain-to-source bias voltag
   <br> 
 </p>
 <p align="center">
-  *Figure 2. Initial $V_{DS}$ Bias Allocation across the 5T OTA Transistor Stack.*
+  Figure 2. Initial $V_{DS}$ Bias Allocation across the 5T OTA Transistor Stack.
 </p>
 ---
 
