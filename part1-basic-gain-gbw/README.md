@@ -1,7 +1,4 @@
-import docx
-from docx.shared import Inches, Pt, RGBColor
-
-part1_md = """# Part 1: Basic 5T OTA Sizing in SKY130 using Open-LUT
+# Part 1: Basic 5T OTA Sizing in SKY130 using Open-LUT
 
 > A step-by-step guide to tool-assisted transistor sizing for a basic 5-transistor Operational Transconductance Amplifier (OTA) in SkyWater 130nm PDK (SKY130) using the [Open-LUT](https://open-lut.app) web application.
 
