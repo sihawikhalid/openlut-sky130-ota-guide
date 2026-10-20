@@ -48,8 +48,6 @@ Serves as an introductory guide to the $g_m/I_D$ design workflow, focusing on ac
 | **Open-Loop DC Gain ($A_{v,dc}$)** | $\ge 32	 { dB}$ |
 | **Gain-Bandwidth Product (GBW)** | $\ge 5	 { MHz}$ |
 
-👉 **[Access Part 1 Guide & Simulation Files](./part1-basic/)**
-
 ---
 
 ### 📁 [Part 2: Extended 5T OTA Sizing](./part2-extended/) ($ICMR$ & $CMRR$ Optimization)
@@ -61,8 +59,6 @@ Extends the baseline 5T OTA design to meet common-mode voltage headroom and reje
 | **Baseline Specifications** | Same as Part 1 | Preserves $A_{v,dc}, 	{GBW}, I_{SS}, C_L$ |
 | **Input Common-Mode Range (ICMR)** | **0.70 V – 1.60 V** | Optimized via LVT input pair & PMOS load selection |
 | **Common-Mode Rejection Ratio (CMRR)** | **$\ge 70	{ dB}$** | Achieved via tail source $r_{o5}$ optimization |
-
-👉 **[Access Part 2 Guide & Simulation Files](./part2-extended/)**
 
 ## References
 [^1]: "SKY’s the Limit with the SKY130 Open-Source PDK." Skywater. https://www.skywatertechnology.com/sky130-open-source-pdk/ (accessed Oct. 10, 2025).
