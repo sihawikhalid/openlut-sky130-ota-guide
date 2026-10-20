@@ -115,7 +115,7 @@ Clearing the form once more and entering $I_D = 0.01\text{ mA}$, $g_m/I_D = 5.03
 
 The tail transistor $M_5$ must carry $I_{SS} = 20\\,\\mu\\text{A}$ with $V_{DS5} = 0.3\\text{ V}$ while staying in saturation ($V_{ov5} \\le 0.2\\text{ V}$). Operating in moderate inversion ($g_m/I_D \\approx 13\\text{--}16\\text{ S/A}$) with $L_5 \\ge 1\\,\\mu\\text{m}$ ensures low overdrive voltage and minimizes channel length modulation.
 
-![Figure 7: gm/ID vs Vov Characteristic for sky130_nfet_01v8](img/fig7_nmos_gm_id_vov.png)
+![Figure 7: gm/ID vs Vov Characteristic for sky130_nfet_01v8](img/gmid_vov.jpg)
 *Figure 7. $g_m/I_D$ vs $V_{ov}$ characteristic for `sky130_nfet_01v8`.*
 
 Clear the form using **`Clear Form / Reset Plots`**, select `sky130_nfet_01v8` at $V_{ds} = 0.3\\text{ V}$, and click **Update**. Enter $I_D = 0.02\\text{ mA}$ and $L = 1\\,\\mu\\text{m}$. Iterate the inputting of $g_m/I_D$ values within the $13.5\\text{--}16\\text{ S/A}$ range until a suitable overdrive voltage $V_{ov5} \\approx 100\\text{ mV}$ is attained. At $g_m/I_D = 13.7\\text{ S/A}$, Open-LUT extracts $V_{ov5} = 0.1006\\text{ V}$ and the finalized dimensions in **Table 4**.
@@ -134,15 +134,15 @@ Bias mirror $M_6$ carries $I_{bias} = 10\\,\\mu\\text{A}$ (half of $I_{SS}$) and
 
 The design was verified using Xschem and Ngspice within the IIC-OSIC-TOOLS Docker environment. The simulation setup is shown in **Figure 8**, and schematic files are available in the `./cir/` subfolder.
 
-![Figure 8: Xschem Simulation Setup for 5T OTA Verification](img/fig8_xschem_setup.png)
+![Figure 8: Xschem Simulation Setup for 5T OTA Verification](img/schematic.jpg)
 *Figure 8. Xschem simulation setup for 5T OTA verification.*
 
 A DC common-mode sweep ($V_{CM}$ from $0$ to $1.8\\text{ V}$) identifies the valid operating range (**Figures 9 & 10**). Selecting $V_{CM} = 1.0\\text{ V}$ establishes an optimal operating point.
 
-![Figure 9: Transconductance gm1,2 vs Input Common-Mode Voltage VCM](img/fig9_gm_vcm.png)
+![Figure 9: Transconductance gm1,2 vs Input Common-Mode Voltage VCM](img/gm_vs_vcm.jpg)
 *Figure 9. Transconductance $g_{m1,2}$ vs Input Common-Mode Voltage $V_{CM}$.*
 
-![Figure 10: Tail Current ISS vs Input Common-Mode Voltage VCM](img/fig10_iss_vcm.png)
+![Figure 10: Tail Current ISS vs Input Common-Mode Voltage VCM](img/iss_vs_vcm.jpg)
 *Figure 10. Tail current $I_{SS}$ vs Input Common-Mode Voltage $V_{CM}$.*
 
 **Table 5** compares the Open-LUT computed values against Ngspice DC operating point simulation results at $V_{CM} = 1.0\\text{ V}$.
