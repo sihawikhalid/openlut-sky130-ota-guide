@@ -36,7 +36,7 @@ Each part of this series is organized in its own directory containing a dedicate
 
 ## Series Directory
 
-### 📁 [Part 1: Basic 5T OTA Sizing ($A_{v,dc}$, GBW, $I_{SS}$)](./part1-basic/)
+### 📁 [Part 1: Basic 5T OTA Sizing ($A_{v,\mathrm{dc}}$, GBW, $I_{SS}$ )](./part1-basic/)
 
 Serves as an introductory guide to the $g_m/I_D$ design workflow, focusing on achieving core Gain, Bandwidth, and Current specifications.
 
