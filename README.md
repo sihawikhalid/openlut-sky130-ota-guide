@@ -68,11 +68,13 @@ S. A. Khalid, S. E. Maestre and K. M. Madrid-Khalid, "Open-LUT: Interactive gm/I
 
 ```bibtex
 @inproceedings{khalid2025openlut,
-   author    = {Khalid, S. and Maestre, S. and Madrid-Khalid, K.},
+   author    = {Khalid, S. A. and Maestre, S. E. and Madrid-Khalid, K. M.},
    title     = {{Open-LUT: Interactive $g_m/I_D$ Lookup Tables for MOSFET Sizing in Open-Source PDKs}},
    booktitle = {2025 10th International Conference on Integrated Circuits and Microsystems (ICICM)},
    address   = {Hefei, China},
-   year      = {2025}
+   year      = {2025},
+   pages     = {344--353},
+   doi       = {10.1109/ICICM66614.2025.11316023}
 }
 ```
 
