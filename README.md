@@ -1,6 +1,6 @@
 # Systematic 5T OTA Design via $g_m/I_D$ & Open-LUT
 
-A multi-part guide to systematic 5T Operational Transconductance Amplifier (OTA) design using SkyWater's open-source 130nm PDK (SKY130)[^1] and the interactive **[Open-LUT](http://www.open-lut.org)** [^2] web app. A multi-part guide to systematic 5T Operational Transconductance Amplifier (OTA) design in SKY130 technology using the interactive **[Open-LUT](http://www.open-lut.org)** [^1] web app. This guide demonstrates how to translate target performance specifications into transistor dimensions ($W, L$) using the $g_m/I_D$ methodology, verified with **Ngspice** and **Xschem**.
+A multi-part guide to systematic 5T Operational Transconductance Amplifier (OTA) design using SkyWater's open-source 130nm PDK ([SKY130](https://www.skywatertechnology.com/skys-the-limit-with-the-sky130-open-source-pdk/))[^1] and the interactive **[Open-LUT](http://www.open-lut.org)** [^2] web app. A multi-part guide to systematic 5T Operational Transconductance Amplifier (OTA) design in SKY130 technology using the interactive **[Open-LUT](http://www.open-lut.org)** [^1] web app. This guide demonstrates how to translate target performance specifications into transistor dimensions ($W, L$) using the $g_m/I_D$ methodology, verified with **Ngspice** and **Xschem**.
 
 ---
 
@@ -65,5 +65,5 @@ Extends the baseline 5T OTA design to meet common-mode voltage headroom and reje
 👉 **[Access Part 2 Guide & Simulation Files](./part2-extended/)**
 
 ## References
-[^1]: "SKY’s the Limit with the SKY130 Open-Source PDK." Skywater. https://www.[skywatertechnology.com/sky130-open-source-pdk/](https://www.skywatertechnology.com/skys-the-limit-with-the-sky130-open-source-pdk/) (accessed Oct. 10, 2025).
+[^1]: "SKY’s the Limit with the SKY130 Open-Source PDK." Skywater. https://www.skywatertechnology.com/sky130-open-source-pdk/ (accessed Oct. 10, 2025).
 [^2]: S. Khalid, S. Maestre, and K. Madrid-Khalid, "Open-LUT: Interactive gm/ID Lookup Tables for MOSFET Sizing in Open-Source PDKs," *2025 10th International Conference on Integrated Circuits and Microsystems (ICICM)*, Hefei, China, 2025.
