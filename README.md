@@ -1,6 +1,6 @@
 # Systematic 5T OTA Design via $g_m/I_D$ & Open-LUT
 
-A multi-part, tool-focused guide demonstrating how to use **[Open-LUT](http://www.open-lut.org)** [^1] to facilitate and accelerate $g_m/I_D$ transistor sizing for 5T OTAs in SkyWater's open-source 130nm PDK ([SKY130](https://www.skywatertechnology.com/skys-the-limit-with-the-sky130-open-source-pdk/))[^2], with design results verified using **Ngspice** and **Xschem**.
+A multi-part, tool-focused guide demonstrating how to use **[Open-LUT](http://www.open-lut.org)** <sup>[[3]](#ref1)</sup> to facilitate and accelerate $g_m/I_D$ transistor sizing for 5T OTAs in SkyWater's open-source 130nm PDK ([SKY130](https://www.skywatertechnology.com/skys-the-limit-with-the-sky130-open-source-pdk/))<sup>[[3]](#ref2)</sup>, with design results verified using **Ngspice** and **Xschem**.
 
 > [!NOTE]
 > **Scope & Target Audience:** This guide focuses on **how to navigate and apply Open-LUT** as a CAD tool to streamline transistor sizing. It assumes basic familiarity with $g_m/I_D$ methodology <sup>[[3]](#ref3)</sup> <sup>[[4]](#ref3)</sup> <sup>[[5]](#ref3)</sup>.
@@ -75,8 +75,8 @@ S. A. Khalid, S. E. Maestre and K. M. Madrid-Khalid, "Open-LUT: Interactive gm/I
 
 ## References
 
-- <a id="ref1"></a> **[1]** S. A. Khalid, S. E. Maestre and K. M. Madrid-Khalid, "Open-LUT: Interactive gm/ID Lookup Tables for MOSFET Sizing in Open-Source PDKs," *2025 10th ICICM*, 2025, pp. 344-353, doi: [10.1109/ICICM66614.2025.11316023](https://doi.org/10.1109/ICICM66614.2025.11316023).
-- <a id="ref2"></a> **[2]** "SKY’s the Limit with the SKY130 Open-Source PDK." Skywater. https://www.skywatertechnology.com/sky130-open-source-pdk/ (accessed Oct. 10, 2025).
-- <a id="ref3"></a> **[3]** Reference 3 text...
-- <a id="ref4"></a> **[4]** Reference 4 text...
-- <a id="ref5"></a> **[5]** Reference 5 text...
+<a id="ref1"></a> **[1]** S. A. Khalid, S. E. Maestre and K. M. Madrid-Khalid, "Open-LUT: Interactive gm/ID Lookup Tables for MOSFET Sizing in Open-Source PDKs," *2025 10th ICICM*, 2025, pp. 344-353, doi: [10.1109/ICICM66614.2025.11316023](https://doi.org/10.1109/ICICM66614.2025.11316023).
+<a id="ref2"></a> **[2]** "SKY’s the Limit with the SKY130 Open-Source PDK." Skywater. https://www.skywatertechnology.com/sky130-open-source-pdk/ (accessed Oct. 10, 2025).
+<a id="ref3"></a> **[3]** Reference 3 text...
+<a id="ref4"></a> **[4]** Reference 4 text...
+<a id="ref5"></a> **[5]** Reference 5 text...
