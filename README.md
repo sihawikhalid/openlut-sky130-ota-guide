@@ -1,6 +1,6 @@
 # Systematic 5T OTA Design via $g_m/I_D$ & Open-LUT
 
-A multi-part guide to systematic 5T Operational Transconductance Amplifier (OTA) design in SKY130 technology using the interactive **[Open-LUT](https://open-lut.app)** web app. This guide demonstrates how to translate target performance specifications into transistor dimensions ($W, L, g_m/I_D$) using the $g_m/I_D$ methodology, verified with **Ngspice** and **Xschem**.
+A multi-part guide to systematic 5T Operational Transconductance Amplifier (OTA) design in SKY130 technology using the interactive **[Open-LUT](http://www.open-lut.org)** web app. This guide demonstrates how to translate target performance specifications into transistor dimensions ($W, L, g_m/I_D$) using the $g_m/I_D$ methodology, verified with **Ngspice** and **Xschem**.
 
 ---
 
