@@ -64,7 +64,7 @@ Extends the baseline 5T OTA design to meet common-mode voltage headroom and reje
 
 If you use this work, please cite the following paper:
 
-S. A. Khalid, S. E. Maestre and K. M. Madrid-Khalid, "Open-LUT: Interactive gm/ID Lookup Tables for MOSFET Sizing in Open-Source PDKs," 2025 10th International Conference on Integrated Circuits and Microsystems (ICICM), Hefei, China, 2025, pp. 344-353, doi: 10.1109/ICICM66614.2025.11316023.
+S. A. Khalid, S. E. Maestre and K. M. Madrid-Khalid, "Open-LUT: Interactive gm/ID Lookup Tables for MOSFET Sizing in Open-Source PDKs," 2025 10th International Conference on Integrated Circuits and Microsystems (ICICM), Hefei, China, 2025, pp. 344-353, doi: [10.1109/ICICM66614.2025.11316023](https://doi.org/10.1109/ICICM66614.2025.11316023).
 
 ## References
 [^1]: "SKY’s the Limit with the SKY130 Open-Source PDK." Skywater. https://www.skywatertechnology.com/sky130-open-source-pdk/ (accessed Oct. 10, 2025).
