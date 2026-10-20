@@ -1,4 +1,4 @@
-# Systematic 5T OTA Design via $\frac{g_m}{I_D}$ & Open-LUT
+# Systematic 5T OTA Design via $g_m/I_D$ & Open-LUT
 
 A multi-part guide to systematic 5T Operational Transconductance Amplifier (OTA) design using SkyWater's open-source 130nm PDK ([SKY130](https://www.skywatertechnology.com/skys-the-limit-with-the-sky130-open-source-pdk/))[^1] and the interactive **[Open-LUT](http://www.open-lut.org)** [^2] web app. This guide demonstrates how to translate target performance specifications into transistor dimensions ($W, L$) using the $g_m/I_D$ methodology, verified with **Ngspice** and **Xschem**.
 
