@@ -172,7 +172,7 @@ A DC common-mode sweep ($V_{CM}$ from $0$ to $1.8\\text{ V}$) identifies the val
 
 An AC sweep (`.ac`) verifies open-loop gain and bandwidth (**Figure 11**). **Table 6** confirms that all specifications are satisfied in a single pass.
 
-![Figure 11: AC Magnitude Response of the Designed 5T OTA](img/fig11_ac_response.png)
+![Figure 11: AC Magnitude Response of the Designed 5T OTA](img/ac_plot.jpg)
 *Figure 11. AC magnitude response of the designed 5T OTA.*
 
 ### Table 6: Simulation Results vs. Specifications
