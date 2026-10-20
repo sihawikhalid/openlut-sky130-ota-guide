@@ -77,8 +77,8 @@ S. A. Khalid, S. E. Maestre and K. M. Madrid-Khalid, "Open-LUT: Interactive gm/I
 
 [^1]: S. A. Khalid, S. E. Maestre and K. M. Madrid-Khalid, "Open-LUT: Interactive gm/ID Lookup Tables for MOSFET Sizing in Open-Source PDKs," *2025 10th International Conference on Integrated Circuits and Microsystems (ICICM)*, Hefei, China, 2025, pp. 344-353, doi: [10.1109/ICICM66614.2025.11316023](https://doi.org/10.1109/ICICM66614.2025.11316023).
 [^2]: "SKY’s the Limit with the SKY130 Open-Source PDK." Skywater. https://www.skywatertechnology.com/sky130-open-source-pdk/ (accessed Oct. 10, 2025).
-* <a id="ref3"></a> **[3]** S. A. Khalid, S. E. Maestre, and K. M. Ma
-* <a id="ref4"></a> **[4]** S. A. Khalid, S. E. Maestre, and K. M. Ma
-* <a id="ref5"></a> **[5]** S. A. Khalid, S. E. Maestre, and K. M. Ma
+[^3]: <a id="ref3"></a> Reference 3 text...
+[^4]: <a id="ref4"></a> Reference 4 text...
+[^5]: <a id="ref5"></a> Reference 5 text...
 
 
