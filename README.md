@@ -2,6 +2,9 @@
 
 A multi-part, tool-focused guide demonstrating how to use **[Open-LUT](http://www.open-lut.org)** [^1] to facilitate and accelerate $g_m/I_D$ transistor sizing for 5T OTAs in SkyWater's open-source 130nm PDK ([SKY130](https://www.skywatertechnology.com/skys-the-limit-with-the-sky130-open-source-pdk/))[^2], with design results verified using **Ngspice** and **Xschem**.
 
+[!NOTE]
+> **Scope & Target Audience:** This guide focuses on **how to navigate and apply Open-LUT** as a CAD tool to streamline transistor sizing. It assumes basic familiarity with $g_m/I_D$ methodology [^3] [^4] [^5].
+
 ## Overview & Supported Devices
 
 The **Open-LUT** web application automates MOSFET parameter selection and device sizing using pre-characterized $g_m/I_D$ lookup tables generated from the SKY130 PDK.
