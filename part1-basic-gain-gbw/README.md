@@ -17,9 +17,6 @@ This guide presents a step-by-step procedure for designing a single-ended NMOS d
   <em>Figure 1. 5-transistor (5T) Operational Transconductance Amplifier (OTA) with NMOS input pair.</em>
 </p>
 
-![Figure 1: 5-transistor (5T) Operational Transconductance Amplifier (OTA) with NMOS input pair](img/5t_basic_OTA.jpg)
-*Figure 1. 5-transistor (5T) Operational Transconductance Amplifier (OTA) with NMOS input pair.*
-
 ### Table 1: Design Specifications
 
 | Specification Parameter | Symbol | Target Value |
@@ -41,8 +38,11 @@ Open-LUT queries $g_m/I_D$ lookup tables at specific drain-to-source bias voltag
 * **Tail NMOS ($M_5$):** Allocated $V_{DS5} = 0.3\\text{ V}$ to maintain saturation (assuming $V_{ov5} \\approx 100\\text{--}200\\text{ mV}$) while maximizing voltage headroom for $M_1/M_2$ and $M_3/M_4$.
 * **Input Pair ($M_1/M_2$) & Load Mirror ($M_3/M_4$):** The remaining $1.5\\text{ V}$ headroom is split equally, allocating $V_{DS1,2} = 0.75\\text{ V}$ and $V_{DS3,4} = 0.75\\text{ V}$.
 
-![Figure 2: Initial VDS Bias Allocation across the 5T OTA Transistor Stack](img/5t_basic_OTA_bias.jpg)
-*Figure 2. Initial $V_{DS}$ Bias Allocation across the 5T OTA Transistor Stack.*
+<p align="center">
+  <img src="img/5t_basic_OTA_bias.jpg" alt="Figure 2: Initial VDS Bias Allocation across the 5T OTA Transistor Stack" width="500">
+  <br>
+  <em>Figure 2. Initial $V_{DS}$ Bias Allocation across the 5T OTA Transistor Stack.</em>
+</p>
 
 ---
 
