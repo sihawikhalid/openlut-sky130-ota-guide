@@ -54,7 +54,7 @@ Serves as an introductory guide to the $g_m/I_D$ design workflow, focusing on ac
 
 Extends the baseline 5T OTA design to meet common-mode voltage headroom and rejection specifications.
 
-| Parameter / Specification | &nbsp;&nbsp;Target Value&nbsp;&nbsp; | Notes |
+| Parameter / Specification | Target Value | Notes |
 | :--- | :--- | :--- |
 | **Baseline Specifications** | Same as Part 1 | Preserves $A_{v,dc}, 	{GBW}, I_{SS}, C_L$ |
 | **Input Common-Mode Range (ICMR)** | **0.7 V – 1.6 V** | Optimized via LVT input pair & PMOS load selection |
