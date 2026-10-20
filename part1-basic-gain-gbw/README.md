@@ -14,9 +14,10 @@ This guide presents a step-by-step procedure for designing a single-ended NMOS d
 <p align="center">
   <img src="img/5t_basic_OTA.jpg" alt="Figure 1: 5-transistor (5T) Operational Transconductance Amplifier (OTA) with NMOS input pair" width="500">
   <br>
-  <em>Figure 1. 5-transistor (5T) Operational Transconductance Amplifier (OTA) with NMOS input pair.</em>
 </p>
-
+<p align="center">
+  *Figure 1. 5-transistor (5T) Operational Transconductance Amplifier (OTA) with NMOS input pair.*
+</p>
 ### Table 1: Design Specifications
 
 | Specification Parameter | Symbol | Target Value |
@@ -40,10 +41,11 @@ Open-LUT queries $g_m/I_D$ lookup tables at specific drain-to-source bias voltag
 
 <p align="center">
   <img src="img/5t_basic_OTA_bias.jpg" alt="Figure 2: Initial VDS Bias Allocation across the 5T OTA Transistor Stack" width="500">
-  <br>
-  <em>Figure 2. Initial $V_{DS}$ Bias Allocation across the 5T OTA Transistor Stack.</em>
+  <br> 
 </p>
-
+<p align="center">
+  *Figure 2. Initial $V_{DS}$ Bias Allocation across the 5T OTA Transistor Stack.*
+</p>
 ---
 
 ## 3. Sizing the Input Differential Pair ($M_1/M_2$)
