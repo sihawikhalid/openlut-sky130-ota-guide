@@ -35,7 +35,7 @@ Open-LUT queries $g_m/I_D$ lookup tables at specific drain-to-source bias voltag
 * **Tail NMOS ($M_5$):** Allocated $V_{DS5} = 0.3\\text{ V}$ to maintain saturation (assuming $V_{ov5} \\approx 100\\text{--}200\\text{ mV}$) while maximizing voltage headroom for $M_1/M_2$ and $M_3/M_4$.
 * **Input Pair ($M_1/M_2$) & Load Mirror ($M_3/M_4$):** The remaining $1.5\\text{ V}$ headroom is split equally, allocating $V_{DS1,2} = 0.75\\text{ V}$ and $V_{DS3,4} = 0.75\\text{ V}$.
 
-![Figure 2: Initial VDS Bias Allocation across the 5T OTA Transistor Stack](img/fig2_vds_allocation.png)
+![Figure 2: Initial VDS Bias Allocation across the 5T OTA Transistor Stack](img/5t_basic_OTA_bias.jpg)
 *Figure 2. Initial $V_{DS}$ Bias Allocation across the 5T OTA Transistor Stack.*
 
 ---
@@ -61,7 +61,7 @@ Assuming equal conductance distribution ($g_{ds1,2} = g_{ds3,4}$), both $g_{ds1,
 
 In Open-LUT, select device `sky130_nfet_01v8` and $V_{ds} = 0.75\\text{ V}$, then click **Update**. Entering $g_m = 0.17\\text{ mS}$, $I_D = 0.01\\text{ mA}$, and $g_{ds} = 0.0015\\text{ mS}$ dynamically yields $L = 0.4204\\,\\mu\\text{m}$ and $W = 4.7286\\,\\mu\\text{m}$.
 
-![Figure 3: Open-LUT Interface for Input Pair M1/M2 Sizing](img/fig3_openlut_m12.png)
+![Figure 3: Open-LUT Interface for Input Pair M1/M2 Sizing](img/openlut_ss_0.jpg)
 *Figure 3. Open-LUT Interface for Input Pair $M_1/M_2$ Sizing.*
 
 To snap the channel length to the SKY130 layout grid ($0.005\\,\\mu\\text{m}$ grid step), clear the form first by clicking **`Clear Form / Reset Plots`**, then enter $I_D = 0.01\\text{ mA}$, $g_m = 0.17\\text{ mS}$, and $L = 0.4205\\,\\mu\\text{m}$ as the third parameter instead of $g_{ds}$. If needed, iterate input values slightly within the valid blue dynamic range bounds indicated by Open-LUT until all parameters align with design specs.
@@ -78,12 +78,12 @@ To snap the channel length to the SKY130 layout grid ($0.005\\,\\mu\\text{m}$ gr
 
 In SkyWater 130nm PDK, standard PMOS devices (`pfet_01v8`) exhibit a well-documented non-physical $g_m/I_D$ hump (**Figure 4**). To avoid simulation discrepancies, low-threshold PMOS devices (`sky130_pfet_01v8_lvt`) are used.
 
-![Figure 4: Non-physical gm/ID Hump in Standard SKY130 PMOS (pfet_01v8)](img/fig4_pfet_hump.png)
+![Figure 4: Non-physical gm/ID Hump in Standard SKY130 PMOS (pfet_01v8)](img/pmos_humps.jpg)
 *Figure 4. Non-physical $g_m/I_D$ hump in standard SKY130 PMOS (`pfet_01v8`).*
 
-First, clear the form by clicking **`Clear Form / Reset Plots`**. Select device `sky130_pfet_01v8_lvt` and set $V_{ds} = 0.75\\text{ V}$, then click **Update**. Since $M_3$ is diode-connected, $V_{GS3,4}$ must equal $V_{DS3,4} = 0.75\\text{ V}$. From the $g_m/I_D$ vs $V_{GS}$ chart (**Figure 5**), $V_{GS} = 0.75\\text{ V}$ corresponds to a $g_m/I_D$ range of $4\\text{--}5.5\\text{ S/A}$.
+Select device `sky130_pfet_01v8_lvt` and set $V_{ds} = 0.75\\text{ V}$, then click **Update**. Since $M_3$ is diode-connected, $V_{GS3,4}$ must equal $V_{DS3,4} = 0.75\\text{ V}$. From the $g_m/I_D$ vs $V_{GS}$ chart (**Figure 5**), $V_{GS} = 0.75\\text{ V}$ corresponds to a $g_m/I_D$ range of $4\\text{--}5.5\\text{ S/A}$.
 
-![Figure 5: gm/ID vs VGS Characteristic for LVT PMOS (pfet_01v8_lvt)](img/fig5_pmos_lvt_gm_id.png)
+![Figure 5: gm/ID vs VGS Characteristic for LVT PMOS (pfet_01v8_lvt)](img/gmID_range.jpg)
 *Figure 5. $g_m/I_D$ vs $V_{GS}$ characteristic for LVT PMOS (`pfet_01v8_lvt`).*
 
 ![Figure 6: Open-LUT Range Bounds for M3/M4 at ID = 10 µA and gm/ID = 4 S/A](img/fig6_openlut_m34.png)
