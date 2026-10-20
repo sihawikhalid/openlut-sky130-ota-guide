@@ -5,7 +5,7 @@ A multi-part guide to systematic 5T Operational Transconductance Amplifier (OTA)
 ---
 
 ## Overview & Supported Devices
-$V_{TH}$
+
 The **Open-LUT** web application automates MOSFET parameter selection and device sizing using pre-characterized $g_m/I_D$ lookup tables generated from the SKY130 PDK.
 
 * **Supported SKY130 Devices:**
