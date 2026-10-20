@@ -46,7 +46,7 @@ Serves as an introductory guide to the $g_m/I_D$ design workflow, focusing on ac
 | **Reference Current ($I_{bias}$) / Tail Current ($I_{SS}$)** | 10 µA / 20 µA |
 | **Capacitive Load ($C_L$)** | 5 pF |
 | **Open-Loop DC Gain ($A_{v,dc}$)** | $\ge 32	 { dB}$ |
-| **Gain-Bandwidth Product ($	ext{GBW}$)** | $\ge 5	 { MHz}$ |
+| **Gain-Bandwidth Product (GBW)** | $\ge 5	 { MHz}$ |
 
 👉 **[Access Part 1 Guide & Simulation Files](./part1-basic/)**
 
@@ -59,8 +59,8 @@ Extends the baseline 5T OTA design to meet common-mode voltage headroom and reje
 | Parameter / Specification | Target Value | Notes |
 | :--- | :--- | :--- |
 | **Baseline Specifications** | Same as Part 1 | Preserves $A_{v,dc}, 	{GBW}, I_{SS}, C_L$ |
-| **Input Common-Mode Range ($	ext{ICMR}$)** | **0.70 V – 1.60 V** | Optimized via LVT input pair & PMOS load selection |
-| **Common-Mode Rejection Ratio ($	ext{CMRR}$)** | **$\ge 70	{ dB}$** | Achieved via tail source $r_{o5}$ optimization |
+| **Input Common-Mode Range (ICMR)** | **0.70 V – 1.60 V** | Optimized via LVT input pair & PMOS load selection |
+| **Common-Mode Rejection Ratio (CMRR)** | **$\ge 70	{ dB}$** | Achieved via tail source $r_{o5}$ optimization |
 
 👉 **[Access Part 2 Guide & Simulation Files](./part2-extended/)**
 
