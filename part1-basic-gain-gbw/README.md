@@ -69,9 +69,14 @@ Assuming equal conductance distribution ($g_{ds1,2} = g_{ds3,4}$), both $g_{ds1,
 
 In Open-LUT, select device `sky130_nfet_01v8` and $V_{ds} = 0.75\\text{ V}$, then click **Update**. Entering $g_m = 0.17\\text{ mS}$, $I_D = 0.01\\text{ mA}$, and $g_{ds} = 0.0015\\text{ mS}$ dynamically yields $L = 0.4204\\,\\mu\\text{m}$ and $W = 4.7286\\,\\mu\\text{m}$.
 
-![Figure 3: Open-LUT Interface for Input Pair M1/M2 Sizing](img/openlut_ss_0.jpg)
-*Figure 3. Open-LUT Interface for Input Pair $M_1/M_2$ Sizing.*
 
+<p align="center">
+  <img src="img/openlut_ss_0.jpg" alt="Figure 3: Open-LUT Interface for Input Pair M1/M2 Sizing">
+  <br>
+</p>
+<p align="center">
+ Figure 3. Open-LUT Interface for Input Pair $M_1/M_2$ Sizing.
+</p>
 To snap the channel length to the SKY130 layout grid ($0.005\\,\\mu\\text{m}$ grid step), clear the form first by clicking **`Clear Form / Reset Plots`**, then enter $I_D = 0.01\\text{ mA}$, $g_m = 0.17\\text{ mS}$, and $L = 0.4205\\,\\mu\\text{m}$ as the third parameter instead of $g_{ds}$. If needed, iterate input values slightly within the valid blue dynamic range bounds indicated by Open-LUT until all parameters align with design specs.
 
 ### Table 2: Sizing and Biasing for $M_1/M_2$
