@@ -23,12 +23,12 @@ Each part of this series is organized in its own directory containing a dedicate
 ├── README.md                 # Main overview & series directory (this file)
 ├── part1-basic/              # Part 1: Basic 5T OTA design
 │   ├── README.md             # Part 1 tutorial guide
-│   ├── cir/                  # Ngspice simulation files (.cir)
-│   └── img/                  # Schematics and plots
+│   ├── cir/                  # Schematic file (.sch)
+│   └── img/                  # Figures, diagrams, and plots
 └── part2-extended/           # Part 2: Extended 5T OTA design
     ├── README.md             # Part 2 tutorial guide
-    ├── cir/                  # Ngspice simulation files (.cir)
-    └── img/                  # Schematics and plots
+    ├── cir/                  # Schematic files (.sch)
+    └── img/                  # Figures, diagrams, and plots
 ```
 
 ## Series Directory
