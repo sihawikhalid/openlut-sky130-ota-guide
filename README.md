@@ -60,6 +60,8 @@ Extends the baseline 5T OTA design to meet common-mode voltage headroom and reje
 | **Input Common-Mode Range (ICMR)** | **0.7 V – 1.6 V** | Optimized via LVT input pair & PMOS load selection |
 | **Common-Mode Rejection Ratio (CMRR)** | **$\ge 70	{ dB}$** | Achieved via tail source $r_{ds5}$ $(\frac{1}{g_{ds5}})$ optimization |
 
+---
+
 ## Citation
 
 If you use Open-LUT or this guide in your work, please cite the following paper:
@@ -77,8 +79,10 @@ S. A. Khalid, S. E. Maestre and K. M. Madrid-Khalid, "Open-LUT: Interactive gm/I
    doi       = {10.1109/ICICM66614.2025.11316023}
 }
 ```
+---
 
 ## References
+
 [^1]: "SKY’s the Limit with the SKY130 Open-Source PDK." Skywater. https://www.skywatertechnology.com/sky130-open-source-pdk/ (accessed Oct. 10, 2025).
 [^2]: S. A. Khalid, S. E. Maestre and K. M. Madrid-Khalid, "Open-LUT: Interactive gm/ID Lookup Tables for MOSFET Sizing in Open-Source PDKs," *2025 10th International Conference on Integrated Circuits and Microsystems (ICICM)*, Hefei, China, 2025, pp. 344-353, doi: 10.1109/ICICM66614.2025.11316023.
 
