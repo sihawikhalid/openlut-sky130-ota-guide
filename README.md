@@ -58,7 +58,7 @@ Extends the baseline 5T OTA design to meet common-mode voltage headroom and reje
 | :--- | :--- | :--- |
 | **Baseline Specifications** | Same as Part 1 | Preserves $A_{v,dc}, 	{GBW}, I_{SS}, C_L$ |
 | **Input Common-Mode Range (ICMR)** | **0.70 V – 1.60 V** | Optimized via LVT input pair & PMOS load selection |
-| **Common-Mode Rejection Ratio (CMRR)** | **$\ge 70	{ dB}$** | Achieved via tail source $\frac{1}{g_{ds}$ optimization |
+| **Common-Mode Rejection Ratio (CMRR)** | **$\ge 70	{ dB}$** | Achieved via tail source $\frac{1}{g_{ds}}$ optimization |
 
 ## References
 [^1]: "SKY’s the Limit with the SKY130 Open-Source PDK." Skywater. https://www.skywatertechnology.com/sky130-open-source-pdk/ (accessed Oct. 10, 2025).
