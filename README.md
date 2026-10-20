@@ -11,7 +11,7 @@ The **Open-LUT** web application automates MOSFET parameter selection and device
 * **Supported SKY130 Devices:**
   * **NMOS:** Standard (`nfet_01v8`), Low-V<sub>TH</sub> (`nfet_01v8_lvt`)
   * **PMOS:** Standard (`pfet_01v8`), Low-V<sub>TH</sub> (`pfet_01v8_lvt`), High-V<sub>TH</sub> (`pfet_01v8_hvt`)
-* **Methodology Reference:** For details on how Open-LUT converges on device dimensions using design parameters, refer to the [Open-LUT Paper](https://open-lut.app/paper).
+* **Methodology Reference:** For details on how Open-LUT converges on device dimensions using design parameters, refer to the [Open-LUT Paper](https://ieeexplore.ieee.org/abstract/document/11316023).
 
 ---
 
