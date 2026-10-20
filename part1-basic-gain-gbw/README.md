@@ -76,24 +76,28 @@ To snap the channel length to the SKY130 layout grid ($0.005\\,\\mu\\text{m}$ gr
 
 ## 4. Sizing the Current Mirror Loads ($M_3/M_4$)
 
-In SkyWater 130nm PDK, standard PMOS devices (`pfet_01v8`) exhibit a well-documented non-physical $g_m/I_D$ hump (**Figure 4**). To avoid simulation discrepancies, low-threshold PMOS devices (`sky130_pfet_01v8_lvt`) are used.
+As established in Section 3, $M_3$ and $M_4$ are sized such that $g_{ds3,4} < 2\,\mu\text{S}$. Furthermore, since $M_3$ is diode-connected, its gate-to-source voltage $V_{GS3}$ is constrained to follow $V_{DS3}$.
 
-![Figure 4: Non-physical gm/ID Hump in Standard SKY130 PMOS (pfet_01v8)](img/pmos_humps.jpg)
+To prevent simulation inaccuracies caused by the non-physical $g_m/I_D$ hump exhibited by standard SKY130 PMOS devices (`pfet_01v8`, **Figure 4**), the low-threshold PMOS device `sky130_pfet_01v8_lvt` is selected. In Open-LUT, select `sky130_pfet_01v8_lvt` with the allocated $V_{ds} = 0.75\text{ V}$, then click **Update** to extract the corresponding lookup tables.
+
+![Figure 4: Non-physical gm/ID Hump in Standard SKY130 PMOS (pfet_01v8)](pmos_humps.jpg)
 *Figure 4. Non-physical $g_m/I_D$ hump in standard SKY130 PMOS (`pfet_01v8`).*
 
-Select device `sky130_pfet_01v8_lvt` and set $V_{ds} = 0.75\\text{ V}$, then click **Update**. Since $M_3$ is diode-connected, $V_{GS3,4}$ must equal $V_{DS3,4} = 0.75\\text{ V}$. From the $g_m/I_D$ vs $V_{GS}$ chart (**Figure 5**), $V_{GS} = 0.75\\text{ V}$ corresponds to a $g_m/I_D$ range of $4\\text{--}5.5\\text{ S/A}$.
+From the $V_{GS}$ vs. $g_m/I_D$ plot (**Figure 5**), achieving the target biasing $V_{GS3,4} = V_{DS3,4} = 0.75\text{ V}$ restricts $g_m/I_D$ to the range of $4\text{--}5.5\text{ S/A}$.
 
-![Figure 5: gm/ID vs VGS Characteristic for LVT PMOS (pfet_01v8_lvt)](img/gmID_range.jpg)
+![Figure 5: gm/ID vs VGS Characteristic for LVT PMOS (pfet_01v8_lvt)](img/fig5_pmos_lvt_gm_id.png)
 *Figure 5. $g_m/I_D$ vs $V_{GS}$ characteristic for LVT PMOS (`pfet_01v8_lvt`).*
 
-![Figure 6: Open-LUT Range Bounds for M3/M4 at ID = 10 µA and gm/ID = 4 S/A](img/fig6_openlut_m34.png)
-*Figure 6. Open-LUT range bounds for $M_3/M_4$ at $I_D = 10\\,\\mu\\text{A}$ and $g_m/I_D = 4\\text{ S/A}$.*
+Entering a branch current $I_D = 0.01\text{ mA}\ (10\,\mu\text{A})$ and an initial $g_m/I_D = 4\text{ S/A}$ dynamically updates the achievable range bounds for $g_{ds}$ (shown in blue text in **Figure 6**). This confirms that the required $g_{ds} < 2\,\mu\text{S}$ is indeed attainable within this $g_m/I_D$ operating range.
 
-**Iterative Parameter Matching:** Enter $I_D = 0.01\\text{ mA}$ and $g_{ds} = 0.0015\\text{ mS}$ into Open-LUT. Next, iterate the inputting of $g_m/I_D$ values within the allowable $4\\text{--}5.5\\text{ S/A}$ range across successive attempts until the computed $V_{GS}$ field dynamically matches the target bias of $0.7500\\text{ V}$. An exact match of $V_{GS} = 0.7500\\text{ V}$ is achieved at $g_m/I_D = 5.03\\text{ S/A}$.
+![Figure 6: Open-LUT Range Bounds for M3/M4 at ID = 10 µA and gm/ID = 4 S/A](img/gds_range.bmp)
+*Figure 6. Open-LUT range bounds for $M_3/M_4$ at $I_D = 10\,\mu\text{A}$ and $g_m/I_D = 4\text{ S/A}$.*
 
-Finally, clear the form with **`Clear Form / Reset Plots`**, then re-enter $I_D = 0.01\\text{ mA}$, $g_m/I_D = 5.03\\text{ S/A}$, and grid-snapped $L = 0.7495\\,\\mu\\text{m}$ to extract final dimensions and biasing (**Table 3**).
+An initial entry of $I_D = 0.01\text{ mA}$, $g_m/I_D = 4\text{ S/A}$, and $g_{ds} = 0.0015\text{ mS}\ (1.5\,\mu\text{S})$ into Open-LUT converges the device aspect ratio $W/L$ to $1.1505\,\mu\text{m} / 0.8020\,\mu\text{m}$ and yields $V_{GS} = 0.8805\text{ V}$. However, because $V_{GS} = 0.8805\text{ V}$ deviates from the allocated $V_{DS3,4} = 0.75\text{ V}$, this preliminary sizing is not achievable for the target $V_{DS3,4}$ bias allocation.
 
-### Table 3: Sizing and Biasing for $M_3/M_4$
+To resolve this bias discrepancy, click **`Clear Form / Reset Plots`** and repeat the process for different values of $g_m/I_D$ across the $4\text{--}5.5\text{ S/A}$ range. A $V_{GS}$ of $0.7499\text{ V}$ (matching the $0.75\text{ V}$ target) is successfully attained at $g_m/I_D = 5.03\text{ S/A}$ with an aspect ratio of $W/L = 1.9276\,\mu\text{m} / 0.7493\,\mu\text{m}$.
+
+Clearing the form once more and entering $I_D = 0.01\text{ mA}$, $g_m/I_D = 5.03\text{ S/A}$, and the layout-grid-snapped channel length $L = 0.7495\,\mu\text{m}$ extracts the finalized dimensions and operating point for $M_3/M_4$ summarized in **Table 3**.### Table 3: Sizing and Biasing for $M_3/M_4$
 
 | Parameter | $(g_m/I_D)_{3,4}$ | $L_{3,4}$ | $W_{3,4}$ | $g_{m3,4}$ | $g_{ds3,4}$ | $V_{ov3,4}$ | $V_{GS3,4}$ |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
