@@ -11,6 +11,12 @@
 
 This guide presents a step-by-step procedure for designing a single-ended NMOS differential pair 5-transistor (5T) Operational Transconductance Amplifier (OTA) using SkyWater's open-source 130nm PDK (SKY130) facilitated by Open-LUT. The target schematic is shown in **Figure 1**, and the design requirements are summarized in **Table 1**.
 
+<p align="center">
+  <img src="img/5t_basic_OTA.jpg" alt="Figure 1: 5-transistor (5T) Operational Transconductance Amplifier (OTA) with NMOS input pair" width="500">
+  <br>
+  <em>Figure 1. 5-transistor (5T) Operational Transconductance Amplifier (OTA) with NMOS input pair.</em>
+</p>
+
 ![Figure 1: 5-transistor (5T) Operational Transconductance Amplifier (OTA) with NMOS input pair](img/5t_basic_OTA.jpg)
 *Figure 1. 5-transistor (5T) Operational Transconductance Amplifier (OTA) with NMOS input pair.*
 
