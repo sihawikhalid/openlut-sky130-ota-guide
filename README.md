@@ -79,8 +79,8 @@ S. A. Khalid, S. E. Maestre and K. M. Madrid-Khalid, "Open-LUT: Interactive gm/I
 <br>
 <a id="ref2"></a> **[2]** "SKY’s the Limit with the SKY130 Open-Source PDK." Skywater. https://www.skywatertechnology.com/sky130-open-source-pdk/ (accessed Oct. 10, 2025).
 <br>
-<a id="ref3"></a> **[3]** Reference 3 text...
+<a id="ref3"></a> **[3]** Jespers, P. G. A., & Murmann, B. (2017). Systematic Design of Analog CMOS Circuits: Using Pre-Computed Lookup Tables. Cambridge University Press. https://doi.org/10.1017/9781108125840
 <br>
-<a id="ref4"></a> **[4]** Reference 4 text...
+<a id="ref4"></a> **[4]** Paul Jespers. The gm/ID Methodology, a sizing tool for low-voltage analog CMOS Circuits: The semi-empirical and compact model approaches. Springer Science & Business Media, 2009.
 <br>
-<a id="ref5"></a> **[5]** Reference 5 text...
+<a id="ref5"></a> **[5]** Sabry, M. N., Omran, H., & Dessouky, M. (2018). Systematic design and optimization of operational transconductance amplifier using gm/ID design methodology. Microelectronics Journal, 75, 87–96. https://doi.org/10.1016/j.mejo.2018.02.002
