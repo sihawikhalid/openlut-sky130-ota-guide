@@ -9,8 +9,8 @@ A multi-part guide to systematic 5T Operational Transconductance Amplifier (OTA)
 The **Open-LUT** web application automates MOSFET parameter selection and device sizing using pre-characterized $g_m/I_D$ lookup tables generated from the SKY130 PDK.
 
 * **Supported SKY130 Devices:**
-  * **NMOS:** Standard (`nfet_01v8`), Low-$V_{TH}$ (`nfet_01v8_lvt`)
-  * **PMOS:** Standard (`pfet_01v8`), Low-$V_{TH}$ (`pfet_01v8_lvt`), High-$V_{TH}$ (`pfet_01v8_hvt`)
+  * **NMOS:** Standard (`nfet_01v8`), Low-V<sub>TH</sub> (`nfet_01v8_lvt`)
+  * **PMOS:** Standard (`pfet_01v8`), Low-V<sub>TH</sub> (`pfet_01v8_lvt`), High-V<sub>TH</sub> (`pfet_01v8_hvt`)
 * **Methodology Reference:** For details on how Open-LUT converges on device dimensions using design parameters, refer to the [Open-LUT Paper](https://open-lut.app/paper).
 
 ---
