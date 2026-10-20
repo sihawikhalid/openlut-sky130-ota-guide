@@ -169,32 +169,4 @@ AC frequency response and CMRR curves are presented in **Figures 6 & 7**.
 ## 7. Conclusion
 
 By integrating ICMR and CMRR bounds into the $V_{DS}$ allocation phase, Open-LUT achieves accurate sizing for complex specifications in a single pass. Complete schematic files are provided in the `./cir/` subfolder.
-"""
 
-def save_raw_md_docx(filename, content):
-    doc = docx.Document()
-    for section in doc.sections:
-        section.top_margin = Inches(1.0)
-        section.bottom_margin = Inches(1.0)
-        section.left_margin = Inches(1.0)
-        section.right_margin = Inches(1.0)
-        
-    style = doc.styles['Normal']
-    style.font.name = 'Consolas'
-    style.font.size = Pt(9.5)
-    style.font.color.rgb = RGBColor(34, 34, 34)
-
-    lines = content.split('\n')
-    for line in lines:
-        p = doc.add_paragraph()
-        p.paragraph_format.space_before = Pt(0)
-        p.paragraph_format.space_after = Pt(2)
-        r = p.add_run(line)
-        r.font.name = 'Consolas'
-        r.font.size = Pt(9.5)
-        
-    doc.save(filename)
-    print(f"{filename} saved.")
-
-save_raw_md_docx("Part_1_GitHub_Script.docx", part1_md)
-save_raw_md_docx("Part_2_GitHub_Script.docx", part2_md)
