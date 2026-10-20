@@ -50,7 +50,7 @@ Serves as an introductory guide to the $g_m/I_D$ design workflow, focusing on ac
 
 ---
 
-### 📁 [Part 2: Extended 5T OTA Sizing](./part2-extended/) ($ICMR$ & $CMRR$ Optimization)
+### 📁 [Part 2: Extended 5T OTA Sizing](./part2-full-spec-icmr-cmrr/) ($ICMR$ & $CMRR$ Optimization)
 
 Extends the baseline 5T OTA design to meet common-mode voltage headroom and rejection specifications.
 
