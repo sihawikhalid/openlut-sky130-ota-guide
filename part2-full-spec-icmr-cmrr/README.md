@@ -1,6 +1,6 @@
 # Part 2: 5T OTA Sizing in SKY130 with ICMR and CMRR Constraints using Open-LUT
 
-> A step-by-step guide extending the Open-LUT sizing methodology to meet Input Common-Mode Range (ICMR) and Common-Mode Rejection Ratio (CMRR) specifications for a 5T OTA in SkyWater 130nm PDK.
+> A step-by-step guide extending the [Open-LUT](http://www.open-lut.org) <sup>[[1]](#ref1)</sup> sizing methodology to meet Input Common-Mode Range (ICMR) and Common-Mode Rejection Ratio (CMRR) specifications for a 5T OTA in SkyWater 130nm PDK.
 
 > [!NOTE]
 > **Scope & Focus:** This guide demonstrates how to navigate and leverage Open-LUT to handle ICMR and CMRR constraints. While essential $g_m/I_D$ equations are included, primary focus is placed on tool execution and simulation verification in Ngspice and Xschem.
@@ -29,7 +29,7 @@ This second part extends the 5T OTA design methodology introduced in Part 1 by i
 
 ## 2. $V_{DS}$ Bias Allocation & ICMR Constraints
 
-Initial $V_{DS}$ bias allocation across the transistor stack is dictated by the input common-mode range limits of an NMOS-input 5T OTA:
+Initial $V_{DS}$ bias allocation across the transistor stack is dictated by the input common-mode range limits of an NMOS-input 5T OTA <sup>[[2]](#ref2)</sup>:
 
 $$V_{iCM,\min} > V_{GS1,2} + V_{ov5}$$
 
@@ -259,3 +259,10 @@ To verify $ICMR$, the OTA is configured as a unity-gain follower with $V_{in,-}$
 ## 7. Conclusion
 
 Building upon the single-pass framework established in Part 1, the elimination of time-consuming simulation-in-the-loop workflows still applies when incorporating $ICMR$ and $CMRR$ constraints. By translating system-level common-mode specifications directly into $V_{DS}$ headroom budgets and output conductance limits, deterministic, single-pass device sizing is fully maintained without relying on trial-and-error simulation loops. Complete schematic files for simulation and
+
+## References
+
+- <a id="ref1"></a> **[1]** S. A. Khalid, S. E. Maestre and K. M. Madrid-Khalid, "Open-LUT: Interactive gm/ID Lookup Tables for MOSFET Sizing in Open-Source PDKs," *2025 10th ICICM*, 2025, pp. 344-353, doi: [10.1109/ICICM66614.2025.11316023](https://doi.org/10.1109/ICICM66614.2025.11316023).
+- <a id="ref2"></a> **[2]** P. Allen, D. Holberg, CMOS Analog Circuit Design, third ed, Oxford University Press, 2012.
+- <a id="ref3"></a> **[3]** B. Razavi, Design of Analog CMOS Integrated Circuits, second ed., McGraw-Hill Education, 2017.
+- <a id="ref4"></a> **[4]** Institute for Integrated Circuits and Quantum Computing, Johannes Kepler University Linz , "IIC-OSIC-TOOLS," GitHub, 2022. Accessed: Oct. 16, 2026. Available: [https://github.com/iic-jku/IIC-OSIC-TOOLS](https://github.com/iic-jku/IIC-OSIC-TOOLS)
