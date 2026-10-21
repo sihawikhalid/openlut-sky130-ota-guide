@@ -1,4 +1,4 @@
-<img width="1242" height="639" alt="schematic" src="https://github.com/user-attachments/assets/892fba2e-e953-47be-bc5e-3a30f8a35752" /># Part 2: 5T OTA Sizing in SKY130 with ICMR and CMRR Constraints using Open-LUT
+# Part 2: 5T OTA Sizing in SKY130 with ICMR and CMRR Constraints using Open-LUT
 
 > A step-by-step guide extending the Open-LUT sizing methodology to meet Input Common-Mode Range (ICMR) and Common-Mode Rejection Ratio (CMRR) specifications for a 5T OTA in SkyWater 130nm PDK.
 
