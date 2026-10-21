@@ -100,7 +100,7 @@ To prevent simulation inaccuracies caused by the non-physical $g_m/I_D$ hump exh
  Figure 4. Non-physical $g_m/I_D$ hump in standard SKY130 PMOS (`pfet_01v8`).
 </p>
 
-From the $V_{GS}$ vs. $g_m/I_D$ plot (**Figure 5**), achieving the target biasing $V_{GS3,4} = V_{DS3,4} = 0.75\text{ V}$ restricts $g_m/I_D$ to the range of $4\text{--}5.5\text{ S/A}$.
+From the $V_{GS}$ vs. $g_m/I_D$ plot (**Figure 5**), achieving the target biasing $V_{GS3,4} = V_{DS3,4} = 0.75\text{ V}$ restricts $g_m/I_D$ to the range of $4\text{-}5.5\text{ S/A}$.
 
 <p align="center">
   <img src="img/gmID_range.jpg" alt="Figure 5: gm/ID vs VGS Characteristic for LVT PMOS (pfet_01v8_lvt)" width="450">
@@ -122,7 +122,7 @@ Entering a branch current $I_D = 0.01\text{ mA}\ (10\,\mu\text{A})$ and an initi
 
 An initial entry of $I_D = 0.01\text{ mA}$, $g_m/I_D = 4\text{ S/A}$, and $g_{ds} = 0.0015\text{ mS}\ (1.5\,\mu\text{S})$ into Open-LUT converges the device aspect ratio $W/L$ to $1.1505\,\mu\text{m} / 0.8020\,\mu\text{m}$ and yields $V_{GS} = 0.8805\text{ V}$. However, because $V_{GS} = 0.8805\text{ V}$ deviates from the allocated $V_{DS3,4} = 0.75\text{ V}$, this preliminary sizing is not achievable for the target $V_{DS3,4}$ bias allocation.
 
-To resolve this bias discrepancy, click **`Clear Form / Reset Plots`** and repeat the process for different values of $g_m/I_D$ across the $4\text{--}5.5\text{ S/A}$ range. A $V_{GS}$ of $0.7499\text{ V}$ (matching the $0.75\text{ V}$ target) is successfully attained at $g_m/I_D = 5.03\text{ S/A}$ with an aspect ratio of $W/L = 1.9276\,\mu\text{m} / 0.7493\,\mu\text{m}$.
+To resolve this bias discrepancy, click **`Clear Form / Reset Plots`** and repeat the process for different values of $g_m/I_D$ across the $4\text{-}5.5\text{ S/A}$ range. A $V_{GS}$ of $0.7499\text{ V}$ (matching the $0.75\text{ V}$ target) is successfully attained at $g_m/I_D = 5.03\text{ S/A}$ with an aspect ratio of $W/L = 1.9276\,\mu\text{m} / 0.7493\,\mu\text{m}$.
 
 Clearing the form once more and entering $I_D = 0.01\text{ mA}$, $g_m/I_D = 5.03\text{ S/A}$, and the layout-grid-snapped channel length $L = 0.7495\,\mu\text{m}$ extracts the finalized dimensions and operating point for $M_3/M_4$ summarized in **Table 3**.
 
@@ -134,7 +134,7 @@ Clearing the form once more and entering $I_D = 0.01\text{ mA}$, $g_m/I_D = 5.03
 
 ## 5. Sizing Tail Current Source ($M_5$) & Bias Mirror ($M_6$)
 
-The tail transistor $M_5$ must carry $I_{SS} = 20\\,\\mu\\text{A}$ with $V_{DS5} = 0.3\\text{ V}$ while staying in saturation ($V_{ov5} \\le 0.2\\text{ V}$). Operating in moderate inversion ($g_m/I_D \\approx 13\\text{--}16\\text{ S/A}$) with $L_5 \\ge 1\\,\\mu\\text{m}$ ensures low overdrive voltage and minimizes channel length modulation.
+The tail transistor $M_5$ must carry $I_{SS} = 20\\,\\mu\\text{A}$ with $V_{DS5} = 0.3\\text{ V}$ while staying in saturation ($V_{ov5} \\le 0.2\\text{ V}$). Operating in moderate inversion ($g_m/I_D \\approx 13\\text{-}16\\text{ S/A}$) with $L_5 \\ge 1\\,\\mu\\text{m}$ ensures low overdrive voltage and minimizes channel length modulation.
 
 <p align="center">
   <img src="img/gmid_vov.jpg" alt="Figure 7: gm/ID vs Vov Characteristic for sky130_nfet_01v8" width="500">
