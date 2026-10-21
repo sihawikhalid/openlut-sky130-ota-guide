@@ -20,7 +20,6 @@ This guide presents a step-by-step procedure for designing a single-ended NMOS d
 </p>
 
 ### Table 1: Design Specifications
-<div align="center">
   
 | Specification Parameter | Symbol | Target Value |
 | :--- | :---: | :---: |
@@ -32,7 +31,6 @@ This guide presents a step-by-step procedure for designing a single-ended NMOS d
 | **Open-Loop DC Gain** | $A_{V,DC}$ | $\\ge 32\\text{ dB}\\ (39.81\\text{ V/V})$ |
 | **Gain-Bandwidth Product** | $GBW$ | $\\ge 5\\text{ MHz}$ |
 
-</div>
 
 ## 2. $V_{DS}$ Bias Allocation
 
@@ -132,8 +130,6 @@ Clearing the form once more and entering $I_D = 0.01\text{ mA}$, $g_m/I_D = 5.03
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | **Value** | $5.03\\text{ S/A}$ | $0.7495\\,\\mu\\text{m}$ | $1.9280\\,\\mu\\text{m}$ | $0.0503\\text{ mS}$ | $1.5\\,\\mu\\text{S}$ | $0.4172\\text{ V}$ | $0.7500\\text{ V}$ |
 
----
-
 ## 5. Sizing Tail Current Source ($M_5$) & Bias Mirror ($M_6$)
 
 The tail transistor $M_5$ must carry $I_{SS} = 20\\,\\mu\\text{A}$ with $V_{DS5} = 0.3\\text{ V}$ while staying in saturation ($V_{ov5} \\le 0.2\\text{ V}$). Operating in moderate inversion ($g_m/I_D \\approx 13\\text{--}16\\text{ S/A}$) with $L_5 \\ge 1\\,\\mu\\text{m}$ ensures low overdrive voltage and minimizes channel length modulation.
@@ -155,8 +151,6 @@ Clear the form using **`Clear Form / Reset Plots`**, select `sky130_nfet_01v8` a
 | **Value** | $13.7\\text{ S/A}$ | $1.0000\\,\\mu\\text{m}$ | $10.5435\\,\\mu\\text{m}$ | $0.2740\\text{ mS}$ | $4.9\\,\\mu\\text{S}$ | $0.1006\\text{ V}$ | $0.7041\\text{ V}$ |
 
 Bias mirror $M_6$ carries $I_{bias} = 10\\,\\mu\\text{A}$ (half of $I_{SS}$) and is scaled to $(W/L)_6 = 5.2720 / 1.0000\\,\\mu\\text{m}$.
-
----
 
 ## 6. Verification in Xschem & Ngspice
 
@@ -237,8 +231,6 @@ An AC sweep (`.ac`) verifies open-loop gain and bandwidth (**Figure 11**). **Tab
 | **Open-Loop DC Gain ($A_{V,DC}$)** | $\\ge 32.00\\text{ dB}$ | $34.73\\text{ dB}$ |
 | **Gain-Bandwidth Product ($GBW$)** | $\\ge 5.00\\text{ MHz}$ | $5.27\\text{ MHz}$ |
 | **Tail Current ($I_{SS}$)** | $\\le 20.00\\,\\mu\\text{A}$ | $19.535\\,\\mu\\text{A}$ |
-
----
 
 ## 7. Conclusion
 
