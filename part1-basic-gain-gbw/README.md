@@ -18,6 +18,7 @@ This guide presents a step-by-step procedure for designing a single-ended NMOS d
 <p align="center">
   Figure 1. 5-transistor (5T) Operational Transconductance Amplifier (OTA) with NMOS input pair.
 </p>
+
 ### Table 1: Design Specifications
 
 | Specification Parameter | Symbol | Target Value |
