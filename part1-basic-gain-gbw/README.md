@@ -176,7 +176,7 @@ A DC common-mode sweep ($V_{CM}$ from $0$ to $1.8\\text{ V}$) identifies the val
   <tr style="text-align: center;">
     <td style="padding: 0; width: 50%; text-align: center; vertical-align: middle;">
       <p align="center">
-        <img src="img/gm_vs_vcm.jpg" alt="Figure 9: Transconductance gm1,2 vs Input Common-Mode Voltage VCM" width="300">
+        <img src="img/gm_vs_vcm.jpg" alt="Figure 9: Transconductance gm1,2 vs Input Common-Mode Voltage VCM" width="450">
         <br>
       </p>
       <p align="center">
@@ -185,7 +185,7 @@ A DC common-mode sweep ($V_{CM}$ from $0$ to $1.8\\text{ V}$) identifies the val
     </td>
     <td style="padding: 0; width: 50%; text-align: center; vertical-align: middle;">
       <p align="center">
-        <img src="img/iss_vs_vcm.jpg" alt="Figure 10: Tail Current ISS vs Input Common-Mode Voltage VCM" width="300">
+        <img src="img/iss_vs_vcm.jpg" alt="Figure 10: Tail Current ISS vs Input Common-Mode Voltage VCM" width="450">
         <br>
       </p>
       <p align="center">
