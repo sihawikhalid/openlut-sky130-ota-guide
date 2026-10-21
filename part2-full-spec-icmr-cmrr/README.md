@@ -203,21 +203,28 @@ The plots show that $V_{CM} > 0.675\text{ V}$ satisfies $g_{m1,2} \ge 0.17\text{
 
 AC frequency response and CMRR curves are presented in **Figures 6 & 7**.
 
-<p align="center">
-  <img src="img/ac_plot.jpg" alt="Figure 6: AC Magnitude Response" width="450">
-  <br>
-</p>
-<p align="center">
- Figure 6. AC magnitude response.
-</p>
-
-<p align="center">
-  <img src="img/cmrr.jpg" alt="Figure 7: Common-Mode Rejection Ratio (CMRR) vs Frequency" width="450">
-  <br>
-</p>
-<p align="center">
- Figure 7. Common-Mode Rejection Ratio ($CMRR$) vs frequency.
-</p>
+<table style="border-collapse: collapse; border: none; width: 100%;">
+  <tr style="text-align: center;">
+    <td style="padding: 0; width: 50%; text-align: center; vertical-align: middle; border: 5px solid transparent;">
+      <p align="center">
+        <img src="img/ac_plot.jpg" alt="Figure 6: AC Magnitude Response" width="450">
+        <br>
+      </p>
+      <p align="center">
+       Figure 6. AC magnitude response.
+      </p>
+    </td>
+    <td style="padding: 0; width: 50%; text-align: center; vertical-align: middle; border: 5px solid transparent;">
+      <p align="center">
+        <img src="img/cmrr.jpg" alt="Figure 7: Common-Mode Rejection Ratio (CMRR) vs Frequency" width="450">
+        <br>
+      </p>
+      <p align="center">
+       Figure 7. Common-Mode Rejection Ratio ($CMRR$) vs frequency.
+      </p>
+    </td>
+  </tr>
+</table>
 
 To verify $ICMR$, the OTA is configured as a unity-gain follower with $V_{in,-}$ connected to $V_{out}$ and $V_{in,+}$ swept across $V_{CM}$ (**Figure 8**). Measuring output tracking error ($< 10\text{ mV}$) confirms an operational range of $0.628\text{ V}$ to $1.653\text{ V}$ (**Figure 9**). **Table 6** confirms full compliance with all specifications.
 
