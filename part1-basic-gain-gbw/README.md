@@ -223,9 +223,14 @@ The sweep plots reveal that maintaining $g_{m1,2} \ge 0.17\text{ mS}$ requires $
 
 An AC sweep (`.ac`) verifies open-loop gain and bandwidth (**Figure 11**). **Table 6** confirms that all specifications are satisfied in a single pass.
 
-![Figure 11: AC Magnitude Response of the Designed 5T OTA](img/ac_plot.jpg)
-*Figure 11. AC magnitude response of the designed 5T OTA.*
-
+<p align="center">
+  <img src="img/ac_plot.jpg" alt="Figure 11: AC Magnitude Response of the Designed 5T OTA" width="450">
+  <br>
+</p>
+<p align="center">
+ Figure 11. AC magnitude response of the designed 5T OTA.
+</p>
+      
 ### Table 6: Simulation Results vs. Specifications
 
 | Specification Parameter | Target Requirement | Simulated Performance |
@@ -238,5 +243,5 @@ An AC sweep (`.ac`) verifies open-loop gain and bandwidth (**Figure 11**). **Tab
 
 ## 7. Conclusion
 
-Open-LUT enables single-pass transistor sizing, eliminating time-consuming simulation-in-the-loop iterations. By linking specifications directly to $g_m/I_D$ tables, design convergence is achieved efficiently. Complete schematic files are provided in the `./cir/` subfolder.
+This guide demonstrates a deterministic, single-pass transistor sizing methodology for a 5T OTA using Open-LUT. Rather than relying on traditional simulation-in-the-loop workflows—which often depend on designer intuition, experience, or time-consuming, trial-and-error simulation iterations—all device sizing and biasing in this approach are derived entirely using $g_m/I_D$ lookup tables and automated via the Open-LUT web application. By directly mapping target specifications to physical transistor dimensions in one pass, design time is drastically reduced while ensuring immediate convergence. Complete schematic files for simulation and verification in Xschem and Ngspice are provided in the `./cir/` subfolder.
 
