@@ -1,6 +1,6 @@
 # Part 1: Basic 5T OTA Sizing in SKY130 using Open-LUT
 
-> A step-by-step guide to tool-assisted transistor sizing for a basic 5-transistor Operational Transconductance Amplifier (OTA) in SkyWater 130nm PDK (SKY130) using the [Open-LUT](https://open-lut.app) web application.
+> A step-by-step guide to tool-assisted transistor sizing for a basic 5-transistor Operational Transconductance Amplifier (OTA) in SkyWater 130nm PDK (SKY130) using the [Open-LUT](http://www.open-lut.org) <sup>[[1]](#ref1)</sup> web application.
 
 > [!NOTE]
 > **Scope & Focus:** This guide demonstrates how to navigate and leverage Open-LUT to streamline transistor sizing for basic gain and bandwidth targets. While $g_m/I_D$ equations are included, primary focus is placed on tool execution and simulation verification in Ngspice and Xschem.
@@ -238,3 +238,6 @@ An AC sweep (`.ac`) verifies open-loop gain and bandwidth (**Figure 11**). **Tab
 
 This guide demonstrates a deterministic, single-pass transistor sizing methodology for a 5T OTA using Open-LUT. Rather than relying on traditional simulation-in-the-loop workflows—which often depend on designer intuition, experience, or time-consuming, trial-and-error simulation iterations—all device sizing and biasing in this approach are derived entirely using $g_m/I_D$ lookup tables and automated via the Open-LUT web application. By directly mapping target specifications to physical transistor dimensions in one pass, design time is drastically reduced while ensuring immediate convergence. Complete schematic files for simulation and verification in Xschem and Ngspice are provided in the `./cir/` subfolder.
 
+## References
+
+- <a id="ref1"></a> **[1]** S. A. Khalid, S. E. Maestre and K. M. Madrid-Khalid, "Open-LUT: Interactive gm/ID Lookup Tables for MOSFET Sizing in Open-Source PDKs," *2025 10th ICICM*, 2025, pp. 344-353, doi: [10.1109/ICICM66614.2025.11316023](https://doi.org/10.1109/ICICM66614.2025.11316023).
