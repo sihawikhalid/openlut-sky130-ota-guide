@@ -49,7 +49,7 @@ Open-LUT queries $g_m/I_D$ lookup tables at specific drain-to-source bias voltag
 
 ## 3. Sizing the Input Differential Pair ($M_1/M_2$)
 
-From the Gain-Bandwidth ($GBW$) and load capacitance ($C_L$) specifications, the required transconductance $g_{m1,2}$ is determined:
+From the Gain-Bandwidth ($GBW$) and load capacitance ($C_L$) specifications, the required transconductance $g_{m1,2}$ is determined <sup>[[1]](#ref1)</sup>:
 
 $$GBW = \\frac{g_{m1,2}}{2\\pi C_L} \\implies g_{m1,2} = 2\\pi \\cdot GBW \\cdot C_L$$
 
@@ -57,7 +57,7 @@ For $GBW = 5\\text{ MHz}$ and $C_L = 5\\text{ pF}$, $g_{m1,2} = 0.157\\text{ mS}
 
 $$\\left(\\frac{g_m}{I_D}\\right)_{1,2} \\ge \\frac{0.16\\text{ mS}}{10\\,\mu\\text{A}} = 16\\text{ S/A}$$
 
-The DC gain requirement dictates the output conductance constraint:
+The DC gain requirement dictates the output conductance constraint <sup>[[1]](#ref1)</sup>:
 
 $$\vert{}A_{V,DC}\vert{} = \\frac{g_{m1,2}}{g_{ds1,2} + g_{ds3,4}} \\ge 39.81 \\implies g_{ds1,2} + g_{ds3,4} \\le 4\\,\\mu\\text{S}$$
 
@@ -241,3 +241,4 @@ This guide demonstrates a deterministic, single-pass transistor sizing methodolo
 ## References
 
 - <a id="ref1"></a> **[1]** S. A. Khalid, S. E. Maestre and K. M. Madrid-Khalid, "Open-LUT: Interactive gm/ID Lookup Tables for MOSFET Sizing in Open-Source PDKs," *2025 10th ICICM*, 2025, pp. 344-353, doi: [10.1109/ICICM66614.2025.11316023](https://doi.org/10.1109/ICICM66614.2025.11316023).
+- <a id="ref2"></a> **[2]** B. Razavi, Design of Analog CMOS Integrated Circuits, second ed., McGraw-Hill Education, 2017.
