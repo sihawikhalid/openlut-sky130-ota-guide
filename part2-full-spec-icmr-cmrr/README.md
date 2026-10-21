@@ -78,8 +78,6 @@ Snapping $W$ to the SKY130 layout grid ($0.005\,\mu\text{m}$ grid step) gives $W
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | **Value** | $17\text{ S/A}$ | $2.0755\,\mu\text{m}$ | $22.5430\,\mu\text{m}$ | $0.17\text{ mS}$ | $1.5\,\mu\text{S}$ | $0.0548\text{ V}$ | $0.5174\text{ V}$ |
 
----
-
 ## 4. Sizing Current Mirror Loads ($M_3/M_4$)
 
 With $V_{GS1,2} = 0.5174\text{ V}$ from Table 2 and $V_{ov1,2} = 0.0548\text{ V}$, the upper-bound limit for $V_{GS3,4}$ is updated:
@@ -141,8 +139,6 @@ Iterating within $14\text{--}17\text{ S/A}$ to match target $V_{ov5} \approx 0.1
 
 Bias mirror $M_6$ carries $I_{bias} = 10\,\mu\text{A}$ (half of $I_{SS}$) and is scaled proportionally to half the width of $M_5$: $(W/L)_6 = 21.0350 / 2.7470\,\mu\text{m}$.
 
----
-
 ## 6. Verification in Xschem & Ngspice
 
 The design was verified using Xschem and Ngspice within the IIC-OSIC-TOOLS Docker environment (**Figure 3**; schematic files located in `./cir/` subfolder).
@@ -157,11 +153,28 @@ The design was verified using Xschem and Ngspice within the IIC-OSIC-TOOLS Docke
 
 To select the valid common-mode bias window, a DC common-mode sweep (`.dc VCM 0 1.8V`) is performed, tracking $g_{m1,2}$ (**Figure 4**) and tail current $I_{SS}$ (**Figure 5**).
 
-![Figure 4: Transconductance gm1,2 vs VCM](img/fig4_gm_vcm.png)
-*Figure 4. Transconductance $g_{m1,2}$ vs $V_{CM}$.*
-
-![Figure 5: Tail Current ISS vs VCM](img/fig5_iss_vcm.png)
-*Figure 5. Tail current $I_{SS}$ vs $V_{CM}$.*
+<table style="border-collapse: collapse; border: none; width: 100%;">
+  <tr style="text-align: center;">
+    <td style="padding: 0; width: 50%; text-align: center; vertical-align: middle; border: 5px solid transparent;">
+      <p align="center">
+        <img src="img/gm_vs_vcm.jpg" alt="Figure 4: Transconductance gm1,2 vs VCM]" width="450">
+        <br>
+      </p>
+      <p align="center">
+       Figure 4. Transconductance $g_{m1,2}$ vs $V_{CM}$.
+      </p>
+    </td>
+    <td style="padding: 0; width: 50%; text-align: center; vertical-align: middle; border: 5px solid transparent;">
+      <p align="center">
+        <img src="img/iss_vs_vcm.jpg" alt="Figure 5: Tail Current ISS vs VCM]" width="450">
+        <br>
+      </p>
+      <p align="center">
+       Figure 5. Tail current $I_{SS}$ vs $V_{CM}$.
+      </p>
+    </td>
+  </tr>
+</table>
 
 The plots show that $V_{CM} > 0.675\text{ V}$ satisfies $g_{m1,2} \ge 0.17\text{ mS}$, while $V_{CM} < 0.90\text{ V}$ maintains $I_{SS} \le 20\,\mu\text{A}$. Evaluating DC operating points across $0.675\text{--}0.90\text{ V}$ identifies $V_{CM} = 0.85\text{ V}$ as the optimal bias point. **Table 5** compares Open-LUT predictions against Ngspice simulation results at $V_{CM} = 0.85\text{ V}$.
 
