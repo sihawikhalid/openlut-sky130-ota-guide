@@ -156,7 +156,7 @@ Bias mirror $M_6$ carries $I_{bias} = 10\\,\\mu\\text{A}$ (half of $I_{SS}$) and
 
 ## 6. Verification in Xschem & Ngspice
 
-The design was verified using Xschem and Ngspice within the IIC-OSIC-TOOLS Docker environment. The simulation setup is shown in **Figure 8**, and schematic files are available in the `./cir/` subfolder.
+The design was verified using Xschem and Ngspice within the IIC-OSIC-TOOLS <sup>[[3]](#ref3)</sup> Docker environment. The simulation setup is shown in **Figure 8**, and schematic files are available in the `./cir/` subfolder.
 
 <p align="center">
   <img src="img/schematic.jpg" alt="Figure 8: Xschem Simulation Setup for 5T OTA Verification">
@@ -242,4 +242,4 @@ This guide demonstrates a deterministic, single-pass transistor sizing methodolo
 
 - <a id="ref1"></a> **[1]** S. A. Khalid, S. E. Maestre and K. M. Madrid-Khalid, "Open-LUT: Interactive gm/ID Lookup Tables for MOSFET Sizing in Open-Source PDKs," *2025 10th ICICM*, 2025, pp. 344-353, doi: [10.1109/ICICM66614.2025.11316023](https://doi.org/10.1109/ICICM66614.2025.11316023).
 - <a id="ref2"></a> **[2]** B. Razavi, Design of Analog CMOS Integrated Circuits, second ed., McGraw-Hill Education, 2017.
-- Institute for Integrated Circuits and Quantum Computing, Johannes Kepler University Linz. Author/Owner Surname or Organization, "IIC-OSIC-TOOLS," GitHub, 2026. Accessed: Oct. 16, 2026. [Software]. Available: [https://github.com/iic-jku/IIC-OSIC-TOOLS](https://github.com/iic-jku/IIC-OSIC-TOOLS)
+- <a id="ref3"></a> **[3]** Institute for Integrated Circuits and Quantum Computing, Johannes Kepler University Linz , "IIC-OSIC-TOOLS," GitHub, 2026. Accessed: Oct. 16, 2026. [Software]. Available: [https://github.com/iic-jku/IIC-OSIC-TOOLS](https://github.com/iic-jku/IIC-OSIC-TOOLS)
