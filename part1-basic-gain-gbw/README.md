@@ -21,6 +21,7 @@ This guide presents a step-by-step procedure for designing a single-ended NMOS d
 
 ### Table 1: Design Specifications
 <div align="center">
+  
 | Specification Parameter | Symbol | Target Value |
 | :--- | :---: | :---: |
 | **PDK Technology** | - | SkyWater 130nm (SKY130) |
@@ -30,6 +31,7 @@ This guide presents a step-by-step procedure for designing a single-ended NMOS d
 | **Capacitive Load** | $C_L$ | $5\\text{ pF}$ |
 | **Open-Loop DC Gain** | $A_{V,DC}$ | $\\ge 32\\text{ dB}\\ (39.81\\text{ V/V})$ |
 | **Gain-Bandwidth Product** | $GBW$ | $\\ge 5\\text{ MHz}$ |
+
 </div>
 
 ## 2. $V_{DS}$ Bias Allocation
