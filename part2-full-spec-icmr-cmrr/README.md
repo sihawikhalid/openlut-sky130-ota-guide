@@ -47,7 +47,7 @@ $$V_{iCM,\max} < V_{DD} - \vert{}V_{GS3,4}\vert{} + V_{th1,2} \approx V_{DD} - \
 
 ## 3. Sizing Differential Input Pair ($M_1/M_2$)
 
-Re-applying $GBW$ and gain constraints ($g_{m1,2} \ge 0.16\text{ mS}$, $(g_m/I_D)_{1,2} \ge 16\text{ S/A}$, $g_{ds1,2} \le 2\,\mu\text{S}$) with target margin $g_{m1,2} = 0.17\text{ mS}$ and $g_{ds1,2} = 1.5\,\mu\text{S}$:
+Re-applying $GBW$ and gain constraints ($g_{m1,2} \ge 0.16\text{ mS},\ (g_m/I_D)_{1,2} \ge 16\text{ S/A},\ g_{ds1,2} \le 2\ \mu\text{S}$) with target margin $g_{m1,2} = 0.17\text{ mS}$ and $g_{ds1,2} = 1.5\ \mu\text{S}$:
 
 > [!IMPORTANT]
 > **CRITICAL OPEN-LUT WORKFLOW RULE:** Select your device and $V_{DS}$ bias, then click **`Update`** once to load the lookup tables for that setup. After this initial update, **always click the `Clear Form / Reset Plots` button before entering every new set of values!** Open-LUT preserves previous input fields and solution curves until explicitly reset. Entering new numbers into an uncleared form can lead to parameter conflicts or invalid extractions.
