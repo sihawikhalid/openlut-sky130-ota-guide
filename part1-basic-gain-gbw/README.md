@@ -94,13 +94,23 @@ As established in Section 3, $M_3$ and $M_4$ are sized such that $g_{ds3,4} < 2\
 
 To prevent simulation inaccuracies caused by the non-physical $g_m/I_D$ hump exhibited by standard SKY130 PMOS devices (`pfet_01v8`, **Figure 4**), the low-threshold PMOS device `sky130_pfet_01v8_lvt` is selected. In Open-LUT, select `sky130_pfet_01v8_lvt` with the allocated $V_{ds} = 0.75\text{ V}$, then click **Update** to extract the corresponding lookup tables.
 
-![Figure 4: Non-physical gm/ID Hump in Standard SKY130 PMOS (pfet_01v8)](img/pmos_humps.jpg)
-*Figure 4. Non-physical $g_m/I_D$ hump in standard SKY130 PMOS (`pfet_01v8`).*
+<p align="center">
+  <img src="img/pmos_humps.jpg" alt="Figure 4: Non-physical gm/ID Hump in Standard SKY130 PMOS (pfet_01v8)" width="500">
+  <br>
+</p>
+<p align="center">
+ Figure 4. Non-physical $g_m/I_D$ hump in standard SKY130 PMOS (`pfet_01v8`).
+</p>
 
 From the $V_{GS}$ vs. $g_m/I_D$ plot (**Figure 5**), achieving the target biasing $V_{GS3,4} = V_{DS3,4} = 0.75\text{ V}$ restricts $g_m/I_D$ to the range of $4\text{--}5.5\text{ S/A}$.
 
-![Figure 5: gm/ID vs VGS Characteristic for LVT PMOS (pfet_01v8_lvt)](img/gmID_range.jpg)
-*Figure 5. $g_m/I_D$ vs $V_{GS}$ characteristic for LVT PMOS (`pfet_01v8_lvt`).*
+<p align="center">
+  <img src="img/gmID_range.jpg" alt="Figure 5: gm/ID vs VGS Characteristic for LVT PMOS (pfet_01v8_lvt)" width="500">
+  <br>
+</p>
+<p align="center">
+ Figure 5. $g_m/I_D$ vs $V_{GS}$ characteristic for LVT PMOS (`pfet_01v8_lvt`)..
+</p>
 
 Entering a branch current $I_D = 0.01\text{ mA}\ (10\,\mu\text{A})$ and an initial $g_m/I_D = 4\text{ S/A}$ dynamically updates the achievable range bounds for $g_{ds}$ (shown in blue text in **Figure 6**). This confirms that the required $g_{ds} < 2\,\mu\text{S}$ is indeed attainable within this $g_m/I_D$ operating range.
 
