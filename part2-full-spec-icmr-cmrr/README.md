@@ -123,7 +123,7 @@ The target $V_{ov5} \approx 100\text{ mV}$ falls well within this limit.
 
 $$A_{V,CM} \le \frac{39.81}{3162.28} = 0.0126\text{ V/V}$$
 
-Expressing common-mode gain <sup>[[3]](#ref3)</sup>for a 5T OTA as $A_{V,CM} \approx \frac{g_{m1,2}}{g_{m3,4} \left(1 + \frac{2g_{m1,2}}{g_{ds5}}\right)} \le 0.0126$ and solving for tail output conductance $g_{ds5}$:
+Expressing common-mode gain <sup>[[2]](#ref2)</sup>for a 5T OTA as $A_{V,CM} \approx \frac{g_{m1,2}}{g_{m3,4} \left(1 + \frac{2g_{m1,2}}{g_{ds5}}\right)} \le 0.0126$ and solving for tail output conductance $g_{ds5}$:
 
 $$g_{ds5} \le \frac{2 \cdot g_{m1,2}}{\frac{g_{m1,2}}{0.0126 \cdot g_{m3,4}} - 1} = \frac{2 (0.17\text{ mS})}{\frac{0.17\text{ mS}}{0.0126 (0.105\text{ mS})} - 1} = 2.67\,\mu\text{S}$$
 
