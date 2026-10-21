@@ -9,7 +9,7 @@
 
 ## 1. Design Specifications
 
-This second part extends the 5T OTA design methodology introduced in Part 1 by incorporating strict Input Common-Mode Range ($ICMR$) and Common-Mode Rejection Ratio ($CMRR$) targets. **Table 1** summarizes the expanded specifications.
+This second part extends the 5T OTA design methodology introduced in Part 1 by incorporating Input Common-Mode Range ($ICMR$) and Common-Mode Rejection Ratio ($CMRR$) targets. **Table 1** summarizes the expanded specifications.
 
 ### Table 1: Design Specifications
 
@@ -258,4 +258,4 @@ To verify $ICMR$, the OTA is configured as a unity-gain follower with $V_{in,-}$
 
 ## 7. Conclusion
 
-Building upon the single-pass framework established in Part 1, the elimination of time-consuming simulation-in-the-loop workflows still applies when incorporating strict $ICMR$ and $CMRR$ constraints. By translating system-level common-mode specifications directly into $V_{DS}$ headroom budgets and output conductance limits, deterministic, single-pass device sizing is fully maintained without relying on trial-and-error simulation loops. Complete schematic files for simulation and
+Building upon the single-pass framework established in Part 1, the elimination of time-consuming simulation-in-the-loop workflows still applies when incorporating $ICMR$ and $CMRR$ constraints. By translating system-level common-mode specifications directly into $V_{DS}$ headroom budgets and output conductance limits, deterministic, single-pass device sizing is fully maintained without relying on trial-and-error simulation loops. Complete schematic files for simulation and
