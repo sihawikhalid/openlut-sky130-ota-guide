@@ -163,4 +163,26 @@ AC frequency response and CMRR curves are evaluated in **Figures 8 & 9**.
 ![Figure 9: Common-Mode Rejection Ratio (CMRR) vs Frequency](img/fig9_cmrr_response.png)
 *Figure 9. Common-Mode Rejection Ratio ($CMRR$) vs frequency.*
 
-To verify $ICMR$
+To verify $ICMR$ experimentally, the OTA is configured as a unity-gain follower (**Figure 10**). Sweeping $V_{CM}$ from $0$ to $1.8\text{ V}$ and measuring output tracking error ($< 10\text{ mV}$) confirms an operational range of $0.628\text{ V}$ to $1.653\text{ V}$ (**Figure 11**). **Table 6** demonstrates full compliance with all performance targets.
+
+![Figure 10: 5T OTA Configured as Unity-Gain Follower for ICMR Test](img/fig10_unity_gain_follower.png)
+*Figure 10. 5T OTA configured as unity-gain follower for ICMR testing.*
+
+![Figure 11: Output Tracking Error Plot across VCM Sweep](img/fig11_tracking_error.png)
+*Figure 11. Output tracking error plot across $V_{CM}$ sweep.*
+
+### Table 6: Simulation Results vs. Specifications
+
+| Specification Parameter | Target Requirement | Simulated Performance |
+| :--- | :---: | :---: |
+| **Open-Loop DC Gain ($A_{V,DC}$)** | $\ge 32.00\text{ dB}$ | $35.84\text{ dB}$ |
+| **Gain-Bandwidth Product ($GBW$)** | $\ge 5.00\text{ MHz}$ | $5.56\text{ MHz}$ |
+| **Tail Current ($I_{SS}$)** | $\le 20.00\,\mu\text{A}$ | $19.9361\,\mu\text{A}$ |
+| **Common-Mode Rejection Ratio ($CMRR$)** | $\ge 70.00\text{ dB}$ | $77.27\text{ dB}$ |
+| **Input Common-Mode Range ($ICMR$)** | $0.70\text{ V to } 1.60\text{ V}$ | $0.628\text{ V to } 1.653\text{ V}$ |
+
+---
+
+## 7. Conclusion
+
+This guide demonstrates a deterministic, single-pass transistor sizing methodology for a 5T OTA subject to stringent ICMR and CMRR constraints using Open-LUT. Rather than relying on traditional simulation-in-the-loop workflows—which often depend on designer intuition, experience, or time-consuming, trial-and-error simulation iterations—all device sizing and biasing in this approach are derived entirely using $g_m/I_D$ lookup tables and automated via the Open-LUT web application. By directly mapping target specifications to physical transistor dimensions in one pass, design time is drastically reduced while ensuring immediate convergence. Complete schematic files for simulation and verification in Xschem and Ngspice are provided in the `./cir/` subfolder.
