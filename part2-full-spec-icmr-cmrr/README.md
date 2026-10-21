@@ -25,36 +25,54 @@ This second part extends the 5T OTA design methodology introduced in Part 1 by i
 | **Input Common-Mode Range** | $ICMR$ | $0.7\text{ V to } 1.6\text{ V}$ |
 | **Common-Mode Rejection Ratio** | $CMRR$ | $\ge 70\text{ dB}\ (3162.28\text{ V/V})$ |
 
+---
+
 ## 2. $V_{DS}$ Bias Allocation & ICMR Constraints
 
-The $ICMR$ bounds of an NMOS-input 5T OTA dictate the minimum and maximum gate voltages for $M_1/M_2$:
+Initial $V_{DS}$ bias allocation across the transistor stack is dictated by the input common-mode range limits of an NMOS-input 5T OTA:
 
 $$V_{iCM,\min} > V_{GS1,2} + V_{ov5}$$
 
 $$V_{iCM,\max} < V_{DD} - \vert{}V_{GS3,4}\vert{} + V_{th1,2} \approx V_{DD} - \vert{}V_{GS3,4}\vert{} + V_{GS1,2} + V_{ov1,2}$$
 
-* **Lower Bound Limit:** For $V_{iCM,\min} = 0.7\text{ V}$ and allocating $V_{ov5} \approx 100\text{ mV}$, $V_{GS1,2}$ must satisfy $V_{GS1,2} < 0.6\text{ V}$. To achieve this low gate voltage while meeting the transconductance efficiency requirement, an LVT NMOS device (`sky130_nfet_01v8_lvt`) is selected for $M_1/M_2$.
-* **Upper Bound Limit:** Targeting $V_{GS1,2} \approx 0.5\text{ V}$ and $V_{ov1,2} \approx 50\text{ mV}$ for design margin, achieving $V_{iCM,\max} = 1.6\text{ V}$ requires $\vert{}V_{GS3,4}\vert{} < 1.8 - 1.6 + 0.5 + 0.05 = 0.75\text{ V}$.
-* **$V_{DS}$ Budget Allocation:** Tail transistor $M_5$ is assigned $V_{DS5} = 0.3\text{ V}$ ($> V_{ov5}$). Mirror loads $M_3/M_4$ (diode-connected) are allocated $V_{DS3,4} = \vert{}V_{GS3,4}\vert{} = 0.5\text{ V}$ ($< 0.75\text{ V}$). The remaining $1.0\text{ V}$ headroom is assigned to $V_{DS1,2}$. **Figure 1** illustrates the target bias allocation.
+* **Lower Bound Limit:** For $V_{iCM,\min} = 0.7\text{ V}$ and allocating $V_{ov5} \approx 100\text{ mV}$, $V_{GS1,2}$ must satisfy $V_{GS1,2} < 0.6\text{ V}$. To operate at low gate voltage while maintaining moderate inversion transconductance efficiency, an LVT NMOS device (`sky130_nfet_01v8_lvt`) is selected for $M_1/M_2$.
+* **Upper Bound Limit:** Targeting $V_{GS1,2} \approx 0.5\text{ V}$ and $V_{ov1,2} \approx 50\text{ mV}$ for design allowance, achieving $V_{iCM,\max} = 1.6\text{ V}$ requires $\vert{}V_{GS3,4}\vert{}$ for mirror loads $M_3/M_4$ to satisfy:
 
+$$\vert{}V_{GS3,4}\vert{} < 1.8 - 1.6 + 0.5 + 0.05 = 0.75\text{ V}$$
+
+* **$V_{DS}$ Headroom Budget Allocation:**
+  * Tail transistor $M_5$ is assigned $V_{DS5} = 0.3\text{ V}$ ($> V_{ov5}$) to ensure saturation.
+  * Diode-connected loads $M_3/M_4$ require $V_{DS3,4} = \vert{}V_{GS3,4}\vert{}$. Selecting $V_{GS3,4} = 0.5\text{ V}$ ($< 0.75\text{ V}$) allocates $V_{DS3,4} = 0.5\text{ V}$.
+  * The remaining headroom $V_{DD} - V_{DS5} - V_{DS3,4} = 1.8 - 0.3 - 0.5 = 1.0\text{ V}$ is assigned to $V_{DS1,2}$.
+
+**Figure 1** illustrates the initial target $V_{DS}$ bias allocation across the device stack.
+
+![](img/fig1_vds_allocation.png)
+**
 <p align="center">
   <img src="img/5t_basic_OTA_bias.jpg" alt="Figure 1: Initial VDS Bias Allocation under ICMR Constraints" width="500">
   <br>
 </p>
 <p align="center">
-  Figure 1. Initial $V_{DS}$ Bias Allocation under ICMR constraints.
+  Figure 1. Initial $V_{DS}$ bias allocation under ICMR constraints.
 </p>
 
 ## 3. Sizing Differential Input Pair ($M_1/M_2$)
 
-Re-applying *GBW* and gain constraints (*g*<sub>m1,2</sub> ≥ 0.16 mS, (*g*<sub>m</sub>/*I*<sub>D</sub>)<sub>1,2</sub> ≥ 16 S/A, *g*<sub>ds1,2</sub> ≤ 2 µS) with target margin *g*<sub>m1,2</sub> = 0.17 mS and *g*<sub>ds1,2</sub> = 1.5 µS:
+The required transconductance $g_{m1,2}$ is derived from the $GBW$ specification:
+
+$$GBW = \frac{g_{m1,2}}{2\pi C_L} \implies g_{m1,2} > 2\pi (5\text{ MHz})(5\text{ pF}) = 0.157\text{ mS} \approx 0.16\text{ mS}$$
+
+With branch current $I_{D1,2} = 10\,\mu\text{A}$, the transconductance efficiency requirement is $(g_m/I_D)_{1,2} \ge 16\text{ S/A}$. Expressing open-loop DC gain as $A_{V,DC} = \frac{g_{m1,2}}{g_{ds1,2} + g_{ds3,4}} \ge 39.81\text{ V/V}$ at $g_{m1,2} = 0.16\text{ mS}$ bounds total output conductance to $g_{ds1,2} + g_{ds3,4} \le 4.02\,\mu\text{S}$. Allocating equal loss yields $g_{ds1,2} < 2.0\,\mu\text{S}$ and $g_{ds3,4} < 2.0\,\mu\text{S}$.
+
+To provide design margin, target $g_{m1,2} = 0.17\text{ mS}$ and $g_{ds1,2} = 1.5\,\mu\text{S}$ are selected.
 
 > [!IMPORTANT]
 > **CRITICAL OPEN-LUT WORKFLOW RULE:** Select your device and $V_{DS}$ bias, then click **`Update`** once to load the lookup tables for that setup. After this initial update, **always click the `Clear Form / Reset Plots` button before entering every new set of values!** Open-LUT preserves previous input fields and solution curves until explicitly reset. Entering new numbers into an uncleared form can lead to parameter conflicts or invalid extractions.
 
-In Open-LUT, select device `sky130_nfet_01v8_lvt` and $V_{ds} = 1.0\text{ V}$, then click **Update** once. Entering $g_m = 0.17\text{ mS}$, $I_D = 0.01\text{ mA}$, and $g_{ds} = 0.0015\text{ mS}$ dynamically yields initial continuous channel dimensions.
+In Open-LUT, select `sky130_nfet_01v8_lvt` at $V_{ds} = 1.0\text{ V}$ and click **Update** once. Entering $g_m = 0.17\text{ mS}$, $I_D = 0.01\text{ mA}$, and $g_{ds} = 0.0015\text{ mS}$ yields initial continuous channel dimensions ($L = 2.0755\,\mu\text{m}$, $W = 22.5428\,\mu\text{m}$).
 
-To snap the channel length to the SKY130 layout grid ($0.005\,\mu\text{m}$ grid step), click **`Clear Form / Reset Plots`**, then enter $I_D = 0.01\text{ mA}$, $g_m = 0.17\text{ mS}$, and $L = 2.0755\,\mu\text{m}$ as the third parameter instead of $g_{ds}$. The final sizing dimensions and operating bias parameters for $M_1/M_2$ are summarized in **Table 2**.
+Snapping $W$ to the SKY130 layout grid ($0.005\,\mu\text{m}$ grid step) gives $W_{1,2} = 22.5430\,\mu\text{m}$. Finalized dimensions and extracted operating parameters for $M_1/M_2$ are listed in **Table 2**.
 
 ### Table 2: Sizing and Biasing for $M_1/M_2$
 
@@ -66,21 +84,20 @@ To snap the channel length to the SKY130 layout grid ($0.005\,\mu\text{m}$ grid 
 
 ## 4. Sizing Current Mirror Loads ($M_3/M_4$)
 
-With $V_{GS1,2} = 0.5174\text{ V}$ from Table 2, the upper-bound $V_{GS3,4}$ limit is updated: $\vert{}V_{GS3,4}\vert{} < 1.8 - 1.6 + 0.5174 + 0.0548 = 0.7722\text{ V}$. The allocated $V_{DS3,4} = V_{GS3,4} = 0.5\text{ V}$ remains fully valid. Furthermore, as established in Part 1, $M_3/M_4$ require $g_{ds3,4} \le 2\,\mu\text{S}$ to satisfy total DC open-loop gain requirements.
+With $V_{GS1,2} = 0.5174\text{ V}$ from Table 2 and $V_{ov1,2} = 0.0548\text{ V}$, the upper-bound limit for $V_{GS3,4}$ is updated:
 
-In Open-LUT, select `sky130_pfet_01v8_lvt` with the allocated $V_{ds} = 0.5\text{ V}$, then click **Update** once to extract the lookup tables. Examining the $V_{GS}$ vs $g_m/I_D$ characteristic (**Figure 2**) shows that achieving $V_{GS3,4} \approx 0.5\text{ V}$ restricts $g_m/I_D$ to the range of $6.5\text{--}11\text{ S/A}$.
+$$\vert{}V_{GS3,4}\vert{} < V_{DD} - V_{iCM,\max} + V_{GS1,2} + V_{ov1,2} = 1.8 - 1.6 + 0.5174 + 0.0548 = 0.7722\text{ V}$$
 
-![Figure 2: gm/ID vs VGS for sky130_pfet_01v8_lvt at Vds = 0.5 V](img/fig3_pmos_lvt_gm_id.png)
+The allocated $V_{DS3,4} = V_{GS3,4} = 0.5\text{ V}$ remains fully valid. Devices $M_3/M_4$ also require $g_{ds3,4} \le 2.0\,\mu\text{S}$ (target $1.5\,\mu\text{S}$) to satisfy total open-loop gain requirements.
+
+In Open-LUT, select `sky130_pfet_01v8_lvt` with $V_{ds} = 0.5\text{ V}$ and click **Update**. Inspecting the $V_{GS}$ vs $g_m/I_D$ curve (**Figure 2**) indicates that achieving $V_{GS3,4} \approx 0.5\text{ V}$ restricts $g_m/I_D$ to the range of $6.5\text{--}11\text{ S/A}$.
+
+![Figure 2: gm/ID vs VGS for sky130_pfet_01v8_lvt at Vds = 0.5 V](img/fig2_pmos_lvt_gm_id.png)
 *Figure 2. $g_m/I_D$ vs $V_{GS}$ for `sky130_pfet_01v8_lvt` at $V_{ds} = 0.5\text{ V}$.*
 
-Entering a branch current $I_D = 0.01\text{ mA}\ (10\,\mu\text{A})$ and an initial $g_m/I_D = 6.5\text{ S/A}$ dynamically updates the achievable range bounds for $g_{ds}$ in Open-LUT (**Figure 3**). This confirms that the required $g_{ds} < 2\,\mu\text{S}$ (target $1.5\,\mu\text{S}$) is indeed attainable within this $g_m/I_D$ operating range.
+Click **`Clear Form / Reset Plots`** and iterate $g_m/I_D$ within the $6.5\text{--}11\text{ S/A}$ range at $I_D = 0.01\text{ mA}$ until $V_{GS3,4} = 0.5000\text{ V}$ is achieved. At $g_m/I_D = 10.5\text{ S/A}$, a gate bias of $V_{GS3,4} = 0.5077\text{ V} \approx 0.5\text{ V}$ is matched with $g_{ds3,4} = 1.5\,\mu\text{S}$. 
 
-![Figure 3: Open-LUT Range Bounds for M3/M4 at ID = 10 µA and Vds = 0.5 V](img/fig4_openlut_m34.png)
-*Figure 3. Open-LUT range bounds for $M_3/M_4$ at $I_D = 10\,\mu\text{A}$ and $V_{ds} = 0.5\text{ V}$.*
-
-An initial entry of $I_D = 0.01\text{ mA}$, $g_m/I_D = 6.5\text{ S/A}$, and $g_{ds} = 0.0015\text{ mS}\ (1.5\,\mu\text{S})$ into Open-LUT yields a $V_{GS}$ that deviates from $0.5\text{ V}$. To resolve this bias discrepancy and match $V_{GS3,4}$ to the allocated $V_{DS3,4} = 0.5\text{ V}$, click **`Clear Form / Reset Plots`** and iterate $g_m/I_D$ values across the $6.5\text{--}11\text{ S/A}$ range. A $V_{GS3,4}$ of $0.5077\text{ V} \approx 0.5\text{ V}$ is successfully attained at $g_m/I_D = 10.5\text{ S/A}$.
-
-Clearing the form once more and entering $I_D = 0.01\text{ mA}$, $g_m/I_D = 10.5\text{ S/A}$, and the layout-grid-snapped channel length $L = 1.2130\,\mu\text{m}$ extracts the finalized dimensions and operating point summarized in **Table 3**.
+Snapping $W$ to the layout grid yields the finalized sizing and operating point summarized in **Table 3**.
 
 ### Table 3: Sizing and Biasing for $M_3/M_4$
 
@@ -92,16 +109,23 @@ Clearing the form once more and entering $I_D = 0.01\text{ mA}$, $g_m/I_D = 10.5
 
 ## 5. Sizing Tail Source ($M_5$) & Mirror ($M_6$) under CMRR Constraint
 
-* **Lower-bound check:** $V_{ov5} < V_{iCM,\min} - V_{GS1,2} = 0.7 - 0.5174 = 0.1826\text{ V}$. The target $V_{ov5} \approx 100\text{ mV}$ is confirmed to fall well within the allowable lower limit.
-* **CMRR Constraint:** With $CMRR = A_{V,DC} / A_{V,CM} \ge 70\text{ dB}\ (3162.28\text{ V/V})$, the allowable common-mode gain is constrained by:
+* **Lower-Bound Check:** With $V_{iCM,\min} = 0.7\text{ V}$ and $V_{GS1,2} = 0.5174\text{ V}$, overdrive voltage $V_{ov5}$ must satisfy:
+
+$$V_{ov5} < V_{iCM,\min} - V_{GS1,2} = 0.7 - 0.5174 = 0.1826\text{ V}$$
+
+The target $V_{ov5} \approx 100\text{ mV}$ falls well within this upper limit.
+
+* **CMRR Constraint:** With $CMRR = \frac{A_{V,DC}}{A_{V,CM}} \ge 70\text{ dB}\ (3162.28\text{ V/V})$ and $A_{V,DC} = 39.81\text{ V/V}$, allowable common-mode gain is constrained to:
 
 $$A_{V,CM} \le \frac{39.81}{3162.28} = 0.0126\text{ V/V}$$
 
-Expressing common-mode gain as $A_{V,CM} \approx \frac{g_{m1,2}}{g_{m3,4} \cdot \left(1 + \frac{2g_{m1,2}}{g_{ds5}}\right)}$ and solving for output conductance $g_{ds5}$:
+Expressing common-mode gain for a 5T OTA as $A_{V,CM} \approx \frac{g_{m1,2}}{g_{m3,4} \left(1 + \frac{2g_{m1,2}}{g_{ds5}}\right)} \le 0.0126$ and solving for tail output conductance $g_{ds5}$:
 
-$$g_{ds5} \le \frac{2 \cdot g_{m1,2}}{\frac{g_{m1,2}}{0.0126 \cdot g_{m3,4}} - 1} = 2.67\,\mu\text{S}$$
+$$g_{ds5} \le \frac{2 \cdot g_{m1,2}}{\frac{g_{m1,2}}{0.0126 \cdot g_{m3,4}} - 1} = \frac{2 (0.17\text{ mS})}{\frac{0.17\text{ mS}}{0.0126 (0.105\text{ mS})} - 1} = 2.67\,\mu\text{S}$$
 
-In Open-LUT, select `sky130_nfet_01v8` at $V_{ds} = 0.3\text{ V}$ and click **Update** once. Enter $I_D = 0.02\text{ mA}$ and iterate $g_m/I_D$ within the $14\text{--}17\text{ S/A}$ range (clicking **`Clear Form / Reset Plots`** before each entry) to evaluate attainable $g_{ds}$ bounds. At $g_m/I_D = 16\text{ S/A}$, $g_{ds5} = 2.3\,\mu\text{S}$ ($< 2.67\,\mu\text{S}$) and $V_{ov5} = 0.1034\text{ V}$ are achieved. Snapping to layout grid yields the finalized parameters in **Table 4**.
+In Open-LUT, select `sky130_nfet_01v8` at $V_{ds} = 0.3\text{ V}$ and click **Update**. Entering tail current $I_D = 0.02\text{ mA}$ ($I_{SS}$) and evaluating $g_{ds}$ across $g_m/I_D$ shows that $g_{ds} = 2.0\,\mu\text{S}$ is not achievable across all regions, but a minimum $g_{ds5} = 2.3\,\mu\text{S}$ is attained within the $g_m/I_D$ range of $14\text{--}17\text{ S/A}$. Since $2.3\,\mu\text{S} < 2.67\,\mu\text{S}$, this satisfies the CMRR specification with margin.
+
+Iterating within $14\text{--}17\text{ S/A}$ to match target $V_{ov5} \approx 0.1\text{ V}$ yields $g_m/I_D = 16\text{ S/A}$. Grid-snapped dimensions and extracted parameters are summarized in **Table 4**.
 
 ### Table 4: Sizing and Biasing for $M_5$
 
@@ -109,27 +133,78 @@ In Open-LUT, select `sky130_nfet_01v8` at $V_{ds} = 0.3\text{ V}$ and click **Up
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | **Value** | $16\text{ S/A}$ | $2.7470\,\mu\text{m}$ | $42.0700\,\mu\text{m}$ | $0.3200\text{ mS}$ | $2.3\,\mu\text{S}$ | $0.1034\text{ V}$ | $0.6508\text{ V}$ |
 
-Mirror transistor $M_6$ carries $I_{bias} = 10\,\mu\text{A}$ (half of $I_{SS}$) and is scaled to $(W/L)_6 = 21.0350 / 2.7470\,\mu\text{m}$.
+Bias mirror $M_6$ carries $I_{bias} = 10\,\mu\text{A}$ (half of $I_{SS}$) and is scaled proportionally to half the width of $M_5$: $(W/L)_6 = 21.0350 / 2.7470\,\mu\text{m}$.
 
 ---
 
 ## 6. Verification in Xschem & Ngspice
 
-The design was verified using Xschem and Ngspice within the IIC-OSIC-TOOLS Docker environment. The simulation setup is shown in **Figure 4**, with schematic files provided in the `./cir/` subfolder.
+The design was verified using Xschem and Ngspice within the IIC-OSIC-TOOLS Docker environment (**Figure 3**; schematic files located in `./cir/` subfolder).
 
-![Figure 4: Xschem Simulation Setup for Part 2 Verification](img/fig5_xschem_setup.png)
-*Figure 4. Xschem simulation setup for Part 2 verification.*
+![Figure 3: Xschem Simulation Setup for Part 2 Verification](img/fig3_xschem_setup.png)
+*Figure 3. Xschem simulation setup for Part 2 verification.*
 
-A critical step in design validation is ensuring that all transistors operate at their intended DC operating points under appropriate common-mode biasing ($V_{CM}$). To evaluate the valid bias window, a DC common-mode sweep (`.dc VCM 0 1.8V`) is performed, tracking input transconductance $g_{m1,2}$ (**Figure 5**) and tail current $I_{D5}$ ($I_{SS}$, **Figure 6**).
+To select the valid common-mode bias window, a DC common-mode sweep (`.dc VCM 0 1.8V`) is performed, tracking $g_{m1,2}$ (**Figure 4**) and tail current $I_{SS}$ (**Figure 5**).
 
-![Figure 5: Transconductance gm1,2 vs VCM](img/fig6_gm_vcm.png)
-*Figure 5. Transconductance $g_{m1,2}$ vs $V_{CM}$.*
+![Figure 4: Transconductance gm1,2 vs VCM](img/fig4_gm_vcm.png)
+*Figure 4. Transconductance $g_{m1,2}$ vs $V_{CM}$.*
 
-![Figure 6: Tail Current ISS vs VCM](img/fig7_iss_vcm.png)
-*Figure 6. Tail current $I_{SS}$ vs $V_{CM}$.*
+![Figure 5: Tail Current ISS vs VCM](img/fig5_iss_vcm.png)
+*Figure 5. Tail current $I_{SS}$ vs $V_{CM}$.*
 
-The sweep plots confirm that maintaining $g_{m1,2} \ge 0.17\text{ mS}$ and holding $I_{D5} \le 20\,\mu\text{A}$ are satisfied across the target $ICMR$ window ($0.7\text{ V to } 1.6\text{ V}$). Iterative DC operating point evaluations identify $V_{CM} = 0.85\text{ V}$ as the optimal common-mode bias. **Table 5** confirms close agreement between Open-LUT predictions and Ngspice DC operating point simulation results at $V_{CM} = 0.85\text{ V}$.
+The plots show that $V_{CM} > 0.675\text{ V}$ satisfies $g_{m1,2} \ge 0.17\text{ mS}$, while $V_{CM} < 0.90\text{ V}$ maintains $I_{SS} \le 20\,\mu\text{A}$. Evaluating DC operating points across $0.675\text{--}0.90\text{ V}$ identifies $V_{CM} = 0.85\text{ V}$ as the optimal bias point. **Table 5** compares Open-LUT predictions against Ngspice simulation results at $V_{CM} = 0.85\text{ V}$.
 
 ### Table 5: Open-LUT vs. Simulated Operating Point ($V_{CM} = 0.85\text{ V}$)
 
-| Operating Parameter | Open-LUT Value | Simulated
+| Operating Parameter | Open-LUT Value | Simulated Value (Ngspice) |
+| :--- | :---: | :---: |
+| $g_{m1,2}$ | $0.1700\text{ mS}$ | $0.1776\text{ mS}$ |
+| $g_{ds1,2}$ | $1.5000\,\mu\text{S}$ | $1.3710\,\mu\text{S}$ |
+| $V_{ov1,2}$ | $0.0548\text{ V}$ | $0.0866\text{ V}$ |
+| $V_{GS1,2}$ | $0.5174\text{ V}$ | $0.5597\text{ V}$ |
+| $V_{DS1,2}$ | $1.0000\text{ V}$ | $0.9208\text{ V}$ |
+| $I_{D1,2}$ | $10.000\,\mu\text{A}$ | $9.9681\,\mu\text{A}$ |
+| $g_{m3,4}$ | $0.1050\text{ mS}$ | $0.1161\text{ mS}$ |
+| $g_{ds3,4}$ | $1.5000\,\mu\text{S}$ | $1.4780\,\mu\text{S}$ |
+| $V_{ov3,4}$ | $0.1519\text{ V}$ | $0.1415\text{ V}$ |
+| $V_{GS3,4}$ | $0.5077\text{ V}$ | $0.5889\text{ V}$ |
+| $V_{DS3,4}$ | $0.5000\text{ V}$ | $0.5889\text{ V}$ |
+| $I_{D3,4}$ | $10.000\,\mu\text{A}$ | $9.9681\,\mu\text{A}$ |
+| $g_{m5}$ | $0.3200\text{ mS}$ | $0.3271\text{ mS}$ |
+| $g_{ds5}$ | $2.3000\,\mu\text{S}$ | $2.3550\,\mu\text{S}$ |
+| $V_{ov5}$ | $0.1034\text{ V}$ | $0.1048\text{ V}$ |
+| $V_{GS5}$ | $0.6508\text{ V}$ | $0.6377\text{ V}$ |
+| $V_{DS5}$ | $0.3000\text{ V}$ | $0.2903\text{ V}$ |
+| $I_{D5}$ | $20.000\,\mu\text{A}$ | $19.9361\,\mu\text{A}$ |
+
+AC frequency response and CMRR curves are presented in **Figures 6 & 7**.
+
+![Figure 6: AC Magnitude Response](img/fig6_ac_response.png)
+*Figure 6. AC magnitude response.*
+
+![Figure 7: Common-Mode Rejection Ratio (CMRR) vs Frequency](img/fig7_cmrr_response.png)
+*Figure 7. Common-Mode Rejection Ratio ($CMRR$) vs frequency.*
+
+To verify $ICMR$, the OTA is configured as a unity-gain follower with $V_{in,-}$ connected to $V_{out}$ and $V_{in,+}$ swept across $V_{CM}$ (**Figure 8**). Measuring output tracking error ($< 10\text{ mV}$) confirms an operational range of $0.628\text{ V}$ to $1.653\text{ V}$ (**Figure 9**). **Table 6** confirms full compliance with all specifications.
+
+![Figure 8: 5T OTA Configured as Unity-Gain Follower for ICMR Test](img/fig8_unity_gain_follower.png)
+*Figure 8. 5T OTA configured as unity-gain follower for ICMR testing.*
+
+![Figure 9: Output Tracking Error Plot across VCM Sweep](img/fig9_tracking_error.png)
+*Figure 9. Output tracking error plot across $V_{CM}$ sweep.*
+
+### Table 6: Simulation Results vs. Specifications
+
+| Specification Parameter | Target Requirement | Simulated Performance |
+| :--- | :---: | :---: |
+| **Open-Loop DC Gain ($A_{V,DC}$)** | $\ge 32.00\text{ dB}$ | $35.84\text{ dB}$ |
+| **Gain-Bandwidth Product ($GBW$)** | $\ge 5.00\text{ MHz}$ | $5.56\text{ MHz}$ |
+| **Tail Current ($I_{SS}$)** | $\le 20.00\,\mu\text{A}$ | $19.9361\,\mu\text{A}$ |
+| **Common-Mode Rejection Ratio ($CMRR$)** | $\ge 70.00\text{ dB}$ | $77.27\text{ dB}$ |
+| **Input Common-Mode Range ($ICMR$)** | $0.70\text{ V to } 1.60\text{ V}$ | $0.628\text{ V to } 1.653\text{ V}$ |
+
+---
+
+## 7. Conclusion
+
+Building upon the single-pass framework established in Part 1, the elimination of time-consuming simulation-in-the-loop workflows still applies when incorporating strict $ICMR$ and $CMRR$ constraints. By translating system-level common-mode specifications directly into $V_{DS}$ headroom budgets and output conductance limits, deterministic, single-pass device sizing is fully maintained without relying on trial-and-error simulation loops. Complete schematic files for simulation and
