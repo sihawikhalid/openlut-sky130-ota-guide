@@ -57,7 +57,7 @@ $$\vert{}V_{GS3,4}\vert{} < 1.8 - 1.6 + 0.5 + 0.05 = 0.75\text{ V}$$
 
 ## 3. Sizing Differential Input Pair ($M_1/M_2$)
 
-The required transconductance $g_{m1,2}$ is derived from the $GBW$ specification:
+The required transconductance $g_{m1,2}$ is derived from the $GBW$ specification <sup>[[3]](#ref3)</sup>:
 
 $$GBW = \frac{g_{m1,2}}{2\pi C_L} \implies g_{m1,2} > 2\pi (5\text{ MHz})(5\text{ pF}) = 0.157\text{ mS} \approx 0.16\text{ mS}$$
 
