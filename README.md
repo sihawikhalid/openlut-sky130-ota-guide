@@ -3,7 +3,7 @@
 A multi-part, tool-focused guide demonstrating how to use **[Open-LUT](http://www.open-lut.org)** <sup>[[1]](#ref1)</sup> to facilitate and accelerate $g_m/I_D$ transistor sizing for 5T OTAs in SkyWater's open-source 130nm PDK ([SKY130](https://www.skywatertechnology.com/skys-the-limit-with-the-sky130-open-source-pdk/))<sup>[[2]](#ref2)</sup>, with design results verified using **Ngspice** and **Xschem**.
 
 > [!NOTE]
-> **Scope & Target Audience:** This guide focuses on **how to navigate and apply Open-LUT** as a CAD tool to streamline transistor sizing. It assumes basic familiarity with $g_m/I_D$ methodology <sup>[[3]](#ref3)</sup> <sup>[[4]](#ref3)</sup> <sup>[[5]](#ref3)</sup>.
+> **Scope & Target Audience:** This guide focuses on **how to navigate and apply Open-LUT** as a CAD tool to streamline transistor sizing. It assumes basic familiarity with $g_m/I_D$ methodology <sup>[[3]](#ref3)</sup> <sup>[[4]](#ref4)</sup> <sup>[[5]](#ref5)</sup> <sup>[[6]](#ref6)</sup>.
 
 ## Overview & Supported Devices
 
@@ -76,7 +76,8 @@ S. A. Khalid, S. E. Maestre and K. M. Madrid-Khalid, "Open-LUT: Interactive gm/I
 ## References
 
 - <a id="ref1"></a> **[1]** S. A. Khalid, S. E. Maestre and K. M. Madrid-Khalid, "Open-LUT: Interactive gm/ID Lookup Tables for MOSFET Sizing in Open-Source PDKs," *2025 10th ICICM*, 2025, pp. 344-353, doi: [10.1109/ICICM66614.2025.11316023](https://doi.org/10.1109/ICICM66614.2025.11316023).
-- <a id="ref2"></a> **[2]** "SKY’s the Limit with the SKY130 Open-Source PDK." Skywater. https://www.skywatertechnology.com/sky130-open-source-pdk/ (accessed Oct. 10, 2025).
+- <a id="ref2"></a> **[2]** "SKY’s the Limit with the SKY130 Open-Source PDK." Skywater. https://www.skywatertechnology.com/sky130-open-source-pdk/ (accessed Oct. 10, 2026).
 - <a id="ref3"></a> **[3]** Jespers, P. G. A., & Murmann, B. (2017). Systematic Design of Analog CMOS Circuits: Using Pre-Computed Lookup Tables. Cambridge University Press. https://doi.org/10.1017/9781108125840
-- <a id="ref4"></a> **[4]** Paul Jespers. The gm/ID Methodology, a sizing tool for low-voltage analog CMOS Circuits: The semi-empirical and compact model approaches. Springer Science & Business Media, 2009.
-- <a id="ref5"></a> **[5]** Sabry, M. N., Omran, H., & Dessouky, M. (2018). Systematic design and optimization of operational transconductance amplifier using gm/ID design methodology. Microelectronics Journal, 75, 87–96. https://doi.org/10.1016/j.mejo.2018.02.002
+- <a id="ref4"></a> **[5]** Paul Jespers. The gm/ID Methodology, a sizing tool for low-voltage analog CMOS Circuits: The semi-empirical and compact model approaches. Springer Science & Business Media, 2009.
+- <a id="ref5"></a> **[4]** IEEE Solid-State Circuits Society (SSCS), "CMOS Transistor Sizing: Gm/ID Approach — Boris Murmann | Circuit Insights - ISSCC 2026 (5)," YouTube, Mar. 10, 2026 [Online Video]. Available: https://youtube.com. [Accessed: Oct. 12, 2026].
+- <a id="ref6"></a> **[6]** Sabry, M. N., Omran, H., & Dessouky, M. (2018). Systematic design and optimization of operational transconductance amplifier using gm/ID design methodology. Microelectronics Journal, 75, 87–96. https://doi.org/10.1016/j.mejo.2018.02.002
