@@ -61,7 +61,7 @@ The required transconductance $g_{m1,2}$ is derived from the $GBW$ specification
 
 $$GBW = \frac{g_{m1,2}}{2\pi C_L} \implies g_{m1,2} > 2\pi (5\text{ MHz})(5\text{ pF}) = 0.157\text{ mS} \approx 0.16\text{ mS}$$
 
-With branch current $I_{D1,2} = 10\,\mu\text{A}$, the transconductance efficiency requirement is $(g_m/I_D)_{1,2} \ge 16\text{ S/A}$. Expressing open-loop DC gain as $A_{V,DC} = \frac{g_{m1,2}}{g_{ds1,2} + g_{ds3,4}} \ge 39.81\text{ V/V}$ at $g_{m1,2} = 0.16\text{ mS}$ bounds total output conductance to $g_{ds1,2} + g_{ds3,4} \le 4.02\,\mu\text{S}$. Allocating equal loss yields $g_{ds1,2} < 2.0\,\mu\text{S}$ and $g_{ds3,4} < 2.0\,\mu\text{S}$.
+With branch current $I_{D1,2} = 10\ \mu\text{A}$, the transconductance efficiency requirement is $(g_m/I_D)_{1,2} \ge 16\text{ S/A}$. Expressing open-loop DC gain as $A_{V,DC} = \frac{g_{m1,2}}{g_{ds1,2} + g_{ds3,4}} \ge 39.81\text{ V/V}$ at $g_{m1,2} = 0.16\text{ mS}$ bounds total output conductance to $g_{ds1,2} + g_{ds3,4} \le 4.02\ \mu\text{S}$. Allocating equal loss yields $g_{ds1,2} < 2.0\ \mu\text{S}$ and $g_{ds3,4} < 2.0\ \mu\text{S}$.
 
 To provide design margin, target $g_{m1,2} = 0.17\text{ mS}$ and $g_{ds1,2} = 1.5\,\mu\text{S}$ are selected.
 
