@@ -1,4 +1,4 @@
-# Part 2: 5T OTA Sizing in SKY130 with ICMR and CMRR Constraints using Open-LUT
+<img width="1242" height="639" alt="schematic" src="https://github.com/user-attachments/assets/892fba2e-e953-47be-bc5e-3a30f8a35752" /># Part 2: 5T OTA Sizing in SKY130 with ICMR and CMRR Constraints using Open-LUT
 
 > A step-by-step guide extending the Open-LUT sizing methodology to meet Input Common-Mode Range (ICMR) and Common-Mode Rejection Ratio (CMRR) specifications for a 5T OTA in SkyWater 130nm PDK.
 
@@ -47,8 +47,6 @@ $$\vert{}V_{GS3,4}\vert{} < 1.8 - 1.6 + 0.5 + 0.05 = 0.75\text{ V}$$
 
 **Figure 1** illustrates the initial target $V_{DS}$ bias allocation across the device stack.
 
-![](img/fig1_vds_allocation.png)
-**
 <p align="center">
   <img src="img/5t_basic_OTA_bias.jpg" alt="Figure 1: Initial VDS Bias Allocation under ICMR Constraints" width="500">
   <br>
@@ -92,8 +90,13 @@ The allocated $V_{DS3,4} = V_{GS3,4} = 0.5\text{ V}$ remains fully valid. Device
 
 In Open-LUT, select `sky130_pfet_01v8_lvt` with $V_{ds} = 0.5\text{ V}$ and click **Update**. Inspecting the $V_{GS}$ vs $g_m/I_D$ curve (**Figure 2**) indicates that achieving $V_{GS3,4} \approx 0.5\text{ V}$ restricts $g_m/I_D$ to the range of $6.5\text{--}11\text{ S/A}$.
 
-![Figure 2: gm/ID vs VGS for sky130_pfet_01v8_lvt at Vds = 0.5 V](img/fig2_pmos_lvt_gm_id.png)
-*Figure 2. $g_m/I_D$ vs $V_{GS}$ for `sky130_pfet_01v8_lvt` at $V_{ds} = 0.5\text{ V}$.*
+<p align="center">
+  <img src="img/5gmid_vgs.jpg" alt="Figure 2: gm/ID vs VGS for sky130_pfet_01v8_lvt at Vds = 0.5 V" width="500">
+  <br>
+</p>
+<p align="center">
+  Figure 2. $g_m/I_D$ vs $V_{GS}$ for `sky130_pfet_01v8_lvt` at $V_{ds} = 0.5\text{ V}$.
+</p>
 
 Click **`Clear Form / Reset Plots`** and iterate $g_m/I_D$ within the $6.5\text{--}11\text{ S/A}$ range at $I_D = 0.01\text{ mA}$ until $V_{GS3,4} = 0.5000\text{ V}$ is achieved. At $g_m/I_D = 10.5\text{ S/A}$, a gate bias of $V_{GS3,4} = 0.5077\text{ V} \approx 0.5\text{ V}$ is matched with $g_{ds3,4} = 1.5\,\mu\text{S}$. 
 
@@ -104,8 +107,6 @@ Snapping $W$ to the layout grid yields the finalized sizing and operating point 
 | Parameter | $(g_m/I_D)_{3,4}$ | $L_{3,4}$ | $W_{3,4}$ | $g_{m3,4}$ | $g_{ds3,4}$ | $V_{ov3,4}$ | $V_{GS3,4}$ |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | **Value** | $10.5\text{ S/A}$ | $1.2130\,\mu\text{m}$ | $23.8550\,\mu\text{m}$ | $0.1050\text{ mS}$ | $1.5\,\mu\text{S}$ | $0.1519\text{ V}$ | $0.5077\text{ V}$ |
-
----
 
 ## 5. Sizing Tail Source ($M_5$) & Mirror ($M_6$) under CMRR Constraint
 
@@ -141,8 +142,13 @@ Bias mirror $M_6$ carries $I_{bias} = 10\,\mu\text{A}$ (half of $I_{SS}$) and is
 
 The design was verified using Xschem and Ngspice within the IIC-OSIC-TOOLS Docker environment (**Figure 3**; schematic files located in `./cir/` subfolder).
 
-![Figure 3: Xschem Simulation Setup for Part 2 Verification](img/fig3_xschem_setup.png)
-*Figure 3. Xschem simulation setup for Part 2 verification.*
+<p align="center">
+  <img src="img/schematic.jpg" alt="Figure 3: Xschem Simulation Setup for Part 2 Verification">
+  <br>
+</p>
+<p align="center">
+  Figure 3. Xschem simulation setup for Part 2 verification.
+</p>
 
 To select the valid common-mode bias window, a DC common-mode sweep (`.dc VCM 0 1.8V`) is performed, tracking $g_{m1,2}$ (**Figure 4**) and tail current $I_{SS}$ (**Figure 5**).
 
