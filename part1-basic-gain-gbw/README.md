@@ -175,7 +175,7 @@ A critical first step in validation is ensuring that all transistors operate at 
 
 <table style="border-collapse: collapse; border: none; width: 100%;">
   <tr style="text-align: center;">
-    <td style="padding: 0; width: 50%; text-align: center; vertical-align: middle;">
+    <td style="padding: 0; width: 50%; text-align: center; vertical-align: middle; border: 1px solid transparent;">
       <p align="center">
         <img src="img/gm_vs_vcm.jpg" alt="Figure 9: Transconductance gm1,2 vs Input Common-Mode Voltage VCM" width="450">
         <br>
@@ -184,7 +184,7 @@ A critical first step in validation is ensuring that all transistors operate at 
        Figure 9. Transconductance $g_{m1,2}$ vs Input Common-Mode Voltage $V_{CM}$.
       </p>
     </td>
-    <td style="padding: 0; width: 50%; text-align: center; vertical-align: middle;">
+    <td style="padding: 0; width: 50%; text-align: center; vertical-align: middle; border: 1px solid transparent;">
       <p align="center">
         <img src="img/iss_vs_vcm.jpg" alt="Figure 10: Tail Current ISS vs Input Common-Mode Voltage VCM" width="450">
         <br>
