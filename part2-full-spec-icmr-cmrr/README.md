@@ -123,7 +123,7 @@ The target $V_{ov5} \approx 100\text{ mV}$ falls well within this limit.
 
 $$A_{V,CM} \le \frac{39.81}{3162.28} = 0.0126\text{ V/V}$$
 
-Expressing common-mode gain for a 5T OTA as $A_{V,CM} \approx \frac{g_{m1,2}}{g_{m3,4} \left(1 + \frac{2g_{m1,2}}{g_{ds5}}\right)} \le 0.0126$ and solving for tail output conductance $g_{ds5}$:
+Expressing common-mode gain <sup>[[3]](#ref3)</sup>for a 5T OTA as $A_{V,CM} \approx \frac{g_{m1,2}}{g_{m3,4} \left(1 + \frac{2g_{m1,2}}{g_{ds5}}\right)} \le 0.0126$ and solving for tail output conductance $g_{ds5}$:
 
 $$g_{ds5} \le \frac{2 \cdot g_{m1,2}}{\frac{g_{m1,2}}{0.0126 \cdot g_{m3,4}} - 1} = \frac{2 (0.17\text{ mS})}{\frac{0.17\text{ mS}}{0.0126 (0.105\text{ mS})} - 1} = 2.67\,\mu\text{S}$$
 
@@ -141,7 +141,7 @@ Bias mirror $M_6$ carries $I_{bias} = 10\,\mu\text{A}$ (half of $I_{SS}$) and is
 
 ## 6. Verification in Xschem & Ngspice
 
-The design was verified using Xschem and Ngspice within the IIC-OSIC-TOOLS Docker environment (**Figure 3**; schematic files located in `./cir/` subfolder).
+The design was verified using Xschem and Ngspice within the IIC-OSIC-TOOLS <sup>[[4]](#ref4)</sup> Docker environment (**Figure 3**; schematic files located in `./cir/` subfolder).
 
 <p align="center">
   <img src="img/schematic.jpg" alt="Figure 3: Xschem Simulation Setup for Part 2 Verification">
