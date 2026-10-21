@@ -20,7 +20,7 @@ This guide presents a step-by-step procedure for designing a single-ended NMOS d
 </p>
 
 ### Table 1: Design Specifications
-
+<div align="center">
 | Specification Parameter | Symbol | Target Value |
 | :--- | :---: | :---: |
 | **PDK Technology** | - | SkyWater 130nm (SKY130) |
@@ -30,8 +30,7 @@ This guide presents a step-by-step procedure for designing a single-ended NMOS d
 | **Capacitive Load** | $C_L$ | $5\\text{ pF}$ |
 | **Open-Loop DC Gain** | $A_{V,DC}$ | $\\ge 32\\text{ dB}\\ (39.81\\text{ V/V})$ |
 | **Gain-Bandwidth Product** | $GBW$ | $\\ge 5\\text{ MHz}$ |
-
----
+</div>
 
 ## 2. $V_{DS}$ Bias Allocation
 
@@ -47,7 +46,6 @@ Open-LUT queries $g_m/I_D$ lookup tables at specific drain-to-source bias voltag
 <p align="center">
   Figure 2. Initial $V_{DS}$ Bias Allocation across the 5T OTA Transistor Stack.
 </p>
----
 
 ## 3. Sizing the Input Differential Pair ($M_1/M_2$)
 
@@ -87,7 +85,6 @@ To snap the channel length to the SKY130 layout grid ($0.005\\,\\mu\\text{m}$ gr
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | **Value** | $17\\text{ S/A}$ | $0.4205\\,\\mu\\text{m}$ | $4.7300\\,\\mu\\text{m}$ | $0.17\\text{ mS}$ | $1.5\\,\\mu\\text{S}$ | $0.0562\\text{ V}$ | $0.6942\\text{ V}$ |
 
----
 
 ## 4. Sizing the Current Mirror Loads ($M_3/M_4$)
 
