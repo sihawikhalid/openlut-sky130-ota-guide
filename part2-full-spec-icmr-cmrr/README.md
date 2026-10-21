@@ -203,19 +203,39 @@ The plots show that $V_{CM} > 0.675\text{ V}$ satisfies $g_{m1,2} \ge 0.17\text{
 
 AC frequency response and CMRR curves are presented in **Figures 6 & 7**.
 
-![Figure 6: AC Magnitude Response](img/fig6_ac_response.png)
-*Figure 6. AC magnitude response.*
+<p align="center">
+  <img src="img/ac_plot.jpg" alt="Figure 6: AC Magnitude Response" width="450">
+  <br>
+</p>
+<p align="center">
+ Figure 6. AC magnitude response.
+</p>
 
-![Figure 7: Common-Mode Rejection Ratio (CMRR) vs Frequency](img/fig7_cmrr_response.png)
-*Figure 7. Common-Mode Rejection Ratio ($CMRR$) vs frequency.*
+<p align="center">
+  <img src="img/cmrr.jpg" alt="Figure 7: Common-Mode Rejection Ratio (CMRR) vs Frequency" width="450">
+  <br>
+</p>
+<p align="center">
+ Figure 7. Common-Mode Rejection Ratio ($CMRR$) vs frequency.
+</p>
 
 To verify $ICMR$, the OTA is configured as a unity-gain follower with $V_{in,-}$ connected to $V_{out}$ and $V_{in,+}$ swept across $V_{CM}$ (**Figure 8**). Measuring output tracking error ($< 10\text{ mV}$) confirms an operational range of $0.628\text{ V}$ to $1.653\text{ V}$ (**Figure 9**). **Table 6** confirms full compliance with all specifications.
 
-![Figure 8: 5T OTA Configured as Unity-Gain Follower for ICMR Test](img/fig8_unity_gain_follower.png)
-*Figure 8. 5T OTA configured as unity-gain follower for ICMR testing.*
+<p align="center">
+  <img src="img/schematic_ICMR.jpg" alt="Figure 8: 5T OTA Configured as Unity-Gain Follower for ICMR Test">
+  <br>
+</p>
+<p align="center">
+ Figure 8. 5T OTA configured as unity-gain follower for ICMR testing.
+</p>
 
-![Figure 9: Output Tracking Error Plot across VCM Sweep](img/fig9_tracking_error.png)
-*Figure 9. Output tracking error plot across $V_{CM}$ sweep.*
+<p align="center">
+  <img src="img/ICMR.jpg" alt="Figure 9: Output Tracking Error Plot across VCM Sweep" width="450">
+  <br>
+</p>
+<p align="center">
+ Figure 9. Output tracking error plot across $V_{CM}$ sweep.
+</p>
 
 ### Table 6: Simulation Results vs. Specifications
 
