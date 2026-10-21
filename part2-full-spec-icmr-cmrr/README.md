@@ -117,7 +117,7 @@ Snapping $W$ to the layout grid yields the finalized sizing and operating point 
 
 $$V_{ov5} < V_{iCM,\min} - V_{GS1,2} = 0.7 - 0.5174 = 0.1826\text{ V}$$
 
-The target $V_{ov5} \approx 100\text{ mV}$ falls well within this upper limit.
+The target $V_{ov5} \approx 100\text{ mV}$ falls well within this limit.
 
 * **CMRR Constraint:** With $CMRR = \frac{A_{V,DC}}{A_{V,CM}} \ge 70\text{ dB}\ (3162.28\text{ V/V})$ and $A_{V,DC} = 39.81\text{ V/V}$, allowable common-mode gain is constrained to:
 
