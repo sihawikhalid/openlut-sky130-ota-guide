@@ -171,7 +171,7 @@ The design was verified using Xschem and Ngspice within the IIC-OSIC-TOOLS Docke
  Figure 8. Xschem simulation setup for 5T OTA verification.
 </p>
 
-A DC common-mode sweep ($V_{CM}$ from $0$ to $1.8\\text{ V}$) identifies the valid operating range (**Figures 9 & 10**). Selecting $V_{CM} = 1.0\\text{ V}$ establishes an optimal operating point.
+A critical first step in validation is ensuring that all transistors operate at their intended DC operating points under appropriate common-mode biasing ($V_{CM}$). To identify the valid operating window, a DC common-mode sweep (.dc VCM 0 1.8V) is performed, tracking input transconductance $g_{m1,2}$ (Figure 9) and tail current $I_{D5}$ ($I_{SS}$, Figure 10).
 
 <table style="border-collapse: collapse; border: none; width: 100%;">
   <tr style="text-align: center;">
@@ -196,7 +196,7 @@ A DC common-mode sweep ($V_{CM}$ from $0$ to $1.8\\text{ V}$) identifies the val
   </tr>
 </table>
 
-**Table 5** compares the Open-LUT computed values against Ngspice DC operating point simulation results at $V_{CM} = 1.0\\text{ V}$.
+The sweep plots reveal that maintaining $g_{m1,2} \ge 0.17\text{ mS}$ requires $V_{CM} \ge 1.0\text{ V}$, whereas holding $I_{D5} \le 20\,\mu\text{A}$ requires $V_{CM} \le 1.25\text{ V}$—defining a valid bias range of $1.0\text{ V}$ to $1.25\text{ V}$. Iterative DC operating point evaluations across this window pinpoint $V_{CM} = 1.0\text{ V}$ as the optimal common-mode bias. **Table 5** confirms close agreement between Open-LUT predictions and Ngspice operating point results at $V_{CM} = 1.0\text{ V}$.
 
 ### Table 5: Open-LUT vs. Simulated Operating Point ($V_{CM} = 1.0\\text{ V}$)
 
