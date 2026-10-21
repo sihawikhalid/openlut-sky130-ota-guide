@@ -95,7 +95,7 @@ As established in Section 3, $M_3$ and $M_4$ are sized such that $g_{ds3,4} < 2\
 To prevent simulation inaccuracies caused by the non-physical $g_m/I_D$ hump exhibited by standard SKY130 PMOS devices (`pfet_01v8`, **Figure 4**), the low-threshold PMOS device `sky130_pfet_01v8_lvt` is selected. In Open-LUT, select `sky130_pfet_01v8_lvt` with the allocated $V_{ds} = 0.75\text{ V}$, then click **Update** to extract the corresponding lookup tables.
 
 <p align="center">
-  <img src="img/pmos_humps.jpg" alt="Figure 4: Non-physical gm/ID Hump in Standard SKY130 PMOS (pfet_01v8)" width="500">
+  <img src="img/pmos_humps.jpg" alt="Figure 4: Non-physical gm/ID Hump in Standard SKY130 PMOS (pfet_01v8)" width="450">
   <br>
 </p>
 <p align="center">
@@ -105,17 +105,22 @@ To prevent simulation inaccuracies caused by the non-physical $g_m/I_D$ hump exh
 From the $V_{GS}$ vs. $g_m/I_D$ plot (**Figure 5**), achieving the target biasing $V_{GS3,4} = V_{DS3,4} = 0.75\text{ V}$ restricts $g_m/I_D$ to the range of $4\text{--}5.5\text{ S/A}$.
 
 <p align="center">
-  <img src="img/gmID_range.jpg" alt="Figure 5: gm/ID vs VGS Characteristic for LVT PMOS (pfet_01v8_lvt)" width="500">
+  <img src="img/gmID_range.jpg" alt="Figure 5: gm/ID vs VGS Characteristic for LVT PMOS (pfet_01v8_lvt)" width="450">
   <br>
 </p>
 <p align="center">
- Figure 5. $g_m/I_D$ vs $V_{GS}$ characteristic for LVT PMOS (`pfet_01v8_lvt`)..
+ Figure 5. $g_m/I_D$ vs $V_{GS}$ characteristic for LVT PMOS (`pfet_01v8_lvt`).
 </p>
 
 Entering a branch current $I_D = 0.01\text{ mA}\ (10\,\mu\text{A})$ and an initial $g_m/I_D = 4\text{ S/A}$ dynamically updates the achievable range bounds for $g_{ds}$ (shown in blue text in **Figure 6**). This confirms that the required $g_{ds} < 2\,\mu\text{S}$ is indeed attainable within this $g_m/I_D$ operating range.
 
-![Figure 6: Open-LUT Range Bounds for M3/M4 at ID = 10 µA and gm/ID = 4 S/A](img/gds_range.bmp)
-*Figure 6. Open-LUT range bounds for $M_3/M_4$ at $I_D = 10\,\mu\text{A}$ and $g_m/I_D = 4\text{ S/A}$.*
+<p align="center">
+  <img src="img/gds_range.bmp" alt="Figure 6: Open-LUT Range Bounds for M3/M4 at ID = 10 µA and gm/ID = 4 S/A">
+  <br>
+</p>
+<p align="center">
+ Figure 6. Open-LUT range bounds for $M_3/M_4$ at $I_D = 10\,\mu\text{A}$ and $g_m/I_D = 4\text{ S/A}$.
+</p>
 
 An initial entry of $I_D = 0.01\text{ mA}$, $g_m/I_D = 4\text{ S/A}$, and $g_{ds} = 0.0015\text{ mS}\ (1.5\,\mu\text{S})$ into Open-LUT converges the device aspect ratio $W/L$ to $1.1505\,\mu\text{m} / 0.8020\,\mu\text{m}$ and yields $V_{GS} = 0.8805\text{ V}$. However, because $V_{GS} = 0.8805\text{ V}$ deviates from the allocated $V_{DS3,4} = 0.75\text{ V}$, this preliminary sizing is not achievable for the target $V_{DS3,4}$ bias allocation.
 
@@ -133,8 +138,13 @@ Clearing the form once more and entering $I_D = 0.01\text{ mA}$, $g_m/I_D = 5.03
 
 The tail transistor $M_5$ must carry $I_{SS} = 20\\,\\mu\\text{A}$ with $V_{DS5} = 0.3\\text{ V}$ while staying in saturation ($V_{ov5} \\le 0.2\\text{ V}$). Operating in moderate inversion ($g_m/I_D \\approx 13\\text{--}16\\text{ S/A}$) with $L_5 \\ge 1\\,\\mu\\text{m}$ ensures low overdrive voltage and minimizes channel length modulation.
 
-![Figure 7: gm/ID vs Vov Characteristic for sky130_nfet_01v8](img/gmid_vov.jpg)
-*Figure 7. $g_m/I_D$ vs $V_{ov}$ characteristic for `sky130_nfet_01v8`.*
+<p align="center">
+  <img src="img/gmid_vov.jpg" alt="Figure 7: gm/ID vs Vov Characteristic for sky130_nfet_01v8" width="500">
+  <br>
+</p>
+<p align="center">
+ Figure 7. $g_m/I_D$ vs $V_{ov}$ characteristic for `sky130_nfet_01v8`.
+</p>
 
 Clear the form using **`Clear Form / Reset Plots`**, select `sky130_nfet_01v8` at $V_{ds} = 0.3\\text{ V}$, and click **Update**. Enter $I_D = 0.02\\text{ mA}$ and $L = 1\\,\\mu\\text{m}$. Iterate the inputting of $g_m/I_D$ values within the $13.5\\text{--}16\\text{ S/A}$ range until a suitable overdrive voltage $V_{ov5} \\approx 100\\text{ mV}$ is attained. At $g_m/I_D = 13.7\\text{ S/A}$, Open-LUT extracts $V_{ov5} = 0.1006\\text{ V}$ and the finalized dimensions in **Table 4**.
 
@@ -152,16 +162,38 @@ Bias mirror $M_6$ carries $I_{bias} = 10\\,\\mu\\text{A}$ (half of $I_{SS}$) and
 
 The design was verified using Xschem and Ngspice within the IIC-OSIC-TOOLS Docker environment. The simulation setup is shown in **Figure 8**, and schematic files are available in the `./cir/` subfolder.
 
-![Figure 8: Xschem Simulation Setup for 5T OTA Verification](img/schematic.jpg)
-*Figure 8. Xschem simulation setup for 5T OTA verification.*
+<p align="center">
+  <img src="img/schematic.jpg" alt="Figure 8: Xschem Simulation Setup for 5T OTA Verification">
+  <br>
+</p>
+<p align="center">
+ Figure 8. Xschem simulation setup for 5T OTA verification.
+</p>
 
 A DC common-mode sweep ($V_{CM}$ from $0$ to $1.8\\text{ V}$) identifies the valid operating range (**Figures 9 & 10**). Selecting $V_{CM} = 1.0\\text{ V}$ establishes an optimal operating point.
 
-![Figure 9: Transconductance gm1,2 vs Input Common-Mode Voltage VCM](img/gm_vs_vcm.jpg)
-*Figure 9. Transconductance $g_{m1,2}$ vs Input Common-Mode Voltage $V_{CM}$.*
-
-![Figure 10: Tail Current ISS vs Input Common-Mode Voltage VCM](img/iss_vs_vcm.jpg)
-*Figure 10. Tail current $I_{SS}$ vs Input Common-Mode Voltage $V_{CM}$.*
+<table style="border-collapse: collapse; border: none; width: 100%;">
+  <tr style="text-align: center;">
+    <td style="padding: 0; width: 50%; text-align: center; vertical-align: middle;">
+      <p align="center">
+        <img src="img/gm_vs_vcm.jpg" alt="Figure 9: Transconductance gm1,2 vs Input Common-Mode Voltage VCM" width="300">
+        <br>
+      </p>
+      <p align="center">
+       Figure 9. Transconductance $g_{m1,2}$ vs Input Common-Mode Voltage $V_{CM}$.
+      </p>
+    </td>
+    <td style="padding: 0; width: 50%; text-align: center; vertical-align: middle;">
+      <p align="center">
+        <img src="img/iss_vs_vcm.jpg" alt="Figure 10: Tail Current ISS vs Input Common-Mode Voltage VCM" width="300">
+        <br>
+      </p>
+      <p align="center">
+       Figure 10. Tail current $I_{SS}$ vs Input Common-Mode Voltage $V_{CM}$.
+      </p>
+    </td>
+  </tr>
+</table>
 
 **Table 5** compares the Open-LUT computed values against Ngspice DC operating point simulation results at $V_{CM} = 1.0\\text{ V}$.
 
