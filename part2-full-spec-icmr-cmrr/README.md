@@ -70,7 +70,7 @@ To provide design margin, target $g_{m1,2} = 0.17\text{ mS}$ and $g_{ds1,2} = 1.
 
 In Open-LUT, select `sky130_nfet_01v8_lvt` at $V_{ds} = 1.0\text{ V}$ and click **Update** once. Entering $g_m = 0.17\text{ mS}$, $I_D = 0.01\text{ mA}$, and $g_{ds} = 0.0015\text{ mS}$ yields initial continuous channel dimensions ($L = 2.0755\,\mu\text{m}$, $W = 22.5428\,\mu\text{m}$).
 
-Snapping $W$ to the SKY130 layout grid ($0.005\,\mu\text{m}$ grid step) gives $W_{1,2} = 22.5430\,\mu\text{m}$. Finalized dimensions and extracted operating parameters for $M_1/M_2$ are listed in **Table 2**.
+Finalized dimensions and extracted operating parameters for $M_1/M_2$ are listed in **Table 2** (Snapping $W$ to the SKY130 layout grid).
 
 ### Table 2: Sizing and Biasing for $M_1/M_2$
 
