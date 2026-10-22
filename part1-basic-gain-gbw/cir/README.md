@@ -11,21 +11,6 @@ The schematic includes separate SPICE code blocks for:
 
 > **Execution Rule:** Run each code block individually with the others disabled. To enable a code block, open its **Properties** window in Xschem and set the `spice_ignore` attribute value to `false`. To disable it, set `spice_ignore` to `true`.
 
----
-
-## Cloning the Repository
-
-To clone this repository:
-1. Ensure the Docker container is running and open a terminal in the working directory (`/foss/designs`) via the IIC-OSIC-TOOLS VNC desktop interface.
-2. Execute the following command:
-
-```bash
-# 1. Clone the repo structure 
-git clone --depth 1 --filter=blob:none --sparse https://github.com/sihawikhalid/openlut-sky130-ota-guide.git
-cd openlut-sky130-ota-guide
-git sparse-checkout set part1-basic-gain-gbw/cir
-
-```
 ## References
 
 - <a id="ref1"></a> **[1]** Institute for Integrated Circuits and Quantum Computing, Johannes Kepler University Linz , "IIC-OSIC-TOOLS," GitHub, 2022. Accessed: Oct. 16, 2026. Available: [https://github.com/iic-jku/IIC-OSIC-TOOLS](https://github.com/iic-jku/IIC-OSIC-TOOLS)
