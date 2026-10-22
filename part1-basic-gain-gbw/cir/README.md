@@ -20,7 +20,10 @@ To clone this repository:
 2. Execute the following command:
 
 ```bash
-git clone https://github.com/sihawikhalid/openlut-sky130-ota-guide/tree/main/part1-basic-gain-gbw/cir.git
+# 1. Clone the repo structure 
+git clone --depth 1 --filter=blob:none --sparse https://github.com/sihawikhalid/openlut-sky130-ota-guide.git
+cd openlut-sky130-ota-guide
+git sparse-checkout set part1-basic-gain-gbw/cir
 
 ```
 ## References
