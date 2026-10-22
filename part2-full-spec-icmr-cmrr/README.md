@@ -141,7 +141,7 @@ Bias mirror $M_6$ carries $I_{bias} = 10\,\mu\text{A}$ (half of $I_{SS}$) and is
 
 ## 6. Verification in Xschem & Ngspice
 
-The design was verified using Xschem and Ngspice within the IIC-OSIC-TOOLS <sup>[[4]](#ref4)</sup> Docker environment (**Figure 3**; schematic files located in `./cir/` subfolder).
+The design was verified using Xschem and Ngspice within the IIC-OSIC-TOOLS <sup>[[4]](#ref4)</sup> Docker environment (**Figure 3**; schematic files located in `./cir/` [subfolder](https://github.com/sihawikhalid/openlut-sky130-ota-guide/tree/main/part2-full-spec-icmr-cmrr/cir)).
 
 <p align="center">
   <img src="img/schematic.jpg" alt="Figure 3: Xschem Simulation Setup for Part 2 Verification">
@@ -256,7 +256,7 @@ To verify $ICMR$, the OTA is configured as a unity-gain follower with $V_{in,-}$
 
 ## 7. Conclusion
 
-Building upon the single-pass framework established in Part 1, the elimination of time-consuming simulation-in-the-loop workflows still applies when incorporating $ICMR$ and $CMRR$ constraints. By translating system-level common-mode specifications directly into $V_{DS}$ headroom budgets and output conductance limits, deterministic, single-pass device sizing is fully maintained without relying on trial-and-error simulation loops. Complete schematic files for simulation and
+Building upon the single-pass framework established in Part 1, the elimination of time-consuming simulation-in-the-loop workflows still applies when incorporating $ICMR$ and $CMRR$ constraints. By translating system-level common-mode specifications directly into $V_{DS}$ headroom budgets and output conductance limits, deterministic, single-pass device sizing is fully maintained without relying on trial-and-error simulation loops. Complete schematic files for simulation and verification in Xschem and Ngspice are available in the `./cir/` [subfolder](https://github.com/sihawikhalid/openlut-sky130-ota-guide/tree/main/part2-full-spec-icmr-cmrr/cir).
 
 ## References
 
