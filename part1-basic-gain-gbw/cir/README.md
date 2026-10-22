@@ -1,6 +1,6 @@
 # Circuit Simulation Files (Part 1)
 
-The Xschem schematic file for the 5T OTA in Part 1 is designed using the SkyWater 130nm PDK. This guide is executed within the **IIC-OSIC-TOOLS** <sup>[[1]](#ref1)</sup> all-in-one Docker environment, with the SKY130 device libraries configured to point to their corresponding paths within the environment.
+The Xschem schematic file for the 5T OTA in Part 1 is designed using the SkyWater 130nm PDK. This file is executed within the **IIC-OSIC-TOOLS** <sup>[[1]](#ref1)</sup> all-in-one Docker environment, with the SKY130 device libraries configured to point to their corresponding paths within the environment.
 
 ## Simulation Code Blocks
 
