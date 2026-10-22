@@ -156,7 +156,7 @@ Bias mirror $M_6$ carries $I_{bias} = 10\\,\\mu\\text{A}$ (half of $I_{SS}$) and
 
 ## 6. Verification in Xschem & Ngspice
 
-The design was verified using Xschem and Ngspice within the IIC-OSIC-TOOLS <sup>[[4]](#ref4)</sup> Docker environment. The simulation setup is shown in **Figure 8**, and schematic files are available in the `./cir/` subfolder.
+The design was verified using Xschem and Ngspice within the IIC-OSIC-TOOLS <sup>[[4]](#ref4)</sup> Docker environment. The simulation setup is shown in **Figure 8**, and schematic files are available in the `./cir/` [subfolder](https://github.com/sihawikhalid/openlut-sky130-ota-guide/tree/main/part1-basic-gain-gbw/cir).
 
 <p align="center">
   <img src="img/schematic.jpg" alt="Figure 8: Xschem Simulation Setup for 5T OTA Verification">
@@ -236,7 +236,7 @@ An AC analysis (`.ac`) verifies open-loop gain and bandwidth (**Figure 11**). **
 
 ## 7. Conclusion
 
-This guide demonstrates a deterministic, single-pass transistor sizing methodology for a 5T OTA using Open-LUT. Rather than relying on traditional simulation-in-the-loop workflows—which often depend on designer intuition, experience, or time-consuming, trial-and-error simulation iterations—all device sizing and biasing in this approach are derived entirely using $g_m/I_D$ lookup tables and automated via the Open-LUT web application. By directly mapping target specifications to physical transistor dimensions in one pass, design time is drastically reduced while ensuring immediate convergence. Complete schematic files for simulation and verification in Xschem and Ngspice are provided in the `./cir/` subfolder.
+This guide demonstrates a deterministic, single-pass transistor sizing methodology for a 5T OTA using Open-LUT. Rather than relying on traditional simulation-in-the-loop workflows—which often depend on designer intuition, experience, or time-consuming, trial-and-error simulation iterations—all device sizing and biasing in this approach are derived entirely using $g_m/I_D$ lookup tables and automated via the Open-LUT web application. By directly mapping target specifications to physical transistor dimensions in one pass, design time is drastically reduced while ensuring immediate convergence. Complete schematic files for simulation and verification in Xschem and Ngspice are provided in the `./cir/` [subfolder](https://github.com/sihawikhalid/openlut-sky130-ota-guide/tree/main/part1-basic-gain-gbw/cir).
 
 ## References
 
