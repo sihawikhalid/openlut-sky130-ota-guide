@@ -81,3 +81,7 @@ S. A. Khalid, S. E. Maestre and K. M. Madrid-Khalid, "Open-LUT: Interactive gm/I
 - <a id="ref4"></a> **[5]** Paul Jespers. The gm/ID Methodology, a sizing tool for low-voltage analog CMOS Circuits: The semi-empirical and compact model approaches. Springer Science & Business Media, 2009.
 - <a id="ref5"></a> **[4]** IEEE Solid-State Circuits Society (SSCS), "CMOS Transistor Sizing: Gm/ID Approach — Boris Murmann | Circuit Insights - ISSCC 2026 (5)," YouTube, Mar. 10, 2026 [Online Video]. Available: https://youtube.com. [Accessed: Oct. 12, 2026].
 - <a id="ref6"></a> **[6]** Sabry, M. N., Omran, H., & Dessouky, M. (2018). Systematic design and optimization of operational transconductance amplifier using gm/ID design methodology. Microelectronics Journal, 75, 87–96. https://doi.org/10.1016/j.mejo.2018.02.002
+
+## Questions?
+
+If you have any questions or feedback, please reach out to [sihawi.khalid@msumain.edu.ph](sihawi.khalid@msumain.edu.ph).
