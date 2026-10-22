@@ -264,3 +264,7 @@ Building upon the single-pass framework established in Part 1, the elimination o
 - <a id="ref2"></a> **[2]** P. Allen, D. Holberg, CMOS Analog Circuit Design, third ed, Oxford University Press, 2012.
 - <a id="ref3"></a> **[3]** B. Razavi, Design of Analog CMOS Integrated Circuits, second ed., McGraw-Hill Education, 2017.
 - <a id="ref4"></a> **[4]** Institute for Integrated Circuits and Quantum Computing, Johannes Kepler University Linz , "IIC-OSIC-TOOLS," GitHub, 2022. Accessed: Oct. 16, 2026. Available: [https://github.com/iic-jku/IIC-OSIC-TOOLS](https://github.com/iic-jku/IIC-OSIC-TOOLS)
+
+## Questions?
+
+If you have any questions or feedback, please reach out to sihawi.khalid@msumain.edu.ph.
