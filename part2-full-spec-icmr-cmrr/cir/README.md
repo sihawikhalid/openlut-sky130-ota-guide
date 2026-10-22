@@ -1,6 +1,6 @@
 # Circuit Simulation Files (Part 2)
 
-The Xschem schematic files for the 5T OTA in Part 2 are designed using the SkyWater 130nm PDK. This guide is executed within the **IIC-OSIC-TOOLS** all-in-one Docker environment, with the SKY130 device libraries configured to point to their corresponding locations within the environment.
+The Xschem schematic files for the 5T OTA in Part 2 are designed using the SkyWater 130nm PDK. This guide is executed within the **IIC-OSIC-TOOLS** <sup>[[1]](#ref1)</sup> all-in-one Docker environment, with the SKY130 device libraries configured to point to their corresponding locations within the environment.
 
 Two schematics are used in this guide:
 1. **Open-Loop OTA Schematic:** Validates the DC operating point, AC frequency response, and CMRR.
@@ -16,8 +16,11 @@ The first schematic includes separate SPICE code blocks for:
 
 > **Execution Rule:** Run each code block individually with the others disabled. To enable a code block, open its **Properties** window in Xschem and set the `spice_ignore` attribute value to `false`. Otherwise, set it to `true`.
 
----
 
 ## 2. Unity-Gain Follower Schematic
 
 The second schematic contains a single code block that performs a DC sweep on $V_{CM}$ (`.dc`) to measure output tracking error and determine the operational input common-mode range.
+
+## References
+
+- <a id="ref1"></a> **[1]** Institute for Integrated Circuits and Quantum Computing, Johannes Kepler University Linz , "IIC-OSIC-TOOLS," GitHub, 2022. Accessed: Oct. 16, 2026. Available: [https://github.com/iic-jku/IIC-OSIC-TOOLS](https://github.com/iic-jku/IIC-OSIC-TOOLS)
