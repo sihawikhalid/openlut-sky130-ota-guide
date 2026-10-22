@@ -84,4 +84,4 @@ S. A. Khalid, S. E. Maestre and K. M. Madrid-Khalid, "Open-LUT: Interactive gm/I
 
 ## Questions?
 
-If you have any questions or feedback, please reach out to [sihawi.khalid@msumain.edu.ph](sihawi.khalid@msumain.edu.ph).
+If you have any questions or feedback, please reach out to sihawi.khalid@msumain.edu.ph.
