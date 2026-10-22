@@ -244,3 +244,7 @@ This guide demonstrates a deterministic, single-pass transistor sizing methodolo
 - <a id="ref2"></a> **[2]** B. Razavi, Design of Analog CMOS Integrated Circuits, second ed., McGraw-Hill Education, 2017.
 - <a id="ref3"></a> **[3]** skywater-pdk, "MOSFET models show nonphysical gm/ID behavior," Github, 2022. (Accessed: Oct. 16, 2026). Available: [https://github.com/google/skywater-pdk/issues/381](https://github.com/google/skywater-pdk/issues/381)  
 - <a id="ref4"></a> **[4]** Institute for Integrated Circuits and Quantum Computing, Johannes Kepler University Linz , "IIC-OSIC-TOOLS," GitHub, 2022. Accessed: Oct. 16, 2026. Available: [https://github.com/iic-jku/IIC-OSIC-TOOLS](https://github.com/iic-jku/IIC-OSIC-TOOLS)
+
+## Questions?
+
+If you have any questions or feedback, please reach out to sihawi.khalid@msumain.edu.ph.
