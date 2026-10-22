@@ -191,7 +191,7 @@ A critical first step in validation is ensuring that all transistors operate at 
   </tr>
 </table>
 
-The sweep plots reveal that maintaining $g_{m1,2} \ge 0.17\text{ mS}$ requires $V_{CM} \ge 1.0\text{ V}$, whereas holding $I_{D5} \le 20\,\mu\text{A}$ requires $V_{CM} \le 1.25\text{ V}$—defining a valid bias range of $1.0\text{ V}$ to $1.25\text{ V}$. Iterative DC operating point evaluations across this window pinpoint $V_{CM} = 1.0\text{ V}$ as the optimal common-mode bias. **Table 5** confirms close agreement between Open-LUT predictions and Ngspice operating point results at $V_{CM} = 1.0\text{ V}$.
+The sweep plots reveal that maintaining $g_{m1,2} \ge 0.17\text{ mS}$ requires $V_{CM} \ge 1.0\text{ V}$, whereas holding $I_{D5} \le 20\,\mu\text{A}$ requires $V_{CM} \le 1.25\text{ V}$—defining a valid bias range of $1.0\text{ V}$ to $1.25\text{ V}$. Iterative DC operating point evaluations across this window pinpoint $V_{CM} = 1.0\text{ V}$ as the optimal common-mode bias. **Table 5** confirms close agreement between Open-LUT results and Ngspice operating point results at $V_{CM} = 1.0\text{ V}$.
 
 ### Table 5: Open-LUT vs. Simulated Operating Point ($V_{CM} = 1.0\\text{ V}$)
 
