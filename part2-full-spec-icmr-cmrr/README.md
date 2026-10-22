@@ -176,7 +176,7 @@ To select the valid common-mode bias window, a DC common-mode sweep (`.dc VCM 0 
   </tr>
 </table>
 
-The plots show that $V_{CM} > 0.675\text{ V}$ satisfies $g_{m1,2} \ge 0.17\text{ mS}$, while $V_{CM} < 0.90\text{ V}$ maintains $I_{SS} \le 20\,\mu\text{A}$. Evaluating DC operating points across $0.675\text{--}0.90\text{ V}$ identifies $V_{CM} = 0.85\text{ V}$ as the optimal bias point. **Table 5** compares Open-LUT predictions against Ngspice simulation results at $V_{CM} = 0.85\text{ V}$.
+The plots show that $V_{CM} > 0.675\text{ V}$ satisfies $g_{m1,2} \ge 0.17\text{ mS}$, while $V_{CM} < 0.90\text{ V}$ maintains $I_{SS} \le 20\,\mu\text{A}$. Evaluating DC operating points across $0.675\text{--}0.90\text{ V}$ identifies $V_{CM} = 0.85\text{ V}$ as the optimal bias point. **Table 5** compares Open-LUT results against Ngspice simulation results at $V_{CM} = 0.85\text{ V}$.
 
 ### Table 5: Open-LUT vs. Simulated Operating Point ($V_{CM} = 0.85\text{ V}$)
 
