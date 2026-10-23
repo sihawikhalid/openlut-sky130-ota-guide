@@ -3,8 +3,8 @@
 The Xschem schematic files for the 5T OTA in Part 2 are designed using the SkyWater 130nm PDK. This guide is executed within the **IIC-OSIC-TOOLS** <sup>[[1]](#ref1)</sup> all-in-one Docker environment, with the SKY130 device libraries configured to point to their corresponding locations within the environment.
 
 Two schematics are used in this guide:
-1. **Open-Loop OTA Schematic:** Validates the DC operating point, AC frequency response, and CMRR.
-2. **Unity-Gain Follower Schematic:** Validates the Input Common-Mode Range (ICMR).
+1. **Open-Loop OTA Schematic (`part2_OTA_advacned.sch`) :** Validates the DC operating point, AC frequency response, and CMRR.
+2. **Unity-Gain Follower Schematic (`part2_OTA_advacned_ICMR.sch`) :** Validates the Input Common-Mode Range (ICMR).
 
 ## 1. Main OTA Schematic
 
