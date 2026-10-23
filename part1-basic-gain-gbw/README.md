@@ -90,7 +90,7 @@ To snap the channel length to the SKY130 layout grid ($0.005\\,\\mu\\text{m}$ gr
 
 As established in Section 3, $M_3$ and $M_4$ are sized such that $g_{ds3,4} < 2\,\mu\text{S}$. Furthermore, since $M_3$ is diode-connected, its gate-to-source voltage $V_{GS3}$ is constrained to follow $V_{DS3}$.
 
-To prevent simulation inaccuracies caused by the non-physical $g_m/I_D$ hump <sup>[[3]](#ref3)</sup> exhibited by standard SKY130 PMOS devices (`pfet_01v8`, **Figure 4**), the low-threshold PMOS device `sky130_pfet_01v8_lvt` is selected. In Open-LUT, select `sky130_pfet_01v8_lvt` with the allocated $V_{ds} = 0.75\text{ V}$, then click **Update** to extract the corresponding lookup tables.
+To prevent simulation inaccuracies caused by the non-physical $g_m/I_D$ humps <sup>[[3]](#ref3)</sup> exhibited by standard SKY130 PMOS devices (`pfet_01v8`, **Figure 4**), the low-threshold PMOS device `sky130_pfet_01v8_lvt` is selected. In Open-LUT, select `sky130_pfet_01v8_lvt` with the allocated $V_{ds} = 0.75\text{ V}$, then click **Update** to extract the corresponding lookup tables.
 
 <p align="center">
   <img src="img/pmos_humps.jpg" alt="Figure 4: Non-physical gm/ID Hump in Standard SKY130 PMOS (pfet_01v8)" width="450">
