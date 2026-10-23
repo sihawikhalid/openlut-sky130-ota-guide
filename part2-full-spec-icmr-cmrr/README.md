@@ -45,9 +45,7 @@ $$\vert{}V_{GS3,4}\vert{} < 1.8 - 1.6 + 0.5 + 0.05 = 0.75\text{ V}$$
   * Diode-connected loads $M_3/M_4$ require $V_{DS3,4} = \vert{}V_{GS3,4}\vert{}$. Selecting $V_{GS3,4} = 0.5\text{ V}$ ($< 0.75\text{ V}$) allocates $V_{DS3,4} = 0.5\text{ V}$.
   * The remaining headroom $V_{DD} - V_{DS5} - V_{DS3,4} = 1.8 - 0.3 - 0.5 = 1.0\text{ V}$ is assigned to $V_{DS1,2}$.
 
-Figure 1 illustrates the initial target $V_{DS}$ bias allocation across the device stack. These assigned $V_{DS}$ values ($V_{DS1,2} = 1.0\text{ V}$, $V_{DS3,4} = 0.5\text{ V}$, and $V_{DS5} = 0.3\text{ V}$) serve directly as the $V_{DS}$ bias settings selected in Open-LUT when extracting lookup tables for sizing each respective transistor.
-
-**Figure 1** illustrates the initial target $V_{DS}$ bias allocation across the device stack.
+**Figure 1** illustrates the initial target $V_{DS}$ bias allocation across the device stack. These assigned $V_{DS}$ values ($V_{DS1,2} = 1.0\text{ V}$, $V_{DS3,4} = 0.5\text{ V}$, and $V_{DS5} = 0.3\text{ V}$) serve directly as the $V_{DS}$ bias settings selected in Open-LUT when extracting lookup tables for sizing each respective transistor.
 
 <p align="center">
   <img src="img/5t_basic_OTA_bias.jpg" alt="Figure 1: Initial VDS Bias Allocation under ICMR Constraints" width="500">
