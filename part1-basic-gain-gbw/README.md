@@ -134,7 +134,7 @@ Clearing the form once more and entering $I_D = 0.01\text{ mA}$, $g_m/I_D = 5.03
 
 ## 5. Sizing Tail Current Source ($M_5$) & Bias Mirror ($M_6$)
 
-The tail transistor $M_5$ must carry $I_{SS} = 20\,\mu\text{A}$ with $V_{DS5} = 0.3\text{ V}$ while staying in saturation ($V_{ov5} \le 0.2\text{ V}$). Select `sky130_nfet_01v8` at $V_{ds} = 0.3\text{ V}$, and click **Update**. 
+The tail transistor $M_5$ must carry $I_{SS} = 20\,\mu\text{A}$ with $V_{DS5} = 0.3\text{ V}$ while staying in saturation ($V_{ov5} \le 0.1\text{ V}$). Select `sky130_nfet_01v8` at $V_{ds} = 0.3\text{ V}$, and click **Update**. 
 
 Based on **Figure 7**, a $g_m/I_D$ range of $13.5\text{-}16\text{ S/A}$ in moderate inversion achieves the target overdrive voltage $V_{ov5} = 0.1\text{ V}$ for channel lengths $L \ge 0.5\,\mu\text{m}$. Channel lengths of $L \ge 0.5\,\mu\text{m}$ are desired to minimize channel length modulation. A channel length of $L = 1\,\mu\text{m}$ is used.
 
