@@ -17,8 +17,8 @@ This second part extends the 5T OTA design methodology introduced in Part 1 by i
 | :--- | :---: | :---: |
 | **PDK Technology** | - | SkyWater 130nm (SKY130) |
 | **Supply Voltage** | $V_{DD}$ | $1.8\text{ V}$ |
-| **Reference Current** | $I_{bias}$ | $10\,\mu\text{A}$ |
-| **Tail Current** | $I_{SS}$ | $20\,\mu\text{A}$ |
+| **Reference Current** | $I_{bias}$ | $10\ \mu\text{A}$ |
+| **Tail Current** | $I_{SS}$ | $20\ \mu\text{A}$ |
 | **Capacitive Load** | $C_L$ | $5\text{ pF}$ |
 | **Open-Loop DC Gain** | $A_{V,DC}$ | $\ge 32\text{ dB}\ (39.81\text{ V/V})$ |
 | **Gain-Bandwidth Product** | $GBW$ | $\ge 5\text{ MHz}$ |
@@ -68,7 +68,7 @@ To provide design margin, target $g_{m1,2} = 0.17\text{ mS}$ and $g_{ds1,2} = 1.
 > [!IMPORTANT]
 > **CRITICAL OPEN-LUT WORKFLOW RULE:** Select your device and $V_{DS}$ bias, then click **`Update`** once to load the lookup tables for that setup. **Always click the `Clear Form / Reset Plots` button *before* entering every *new set* of values!** Open-LUT preserves previous input fields and solution curves until explicitly reset. Entering new numbers into an uncleared form can lead to parameter conflicts or invalid extractions.
 
-In Open-LUT, select `sky130_nfet_01v8_lvt` at $V_{ds} = 1.0\text{ V}$ and click **Update** once. Entering $g_m = 0.17\text{ mS}$, $I_D = 0.01\text{ mA}$, and $g_{ds} = 0.0015\text{ mS}$ yields initial continuous channel dimensions ($L = 2.0755\,\mu\text{m}$, $W = 22.5428\,\mu\text{m}$).
+In Open-LUT, select `sky130_nfet_01v8_lvt` at $V_{ds} = 1.0\text{ V}$ and click **Update** once. Entering $g_m = 0.17\text{ mS}$, $I_D = 0.01\text{ mA}$, and $g_{ds} = 0.0015\text{ mS}$ yields initial continuous channel dimensions ($L = 2.0755\ \mu\text{m}$, $W = 22.5428\ \mu\text{m}$).
 
 Finalized dimensions and extracted operating parameters for $M_1/M_2$ are listed in **Table 2** (snapping $W$ to the SKY130 layout grid).
 
@@ -76,7 +76,7 @@ Finalized dimensions and extracted operating parameters for $M_1/M_2$ are listed
 
 | Parameter | $(g_m/I_D)_{1,2}$ | $L_{1,2}$ | $W_{1,2}$ | $g_{m1,2}$ | $g_{ds1,2}$ | $V_{ov1,2}$ | $V_{GS1,2}$ |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Value** | $17\text{ S/A}$ | $2.0755\,\mu\text{m}$ | $22.5430\,\mu\text{m}$ | $0.17\text{ mS}$ | $1.5\,\mu\text{S}$ | $0.0548\text{ V}$ | $0.5174\text{ V}$ |
+| **Value** | $17\text{ S/A}$ | $2.0755\ \mu\text{m}$ | $22.5430\ \mu\text{m}$ | $0.17\text{ mS}$ | $1.5\,\mu\text{S}$ | $0.0548\text{ V}$ | $0.5174\text{ V}$ |
 
 ## 4. Sizing Current Mirror Loads ($M_3/M_4$)
 
@@ -84,9 +84,9 @@ With $V_{GS1,2} = 0.5174\text{ V}$ from Table 2 and $V_{ov1,2} = 0.0548\text{ V}
 
 $$\vert{}V_{GS3,4}\vert{} < V_{DD} - V_{iCM,\max} + V_{GS1,2} + V_{ov1,2} = 1.8 - 1.6 + 0.5174 + 0.0548 = 0.7722\text{ V}$$
 
-The allocated $V_{DS3,4} = V_{GS3,4} = 0.5\text{ V}$ remains fully valid. Devices $M_3/M_4$ also require $g_{ds3,4} \le 2.0\,\mu\text{S}$ (target $1.5\,\mu\text{S}$) to satisfy total open-loop gain requirements.
+The allocated $V_{DS3,4} = V_{GS3,4} = 0.5\text{ V}$ remains fully valid. Devices $M_3/M_4$ also require $g_{ds3,4} \le 2.0\ \mu\text{S}$ (target $1.5\,\mu\text{S}$) to satisfy total open-loop gain requirements.
 
-In Open-LUT, select `sky130_pfet_01v8_lvt` with $V_{ds} = 0.5\text{ V}$ and click **Update**. Inspecting the $V_{GS}$ vs $g_m/I_D$ curve (**Figure 2**) indicates that achieving $V_{GS3,4} \approx 0.5\text{ V}$ restricts $g_m/I_D$ to the range of $6.5\text{--}11\text{ S/A}$.
+In Open-LUT, select `sky130_pfet_01v8_lvt` with $V_{ds} = 0.5\text{ V}$ and click **Update**. Inspecting the $V_{GS}$ vs $g_m/I_D$ curve (**Figure 2**) indicates that achieving $V_{GS3,4} \approx 0.5\text{ V}$ restricts $g_m/I_D$ to the range of $6.5\text{-}11\text{ S/A}$.
 
 <p align="center">
   <img src="img/gmid_vgs.jpg" alt="Figure 2: gm/ID vs VGS for sky130_pfet_01v8_lvt at Vds = 0.5 V" width="500">
@@ -97,9 +97,9 @@ In Open-LUT, select `sky130_pfet_01v8_lvt` with $V_{ds} = 0.5\text{ V}$ and clic
 </p>
 
 Click **`Clear Form / Reset Plots`**. For each trial iteration in Open-LUT, enter values in this exact sequence:
-1. Enter $I_D = 0.01\text{ mA}\ (10\,\mu\text{A})$ first.
-2. Enter a trial $g_m/I_D$ value selected from the $6.5\text{--}11\text{ S/A}$ range.
-3. Enter target $g_{ds3,4} = 0.0015\text{ mS}\ (1.5\,\mu\text{S})$.
+1. Enter $I_D = 0.01\text{ mA}\ (10\ \mu\text{A})$ first.
+2. Enter a trial $g_m/I_D$ value selected from the $6.5\text{-}11\text{ S/A}$ range.
+3. Enter target $g_{ds3,4} = 0.0015\text{ mS}\ (1.5\ \mu\text{S})$.
 
 Repeat this input sequence across trial runs until $V_{GS3,4} = 0.5000\text{ V}$ is achieved. At $g_m/I_D = 10.5\text{ S/A}$, a gate bias of $V_{GS3,4} = 0.5077\text{ V} \approx 0.5\text{ V}$ is matched.
 
@@ -109,7 +109,7 @@ Snapping $W$ to the layout grid yields the finalized sizing and operating point 
 
 | Parameter | $(g_m/I_D)_{3,4}$ | $L_{3,4}$ | $W_{3,4}$ | $g_{m3,4}$ | $g_{ds3,4}$ | $V_{ov3,4}$ | $V_{GS3,4}$ |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Value** | $10.5\text{ S/A}$ | $1.2130\,\mu\text{m}$ | $23.8550\,\mu\text{m}$ | $0.1050\text{ mS}$ | $1.5\,\mu\text{S}$ | $0.1519\text{ V}$ | $0.5077\text{ V}$ |
+| **Value** | $10.5\text{ S/A}$ | $1.2130\ \mu\text{m}$ | $23.8550\ \mu\text{m}$ | $0.1050\text{ mS}$ | $1.5\,\mu\text{S}$ | $0.1519\text{ V}$ | $0.5077\text{ V}$ |
 
 ## 5. Sizing Tail Source ($M_5$) & Mirror ($M_6$) under CMRR Constraint
 
@@ -125,9 +125,9 @@ $$A_{V,CM} \le \frac{39.81}{3162.28} = 0.0126\text{ V/V}$$
 
 Expressing common-mode gain <sup>[[2]](#ref2)</sup> for a 5T OTA as $A_{V,CM} \approx \frac{g_{m1,2}}{g_{m3,4} \left(1 + \frac{2g_{m1,2}}{g_{ds5}}\right)} \le 0.0126$ and solving for tail output conductance $g_{ds5}$:
 
-$$g_{ds5} \le \frac{2 \cdot g_{m1,2}}{\frac{g_{m1,2}}{0.0126 \cdot g_{m3,4}} - 1} = \frac{2 (0.17\text{ mS})}{\frac{0.17\text{ mS}}{0.0126 (0.105\text{ mS})} - 1} = 2.67\,\mu\text{S}$$
+$$g_{ds5} \le \frac{2 \cdot g_{m1,2}}{\frac{g_{m1,2}}{0.0126 \cdot g_{m3,4}} - 1} = \frac{2 (0.17\text{ mS})}{\frac{0.17\text{ mS}}{0.0126 (0.105\text{ mS})} - 1} = 2.67\ \mu\text{S}$$
 
-In Open-LUT, select `sky130_nfet_01v8` at $V_{ds} = 0.3\text{ V}$ and click **Update**. Entering tail current $I_D = 0.02\text{ mA}$ ($I_{SS}$) and evaluating $g_{ds}$ range across $g_m/I_D$ shows that a minimum $g_{ds5} = 2.3\,\mu\text{S}$ is attained within the $g_m/I_D$ range of $14\text{-}17\text{ S/A}$. Since $2.3\,\mu\text{S} < 2.67\,\mu\text{S}$, this range satisfies the CMRR specification with margin.
+In Open-LUT, select `sky130_nfet_01v8` at $V_{ds} = 0.3\text{ V}$ and click **Update**. Entering tail current $I_D = 0.02\text{ mA}$ ($I_{SS}$) and evaluating $g_{ds}$ range across $g_m/I_D$ shows that a minimum $g_{ds5} = 2.3\ \mu\text{S}$ is attained within the $g_m/I_D$ range of $14\text{-}17\text{ S/A}$. Since $2.3\ \mu\text{S} < 2.67\ \mu\text{S}$, this range satisfies the CMRR specification with margin.
 
 Iterating within $14\text{--}17\text{ S/A}$ to match target $V_{ov5} \approx 0.1\text{ V}$ yields $g_m/I_D = 16\text{ S/A}$. Grid-snapped dimensions and extracted parameters are summarized in **Table 4**.
 
@@ -135,9 +135,9 @@ Iterating within $14\text{--}17\text{ S/A}$ to match target $V_{ov5} \approx 0.1
 
 | Parameter | $(g_m/I_D)_5$ | $L_5$ | $W_5$ | $g_{m5}$ | $g_{ds5}$ | $V_{ov5}$ | $V_{GS5}$ |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Value** | $16\text{ S/A}$ | $2.7470\,\mu\text{m}$ | $42.0700\,\mu\text{m}$ | $0.3200\text{ mS}$ | $2.3\,\mu\text{S}$ | $0.1034\text{ V}$ | $0.6508\text{ V}$ |
+| **Value** | $16\text{ S/A}$ | $2.7470\ \mu\text{m}$ | $42.0700\ \mu\text{m}$ | $0.3200\text{ mS}$ | $2.3\ \mu\text{S}$ | $0.1034\text{ V}$ | $0.6508\text{ V}$ |
 
-Bias mirror $M_6$ carries $I_{bias} = 10\,\mu\text{A}$ (half of $I_{SS}$) and is scaled proportionally to half the width of $M_5$: $(W/L)_6 = 21.0350 / 2.7470\,\mu\text{m}$.
+Bias mirror $M_6$ carries $I_{bias} = 10\ \mu\text{A}$ (half of $I_{SS}$) and is scaled proportionally to half the width of $M_5$: $(W/L)_6 = 21.0350 / 2.7470\ \mu\text{m}$.
 
 ## 6. Verification in Xschem & Ngspice
 
@@ -176,30 +176,30 @@ To select the valid common-mode bias window, a DC common-mode sweep (`.dc VCM 0 
   </tr>
 </table>
 
-The plots show that $V_{CM} > 0.675\text{ V}$ satisfies $g_{m1,2} \ge 0.17\text{ mS}$, while $V_{CM} < 0.90\text{ V}$ maintains $I_{SS} \le 20\,\mu\text{A}$. Evaluating DC operating points across $0.675\text{--}0.90\text{ V}$ identifies $V_{CM} = 0.85\text{ V}$ as the optimal bias point. **Table 5** compares Open-LUT results against Ngspice simulation results at $V_{CM} = 0.85\text{ V}$.
+The plots show that $V_{CM} > 0.675\text{ V}$ satisfies $g_{m1,2} \ge 0.17\text{ mS}$, while $V_{CM} < 0.90\text{ V}$ maintains $I_{SS} \le 20\ \mu\text{A}$. Evaluating DC operating points across $0.675\text{-}0.90\text{ V}$ identifies $V_{CM} = 0.85\text{ V}$ as the optimal bias point. **Table 5** compares Open-LUT results against Ngspice simulation results at $V_{CM} = 0.85\text{ V}$.
 
 ### Table 5: Open-LUT vs. Simulated Operating Point ($V_{CM} = 0.85\text{ V}$)
 
 | Operating Parameter | Open-LUT Value | Simulated Value (Ngspice) |
 | :--- | :---: | :---: |
 | $g_{m1,2}$ | $0.1700\text{ mS}$ | $0.1776\text{ mS}$ |
-| $g_{ds1,2}$ | $1.5000\,\mu\text{S}$ | $1.3710\,\mu\text{S}$ |
+| $g_{ds1,2}$ | $1.5000\,\mu\text{S}$ | $1.3710\ \mu\text{S}$ |
 | $V_{ov1,2}$ | $0.0548\text{ V}$ | $0.0866\text{ V}$ |
 | $V_{GS1,2}$ | $0.5174\text{ V}$ | $0.5597\text{ V}$ |
 | $V_{DS1,2}$ | $1.0000\text{ V}$ | $0.9208\text{ V}$ |
-| $I_{D1,2}$ | $10.000\,\mu\text{A}$ | $9.9681\,\mu\text{A}$ |
+| $I_{D1,2}$ | $10.000\,\mu\text{A}$ | $9.9681\ \mu\text{A}$ |
 | $g_{m3,4}$ | $0.1050\text{ mS}$ | $0.1161\text{ mS}$ |
-| $g_{ds3,4}$ | $1.5000\,\mu\text{S}$ | $1.4780\,\mu\text{S}$ |
+| $g_{ds3,4}$ | $1.5000\,\mu\text{S}$ | $1.4780\ \mu\text{S}$ |
 | $V_{ov3,4}$ | $0.1519\text{ V}$ | $0.1415\text{ V}$ |
 | $V_{GS3,4}$ | $0.5077\text{ V}$ | $0.5889\text{ V}$ |
 | $V_{DS3,4}$ | $0.5000\text{ V}$ | $0.5889\text{ V}$ |
-| $I_{D3,4}$ | $10.000\,\mu\text{A}$ | $9.9681\,\mu\text{A}$ |
+| $I_{D3,4}$ | $10.000\,\mu\text{A}$ | $9.9681\ \mu\text{A}$ |
 | $g_{m5}$ | $0.3200\text{ mS}$ | $0.3271\text{ mS}$ |
-| $g_{ds5}$ | $2.3000\,\mu\text{S}$ | $2.3550\,\mu\text{S}$ |
+| $g_{ds5}$ | $2.3000\,\mu\text{S}$ | $2.3550\ \mu\text{S}$ |
 | $V_{ov5}$ | $0.1034\text{ V}$ | $0.1048\text{ V}$ |
 | $V_{GS5}$ | $0.6508\text{ V}$ | $0.6377\text{ V}$ |
 | $V_{DS5}$ | $0.3000\text{ V}$ | $0.2903\text{ V}$ |
-| $I_{D5}$ | $20.000\,\mu\text{A}$ | $19.9361\,\mu\text{A}$ |
+| $I_{D5}$ | $20.000\,\mu\text{A}$ | $19.9361\ \mu\text{A}$ |
 
 AC frequency response and CMRR curves are presented in **Figures 6 & 7**.
 
@@ -250,7 +250,7 @@ To verify $ICMR$, the OTA is configured as a unity-gain follower with $V_{in,-}$
 | :--- | :---: | :---: |
 | **Open-Loop DC Gain ($A_{V,DC}$)** | $\ge 32.00\text{ dB}$ | $35.84\text{ dB}$ |
 | **Gain-Bandwidth Product ($GBW$)** | $\ge 5.00\text{ MHz}$ | $5.56\text{ MHz}$ |
-| **Tail Current ($I_{SS}$)** | $\le 20.00\,\mu\text{A}$ | $19.9361\,\mu\text{A}$ |
+| **Tail Current ($I_{SS}$)** | $\le 20.00\ \mu\text{A}$ | $19.9361\ \mu\text{A}$ |
 | **Common-Mode Rejection Ratio ($CMRR$)** | $\ge 70.00\text{ dB}$ | $77.27\text{ dB}$ |
 | **Input Common-Mode Range ($ICMR$)** | $0.70\text{ V to } 1.60\text{ V}$ | $0.597\text{ V to } 1.604\text{ V}$ |
 
