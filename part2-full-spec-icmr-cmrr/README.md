@@ -129,7 +129,7 @@ $$g_{ds5} \le \frac{2 \cdot g_{m1,2}}{\frac{g_{m1,2}}{0.0126 \cdot g_{m3,4}} - 1
 
 In Open-LUT, select `sky130_nfet_01v8` at $V_{ds} = 0.3\text{ V}$ and click **Update**. Entering tail current $I_D = 0.02\text{ mA}$ ($I_{SS}$) and evaluating $g_{ds}$ range across $g_m/I_D$ shows that a minimum $g_{ds5} = 2.3\ \mu\text{S}$ is attained within the $g_m/I_D$ range of $14\text{-}17\text{ S/A}$. Since $2.3\ \mu\text{S} < 2.67\ \mu\text{S}$, this range satisfies the CMRR specification with margin.
 
-Iterating within $14\text{--}17\text{ S/A}$ to match target $V_{ov5} \approx 0.1\text{ V}$ yields $g_m/I_D = 16\text{ S/A}$. Grid-snapped dimensions and extracted parameters are summarized in **Table 4**.
+Iterating within $14\text{-}17\text{ S/A}$ to match target $V_{ov5} \approx 0.1\text{ V}$ yields $g_m/I_D = 16\text{ S/A}$. Grid-snapped dimensions and extracted parameters are summarized in **Table 4**.
 
 ### Table 4: Sizing and Biasing for $M_5$
 
