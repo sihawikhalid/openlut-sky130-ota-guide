@@ -25,8 +25,8 @@ This guide presents a step-by-step procedure for designing a single-ended NMOS d
 | :--- | :---: | :---: |
 | **PDK Technology** | - | SkyWater 130nm (SKY130) |
 | **Supply Voltage** | $V_{DD}$ | $1.8\\text{ V}$ |
-| **Reference Current** | $I_{bias}$ | $10\\,\mu\\text{A}$ |
-| **Tail Current** | $I_{SS}$ | $20\\,\mu\\text{A}$ |
+| **Reference Current** | $I_{bias}$ | $10\\ \mu\\text{A}$ |
+| **Tail Current** | $I_{SS}$ | $20\\ \mu\\text{A}$ |
 | **Capacitive Load** | $C_L$ | $5\\text{ pF}$ |
 | **Open-Loop DC Gain** | $A_{V,DC}$ | $\\ge 32\\text{ dB}\\ (39.81\\text{ V/V})$ |
 | **Gain-Bandwidth Product** | $GBW$ | $\\ge 5\\text{ MHz}$ |
@@ -85,7 +85,7 @@ To snap the channel length to the SKY130 layout grid ($0.005\\,\\mu\\text{m}$ gr
 
 | Parameter | $(g_m/I_D)_{1,2}$ | $L_{1,2}$ | $W_{1,2}$ | $g_{m1,2}$ | $g_{ds1,2}$ | $V_{ov1,2}$ | $V_{GS1,2}$ |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Value** | $17\\text{ S/A}$ | $0.4205\\,\\mu\\text{m}$ | $4.7300\\,\\mu\\text{m}$ | $0.17\\text{ mS}$ | $1.5\\,\\mu\\text{S}$ | $0.0562\\text{ V}$ | $0.6942\\text{ V}$ |
+| **Value** | $17\\text{ S/A}$ | $0.4205\\ \\mu\\text{m}$ | $4.7300\\ \\mu\\text{m}$ | $0.17\\text{ mS}$ | $1.5\\,\\mu\\text{S}$ | $0.0562\\text{ V}$ | $0.6942\\text{ V}$ |
 
 
 ## 4. Sizing the Current Mirror Loads ($M_3/M_4$)
@@ -126,19 +126,19 @@ An initial entry of $I_D = 0.01\text{ mA}$, $g_m/I_D = 4\text{ S/A}$, and $g_{ds
 
 To resolve this bias discrepancy, click **`Clear Form / Reset Plots`** and repeat the process for different values of $g_m/I_D$ across the $4\text{-}5.5\text{ S/A}$ range. A $V_{GS}$ of $0.7499\text{ V}$ (matching the $0.75\text{ V}$ target) is successfully attained at $g_m/I_D = 5.03\text{ S/A}$ with an aspect ratio of $W/L = 1.9276\ \mu\text{m} / 0.7493\ \mu\text{m}$.
 
-Clearing the form once more and entering $I_D = 0.01\text{ mA}$, $g_m/I_D = 5.03\text{ S/A}$, and the layout-grid-snapped channel length $L = 0.7495\,\mu\text{m}$ extracts the finalized dimensions and operating point for $M_3/M_4$ summarized in **Table 3**.
+Clearing the form once more and entering $I_D = 0.01\text{ mA}$, $g_m/I_D = 5.03\text{ S/A}$, and the layout-grid-snapped channel length $L = 0.7495\ \mu\text{m}$ extracts the finalized dimensions and operating point for $M_3/M_4$ summarized in **Table 3**.
 
 ### Table 3: Sizing and Biasing for $M_3/M_4$
 
 | Parameter | $(g_m/I_D)_{3,4}$ | $L_{3,4}$ | $W_{3,4}$ | $g_{m3,4}$ | $g_{ds3,4}$ | $V_{ov3,4}$ | $V_{GS3,4}$ |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Value** | $5.03\\text{ S/A}$ | $0.7495\\,\\mu\\text{m}$ | $1.9280\\,\\mu\\text{m}$ | $0.0503\\text{ mS}$ | $1.5\\,\\mu\\text{S}$ | $0.4172\\text{ V}$ | $0.7500\\text{ V}$ |
+| **Value** | $5.03\\text{ S/A}$ | $0.7495\\ \\mu\\text{m}$ | $1.9280\\ \\mu\\text{m}$ | $0.0503\\text{ mS}$ | $1.5\\,\\mu\\text{S}$ | $0.4172\\text{ V}$ | $0.7500\\text{ V}$ |
 
 ## 5. Sizing Tail Current Source ($M_5$) & Bias Mirror ($M_6$)
 
 The tail transistor $M_5$ must carry $I_{SS} = 20\,\mu\text{A}$ with $V_{DS5} = 0.3\text{ V}$ while staying in saturation ($V_{ov5} \le 0.1\text{ V}$). Select `sky130_nfet_01v8` at $V_{ds} = 0.3\text{ V}$, and click **Update**. 
 
-Based on **Figure 7**, a $g_m/I_D$ range of $13.5\text{-}16\text{ S/A}$ in moderate inversion achieves the target overdrive voltage $V_{ov5} = 0.1\text{ V}$ for channel lengths $L \ge 0.5\,\mu\text{m}$. Channel lengths of $L \ge 0.5\,\mu\text{m}$ are desired to minimize channel length modulation. A channel length of $L = 1\,\mu\text{m}$ is used.
+Based on **Figure 7**, a $g_m/I_D$ range of $13.5\text{-}16\text{ S/A}$ in moderate inversion achieves the target overdrive voltage $V_{ov5} = 0.1\text{ V}$ for channel lengths $L \ge 0.5\ \mu\text{m}$. Channel lengths of $L \ge 0.5\ \mu\text{m}$ are desired to minimize channel length modulation. A channel length of $L = 1\ \mu\text{m}$ is used.
 
 <p align="center">
   <img src="img/gmid_vov.jpg" alt="Figure 7: gm/ID vs Vov Characteristic for sky130_nfet_01v8" width="500">
@@ -148,15 +148,15 @@ Based on **Figure 7**, a $g_m/I_D$ range of $13.5\text{-}16\text{ S/A}$ in moder
  Figure 7. $g_m/I_D$ vs $V_{ov}$ characteristic for `sky130_nfet_01v8`.
 </p>
 
-Enter $I_D = 0.02\text{ mA}$ and $L = 1\,\mu\text{m}$. Iterate inputting $g_m/I_D$ values within the $13.5\text{-}16\text{ S/A}$ range until a suitable overdrive voltage $V_{ov5} \approx 100\text{ mV}$ is attained. At $g_m/I_D = 13.7\text{ S/A}$, Open-LUT extracts $V_{ov5} = 0.1006\text{ V}$ and the finalized dimensions in **Table 4**.
+Enter $I_D = 0.02\text{ mA}$ and $L = 1\ \mu\text{m}$. Iterate inputting $g_m/I_D$ values within the $13.5\text{-}16\text{ S/A}$ range until a suitable overdrive voltage $V_{ov5} \approx 100\text{ mV}$ is attained. At $g_m/I_D = 13.7\text{ S/A}$, Open-LUT extracts $V_{ov5} = 0.1006\text{ V}$ and the finalized dimensions in **Table 4**.
 
 ### Table 4: Sizing and Biasing for $M_5$
 
 | Parameter | $(g_m/I_D)_5$ | $L_5$ | $W_5$ | $g_{m5}$ | $g_{ds5}$ | $V_{ov5}$ | $V_{GS5}$ |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Value** | $13.7\\text{ S/A}$ | $1.0000\\,\\mu\\text{m}$ | $10.5435\\,\\mu\\text{m}$ | $0.2740\\text{ mS}$ | $4.9\\,\\mu\\text{S}$ | $0.1006\\text{ V}$ | $0.7041\\text{ V}$ |
+| **Value** | $13.7\\text{ S/A}$ | $1.0000\\ \\mu\\text{m}$ | $10.5435\\ \\mu\\text{m}$ | $0.2740\\text{ mS}$ | $4.9\\,\\mu\\text{S}$ | $0.1006\\text{ V}$ | $0.7041\\text{ V}$ |
 
-Bias mirror $M_6$ carries $I_{bias} = 10\\,\\mu\\text{A}$ (half of $I_{SS}$) and is scaled to $(W/L)_6 = 5.2720 / 1.0000\\,\\mu\\text{m}$.
+Bias mirror $M_6$ carries $I_{bias} = 10\\ \\mu\\text{A}$ (half of $I_{SS}$) and is scaled to $(W/L)_6 = 5.2720 / 1.0000\\ \\mu\\text{m}$.
 
 ## 6. Verification in Xschem & Ngspice
 
@@ -195,7 +195,7 @@ A critical first step in validation is ensuring that all transistors operate at 
   </tr>
 </table>
 
-The sweep plots reveal that maintaining $g_{m1,2} \ge 0.17\text{ mS}$ requires $V_{CM} \ge 1.0\text{ V}$, whereas holding $I_{D5} \le 20\,\mu\text{A}$ requires $V_{CM} \le 1.25\text{ V}$—defining a valid bias range of $1.0\text{ V}$ to $1.25\text{ V}$. Iterative DC operating point evaluations (`.op`) across this window pinpoint $V_{CM} = 1.0\text{ V}$ as the optimal common-mode bias. **Table 5** confirms close agreement between Open-LUT results and Ngspice operating point results at $V_{CM} = 1.0\text{ V}$.
+The sweep plots reveal that maintaining $g_{m1,2} \ge 0.17\text{ mS}$ requires $V_{CM} \ge 1.0\text{ V}$, whereas holding $I_{D5} \le 20\ \mu\text{A}$ requires $V_{CM} \le 1.25\text{ V}$—defining a valid bias range of $1.0\text{ V}$ to $1.25\text{ V}$. Iterative DC operating point evaluations (`.op`) across this window pinpoint $V_{CM} = 1.0\text{ V}$ as the optimal common-mode bias. **Table 5** confirms close agreement between Open-LUT results and Ngspice operating point results at $V_{CM} = 1.0\text{ V}$.
 
 ### Table 5: Open-LUT vs. Simulated Operating Point ($V_{CM} = 1.0\\text{ V}$)
 
