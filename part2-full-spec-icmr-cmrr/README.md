@@ -35,7 +35,7 @@ $$V_{iCM,\min} > V_{GS1,2} + V_{ov5}$$
 
 $$V_{iCM,\max} < V_{DD} - \vert{}V_{GS3,4}\vert{} + V_{th1,2} = V_{DD} - \vert{}V_{GS3,4}\vert{} + V_{GS1,2} + V_{ov1,2}$$
 
-* **Lower Bound Limit:** For $V_{iCM,\min} = 0.7\text{ V}$ and allocating $V_{ov5} \approx 100\text{ mV}$, $V_{GS1,2}$ must satisfy $V_{GS1,2} < 0.6\text{ V}$. To operate at low gate voltage while maintaining moderate inversion transconductance efficiency, an LVT NMOS device (`sky130_nfet_01v8_lvt`) is selected for $M_1/M_2$.
+* **Lower Bound Limit:** For $V_{iCM,\min} = 0.7\text{ V}$ and allocating $V_{ov5} \approx 100\text{ mV}$, $V_{GS1,2}$ must satisfy $V_{GS1,2} < 0.6\text{ V}$. To operate at low gate voltage while maintaining moderate inversion operation, an LVT NMOS device (`sky130_nfet_01v8_lvt`) is selected for $M_1/M_2$.
 * **Upper Bound Limit:** Targeting $V_{GS1,2} \approx 0.5\text{ V}$ and $V_{ov1,2} \approx 50\text{ mV}$ for design allowance, achieving $V_{iCM,\max} = 1.6\text{ V}$ requires $\vert{}V_{GS3,4}\vert{}$ for mirror loads $M_3/M_4$ to satisfy:
 
 $$\vert{}V_{GS3,4}\vert{} < 1.8 - 1.6 + 0.5 + 0.05 = 0.75\text{ V}$$
