@@ -112,7 +112,7 @@ From the $V_{GS}$ vs. $g_m/I_D$ plot (**Figure 5**), achieving the target biasin
  Figure 5. $g_m/I_D$ vs $V_{GS}$ characteristic for LVT PMOS (`pfet_01v8_lvt`).
 </p>
 
-Entering a branch current $I_D = 0.01\text{ mA}\ (10\,\mu\text{A})$ and an initial $g_m/I_D = 4\text{ S/A}$ dynamically updates the achievable range bounds for $g_{ds}$ (shown in blue text in **Figure 6**). This confirms that the required $g_{ds} < 2\,\mu\text{S}$ is indeed attainable within this $g_m/I_D$ operating range.
+Entering a branch current $I_D = 0.01\text{ mA}\ (10\,\mu\text{A})$ and an initial $g_m/I_D = 4\text{ S/A}$ dynamically updates the achievable range bounds for $g_{ds}$ (shown in blue text in **Figure 6**). This confirms that the required $g_{ds} < 2\,\mu\text{S}$ is attainable within this $g_m/I_D$ operating range.
 
 <p align="center">
   <img src="img/gds_range.bmp" alt="Figure 6: Open-LUT Range Bounds for M3/M4 at ID = 10 µA and gm/ID = 4 S/A">
