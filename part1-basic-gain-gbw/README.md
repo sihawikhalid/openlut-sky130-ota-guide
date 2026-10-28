@@ -12,7 +12,7 @@
 This guide presents a step-by-step procedure for designing a single-ended NMOS differential pair 5-transistor (5T) Operational Transconductance Amplifier (OTA) using SkyWater's open-source 130nm PDK (SKY130) facilitated by Open-LUT. The target schematic is shown in **Figure 1**, and the design requirements are summarized in **Table 1**.
 
 <p align="center">
-  <img src="img/5t_basic_OTA.jpg" alt="Figure 1: 5-transistor (5T) Operational Transconductance Amplifier (OTA) with NMOS input pair" width="500">
+  <img src="img/5t_basic_OTA_2.jpg" alt="Figure 1: 5-transistor (5T) Operational Transconductance Amplifier (OTA) with NMOS input pair" width="500">
   <br>
 </p>
 <p align="center">
@@ -42,7 +42,7 @@ Open-LUT queries $g_m/I_D$ lookup tables at specific drain-to-source bias voltag
 Figure 2 illustrates the initial target $V_{DS}$ bias allocation across the device stack. These assigned $V_{DS}$ values ($V_{DS1,2} = 0.75\text{ V}$, $V_{DS3,4} = 0.75\text{ V}$, and $V_{DS5} = 0.3\text{ V}$) serve directly as the $V_{DS}$ bias settings selected in Open-LUT when extracting lookup tables for sizing each respective transistor.
 
 <p align="center">
-  <img src="img/5t_basic_OTA_bias.jpg" alt="Figure 2: Initial VDS Bias Allocation across the 5T OTA Transistor Stack" width="500">
+  <img src="img/5t_basic_OTA_bias_2.jpg" alt="Figure 2: Initial VDS Bias Allocation across the 5T OTA Transistor Stack" width="500">
   <br> 
 </p>
 <p align="center">
