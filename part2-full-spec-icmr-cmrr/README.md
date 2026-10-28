@@ -48,7 +48,7 @@ $$\vert{}V_{GS3,4}\vert{} < 1.8 - 1.6 + 0.5 + 0.05 = 0.75\text{ V}$$
 **Figure 1** illustrates the initial target $V_{DS}$ bias allocation across the device stack. These assigned $V_{DS}$ values ($V_{DS1,2} = 1.0\text{ V}$, $V_{DS3,4} = 0.5\text{ V}$, and $V_{DS5} = 0.3\text{ V}$) serve directly as the $V_{DS}$ bias settings selected in Open-LUT when extracting lookup tables for sizing each respective transistor.
 
 <p align="center">
-  <img src="img/5t_basic_OTA_bias.jpg" alt="Figure 1: Initial VDS Bias Allocation under ICMR Constraints" width="500">
+  <img src="img/5t_basic_OTA_bias_2.jpg" alt="Figure 1: Initial VDS Bias Allocation under ICMR Constraints" width="500">
   <br>
 </p>
 <p align="center">
