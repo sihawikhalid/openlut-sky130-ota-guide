@@ -90,7 +90,7 @@ To snap the channel length to the SKY130 layout grid ($0.005\\,\\mu\\text{m}$ gr
 
 ## 4. Sizing the Current Mirror Loads ($M_3/M_4$)
 
-As established in Section 3, $M_3$ and $M_4$ are sized such that $g_{ds3,4} < 2\,\mu\text{S}$. Furthermore, since $M_3$ is diode-connected, its gate-to-source voltage $V_{GS3}$ is constrained to follow $V_{DS3}$.
+As established in Section 3, $M_3$ and $M_4$ are sized such that $g_{ds3,4} < 2\,\mu\text{S}$. Furthermore, since $M_3$ is diode-connected, its gate-to-source voltage $\left|V_{GS3}\right|$ is constrained to follow $V_{DS3}$.
 
 To prevent simulation inaccuracies caused by the non-physical $g_m/I_D$ humps <sup>[[3]](#ref3)</sup> exhibited by standard SKY130 PMOS devices (`pfet_01v8`, **Figure 4**), the low-threshold PMOS device `sky130_pfet_01v8_lvt` is selected. In Open-LUT, select `sky130_pfet_01v8_lvt` with the allocated $V_{ds} = 0.75\text{ V}$, then click **Update** to extract the corresponding lookup tables.
 
