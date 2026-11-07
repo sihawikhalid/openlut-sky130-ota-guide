@@ -84,9 +84,9 @@ With $V_{GS1,2} = 0.5174\text{ V}$ from Table 2 and $V_{ov1,2} = 0.0548\text{ V}
 
 $$\vert{}V_{GS3,4}\vert{} < V_{DD} - V_{iCM,\max} + V_{GS1,2} + V_{ov1,2} = 1.8 - 1.6 + 0.5174 + 0.0548 = 0.7722\text{ V}$$
 
-The allocated $V_{DS3,4} = V_{GS3,4} = 0.5\text{ V}$ remains fully valid. Devices $M_3/M_4$ also require $g_{ds3,4} \le 2.0\ \mu\text{S}$ (target $1.5\,\mu\text{S}$) to satisfy total open-loop gain requirements.
+The allocated $V_{DS3,4} = \left|V_{GS3,4}\right| = 0.5\text{ V}$ remains fully valid. Devices $M_3/M_4$ also require $g_{ds3,4} \le 2.0\ \mu\text{S}$ (target $1.5\,\mu\text{S}$) to satisfy total open-loop gain requirements.
 
-In Open-LUT, select `sky130_pfet_01v8_lvt` with $V_{ds} = 0.5\text{ V}$ and click **Update**. Inspecting the $V_{GS}$ vs $g_m/I_D$ curve (**Figure 2**) indicates that achieving $V_{GS3,4} \approx 0.5\text{ V}$ restricts $g_m/I_D$ to the range of $6.5\text{-}11\text{ S/A}$.
+In Open-LUT, select `sky130_pfet_01v8_lvt` with $V_{ds} = 0.5\text{ V}$ and click **Update**. Inspecting the $V_{GS}$ vs $g_m/I_D$ curve (**Figure 2**) indicates that achieving \left|$V_{GS3,4}\right| \approx 0.5\text{ V}$ restricts $g_m/I_D$ to the range of $6.5\text{-}11\text{ S/A}$.
 
 <p align="center">
   <img src="img/gmid_vgs.jpg" alt="Figure 2: gm/ID vs VGS for sky130_pfet_01v8_lvt at Vds = 0.5 V" width="500">
@@ -101,13 +101,13 @@ Click **`Clear Form / Reset Plots`**. For each trial iteration in Open-LUT, ente
 2. Enter a trial $g_m/I_D$ value selected from the $6.5\text{-}11\text{ S/A}$ range.
 3. Enter target $g_{ds3,4} = 0.0015\text{ mS}\ (1.5\ \mu\text{S})$.
 
-Repeat this input sequence across trial runs until $V_{GS3,4} = 0.5000\text{ V}$ is achieved. At $g_m/I_D = 10.5\text{ S/A}$, a gate bias of $V_{GS3,4} = 0.5077\text{ V} \approx 0.5\text{ V}$ is matched.
+Repeat this input sequence across trial runs until \left|$V_{GS3,4}\right| = 0.5000\text{ V}$ is achieved. At $g_m/I_D = 10.5\text{ S/A}$, a gate bias of \left|$V_{GS3,4}\right| = 0.5077\text{ V} \approx 0.5\text{ V}$ is matched.
 
 Snapping $W$ to the layout grid yields the finalized sizing and operating point summarized in **Table 3**.
 
 ### Table 3: Sizing and Biasing for $M_3/M_4$
 
-| Parameter | $(g_m/I_D)_{3,4}$ | $L_{3,4}$ | $W_{3,4}$ | $g_{m3,4}$ | $g_{ds3,4}$ | $V_{ov3,4}$ | $V_{GS3,4}$ |
+| Parameter | $(g_m/I_D)_{3,4}$ | $L_{3,4}$ | $W_{3,4}$ | $g_{m3,4}$ | $g_{ds3,4}$ | $V_{ov3,4}$ | \| $V_{GS3,4}$ \| |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | **Value** | $10.5\text{ S/A}$ | $1.2130\ \mu\text{m}$ | $23.8550\ \mu\text{m}$ | $0.1050\text{ mS}$ | $1.5\,\mu\text{S}$ | $0.1519\text{ V}$ | $0.5077\text{ V}$ |
 
