@@ -130,7 +130,7 @@ Clearing the form once more and entering $I_D = 0.01\text{ mA}$, $g_m/I_D = 5.03
 
 ### Table 3: Sizing and Biasing for $M_3/M_4$
 
-| Parameter | $(g_m/I_D)_{3,4}$ | $L_{3,4}$ | $W_{3,4}$ | $g_{m3,4}$ | $g_{ds3,4}$ | $V_{ov3,4}$ | $\left|V_{GS3,4}\right|$ |
+| Parameter | $(g_m/I_D)_{3,4}$ | $L_{3,4}$ | $W_{3,4}$ | $g_{m3,4}$ | $g_{ds3,4}$ | $V_{ov3,4}$ | $V_{GS3,4}$ |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | **Value** | $5.03\\text{ S/A}$ | $0.7495\\ \\mu\\text{m}$ | $1.9280\\ \\mu\\text{m}$ | $0.0503\\text{ mS}$ | $1.5\\,\\mu\\text{S}$ | $0.4172\\text{ V}$ | $0.7500\\text{ V}$ |
 
