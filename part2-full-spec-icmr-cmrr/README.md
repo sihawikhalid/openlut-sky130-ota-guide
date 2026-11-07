@@ -101,7 +101,7 @@ Click **`Clear Form / Reset Plots`**. For each trial iteration in Open-LUT, ente
 2. Enter a trial $g_m/I_D$ value selected from the $6.5\text{-}11\text{ S/A}$ range.
 3. Enter target $g_{ds3,4} = 0.0015\text{ mS}\ (1.5\ \mu\text{S})$.
 
-Repeat this input sequence across trial runs until \left|$V_{GS3,4}\right| = 0.5000\text{ V}$ is achieved. At $g_m/I_D = 10.5\text{ S/A}$, a gate bias of \left|$V_{GS3,4}\right| = 0.5077\text{ V} \approx 0.5\text{ V}$ is matched.
+Repeat this input sequence across trial runs until $\left|V_{GS3,4}\right| = 0.5000\text{ V}$ is achieved. At $g_m/I_D = 10.5\text{ S/A}$, a gate bias of $\left|V_{GS3,4}\right| = 0.5077\text{ V} \approx 0.5\text{ V}$ is matched.
 
 Snapping $W$ to the layout grid yields the finalized sizing and operating point summarized in **Table 3**.
 
