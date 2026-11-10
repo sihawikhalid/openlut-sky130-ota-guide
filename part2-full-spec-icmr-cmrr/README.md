@@ -86,7 +86,7 @@ $$\vert{}V_{GS3,4}\vert{} < V_{DD} - V_{iCM,\max} + V_{GS1,2} + V_{ov1,2} = 1.8 
 
 The allocated $V_{DS3,4} = \left|V_{GS3,4}\right| = 0.5\text{ V}$ remains fully valid. Devices $M_3/M_4$ also require $g_{ds3,4} \le 2.0\ \mu\text{S}$ (target $1.5\,\mu\text{S}$) to satisfy total open-loop gain requirements.
 
-In Open-LUT, select `sky130_pfet_01v8_lvt` with $V_{ds} = 0.5\text{ V}$ and click **Update**. Inspecting the $V_{GS}$ vs $g_m/I_D$ curve (**Figure 2**) indicates that achieving \left|$V_{GS3,4}\right| \approx 0.5\text{ V}$ restricts $g_m/I_D$ to the range of $6.5\text{-}11\text{ S/A}$.
+In Open-LUT, select `sky130_pfet_01v8_lvt` with $V_{ds} = 0.5\text{ V}$ and click **Update**. Inspecting the $V_{GS}$ vs $g_m/I_D$ curve (**Figure 2**) indicates that achieving $\left|V_{GS3,4}\right| \approx 0.5\text{ V}$ restricts $g_m/I_D$ to the range of $6.5\text{-}11\text{ S/A}$.
 
 <p align="center">
   <img src="img/gmid_vgs.jpg" alt="Figure 2: gm/ID vs VGS for sky130_pfet_01v8_lvt at Vds = 0.5 V" width="500">
